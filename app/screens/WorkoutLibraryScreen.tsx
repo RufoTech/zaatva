@@ -3,7 +3,6 @@ import firestore from '@react-native-firebase/firestore';
 import { useLocalSearchParams, useRouter } from 'expo-router';
 import React, { useEffect, useState } from 'react';
 import {
-  ActivityIndicator,
   Dimensions,
   Image,
   Platform,
@@ -16,6 +15,7 @@ import {
   TouchableOpacity,
   View
 } from 'react-native';
+import { ExerciseListSkeleton } from '@/components/SkeletonLoader';
 
 const { width } = Dimensions.get('window');
 
@@ -188,7 +188,7 @@ export default function WorkoutLibraryScreen() {
       {/* Exercise List */}
       <ScrollView style={styles.listContainer} contentContainerStyle={styles.listContent}>
         {loading ? (
-           <ActivityIndicator size="large" color={PRIMARY} style={{ marginTop: 20 }} />
+           <ExerciseListSkeleton count={5} />
         ) : (
             <View style={styles.exerciseList}>
             {filteredWorkouts.map((exercise) => (

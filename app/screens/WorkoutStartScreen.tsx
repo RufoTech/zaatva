@@ -4,7 +4,6 @@ import { useLocalSearchParams, useRouter } from 'expo-router';
 import React, { useEffect, useState } from 'react';
 import { CustomAlert } from '@/utils/CustomAlert';
 import {
-  ActivityIndicator,
   Dimensions,
   Image,
   ImageBackground,
@@ -17,6 +16,7 @@ import {
   TouchableOpacity,
   View,
 } from 'react-native';
+import { WorkoutStartSkeleton } from '@/components/SkeletonLoader';
 
 const { width, height } = Dimensions.get('window');
 
@@ -44,8 +44,9 @@ export default function WorkoutStartScreen() {
 
   if (!workout) {
     return (
-      <View style={[styles.container, { justifyContent: 'center', alignItems: 'center' }]}>
-        <ActivityIndicator size="large" color={PRIMARY} />
+      <View style={styles.container}>
+        <StatusBar barStyle="light-content" backgroundColor="transparent" translucent />
+        <WorkoutStartSkeleton />
       </View>
     );
   }

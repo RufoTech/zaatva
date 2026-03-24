@@ -6,7 +6,6 @@ import { LinearGradient } from 'expo-linear-gradient';
 import { useLocalSearchParams, useRouter } from 'expo-router';
 import React, { useEffect, useState } from 'react';
 import {
-  ActivityIndicator,
   Dimensions,
   Image,
   ImageBackground,
@@ -19,6 +18,7 @@ import {
   TouchableOpacity,
   View
 } from 'react-native';
+import { WorkoutDetailSkeleton } from '@/components/SkeletonLoader';
 import { SelectionStore } from '../utils/SelectionStore';
 
 const API_URL = Platform.OS === 'android' ? 'http://10.0.2.2:8080' : 'http://localhost:8080';
@@ -403,9 +403,9 @@ export default function WorkoutDetailsScreen() {
 
   if (loading) {
     return (
-      <View style={[styles.container, { justifyContent: 'center', alignItems: 'center' }]}>
+      <View style={styles.container}>
         <StatusBar barStyle="light-content" backgroundColor="#1f230f" />
-        <ActivityIndicator size="large" color="#ccff00" />
+        <WorkoutDetailSkeleton />
       </View>
     );
   }

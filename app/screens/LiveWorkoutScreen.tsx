@@ -21,6 +21,7 @@ import {
 } from 'react-native';
 import { WebView } from 'react-native-webview';
 import { CustomAlert } from '@/utils/CustomAlert';
+import { LiveWorkoutSkeleton } from '@/components/SkeletonLoader';
 
 const { width } = Dimensions.get('window');
 
@@ -498,9 +499,10 @@ export default function LiveWorkoutScreen() {
 
   if (loading) {
     return (
-      <View style={[styles.container, { justifyContent: 'center', alignItems: 'center' }]}>
-        <ActivityIndicator size="large" color={PRIMARY} />
-      </View>
+      <SafeAreaView style={styles.container}>
+        <StatusBar barStyle="light-content" backgroundColor={BG_DARK} />
+        <LiveWorkoutSkeleton />
+      </SafeAreaView>
     );
   }
 

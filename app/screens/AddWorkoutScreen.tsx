@@ -5,7 +5,6 @@ import { LinearGradient } from 'expo-linear-gradient';
 import { useFocusEffect, useLocalSearchParams, useRouter } from 'expo-router';
 import React, { useCallback, useState } from 'react';
 import {
-  ActivityIndicator,
   Alert,
   ImageBackground,
   Platform,
@@ -18,6 +17,7 @@ import {
   TouchableOpacity,
   View
 } from 'react-native';
+import { AddWorkoutListSkeleton } from '@/components/SkeletonLoader';
 import { SelectionStore } from '../utils/SelectionStore';
 import { CustomAlert } from '@/utils/CustomAlert';
 
@@ -294,7 +294,7 @@ export default function AddWorkoutScreen() {
       </View>
 
         {loading ? (
-          <ActivityIndicator size="large" color="#ccff00" style={{ marginTop: 20 }} />
+          <AddWorkoutListSkeleton count={4} />
         ) : (
           filteredWorkouts.map((workout) => {
             const isNoImage = workout.category === 'Custom' && (!workout.image || workout.image === 'https://via.placeholder.com/300');

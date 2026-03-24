@@ -20,6 +20,7 @@ import {
     TouchableOpacity,
     View
 } from 'react-native';
+import { WeeklyProgramListSkeleton } from '@/components/SkeletonLoader';
 
 const { width, height } = Dimensions.get('window');
 
@@ -228,7 +229,7 @@ export default function WeeklyProgramScreen() {
         </View>
 
         {loading ? (
-            <ActivityIndicator size="large" color={PRIMARY} style={{ marginTop: 40 }} />
+            <WeeklyProgramListSkeleton />
         ) : weekSchedule.length === 0 ? (
             <View style={{ alignItems: 'center', marginTop: 40 }}>
                 <Text style={{ color: isDarkMode ? TEXT_MUTED_DARK : TEXT_MUTED_LIGHT }}>No workouts found for this week.</Text>

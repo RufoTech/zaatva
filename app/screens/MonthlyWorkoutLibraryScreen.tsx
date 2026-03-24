@@ -6,7 +6,6 @@ import { LinearGradient } from 'expo-linear-gradient';
 import { useFocusEffect, useLocalSearchParams, useRouter } from 'expo-router';
 import React, { useCallback, useState } from 'react';
 import {
-  ActivityIndicator,
   Dimensions,
   Image,
   ImageBackground,
@@ -21,6 +20,7 @@ import {
   TouchableOpacity,
   View
 } from 'react-native';
+import { ProgramListSkeleton } from '@/components/SkeletonLoader';
 
 const API_URL = Platform.OS === 'android' ? 'http://10.0.2.2:8080' : 'http://localhost:8080';
 
@@ -438,7 +438,7 @@ export default function MonthlyWorkoutLibraryScreen() {
         showsVerticalScrollIndicator={false}
       >
         {loading ? (
-          <ActivityIndicator size="large" color={PRIMARY} style={{ marginTop: 20 }} />
+          <ProgramListSkeleton count={3} />
         ) : (
           filteredPrograms.length > 0 ? (
             filteredPrograms.map((program) => {
