@@ -19,7 +19,6 @@ export default function PrivacyPolicyScreen() {
     <SafeAreaView style={styles.container}>
       <StatusBar barStyle="light-content" backgroundColor="#1f230f" />
       
-      {/* Header */}
       <View style={styles.header}>
         <TouchableOpacity 
           style={styles.backButton}
@@ -28,7 +27,7 @@ export default function PrivacyPolicyScreen() {
           <MaterialIcons name="arrow-back" size={24} color="#ffffff" />
         </TouchableOpacity>
         <Text style={styles.headerTitle}>Privacy Policy</Text>
-        <View style={{ width: 40 }} /> {/* Spacer for centering */}
+        <View style={{ width: 40 }} />
       </View>
 
       <ScrollView contentContainerStyle={styles.content} showsVerticalScrollIndicator={false}>
@@ -48,22 +47,22 @@ export default function PrivacyPolicyScreen() {
           <Text style={styles.paragraph}>
             To function as a health and fitness application, we explicitly request and securely store the following sensitive personal information:
           </Text>
-          <Text style={styles.listItem}>• Identification: Full name, email address, profile picture (via Google Sign-In or manual registration).</Text>
-          <Text style={styles.listItem}>• Physical Characteristics: Height, Weight, Age, Gender.</Text>
-          <Text style={styles.listItem}>• Biometrics: Body measurements (neck, waist, hip), steps taken, daily activity levels.</Text>
+          <Text style={styles.listItem}>{"\u2022"} Identification: Full name, email address, profile picture (via Google Sign-In or manual registration).</Text>
+          <Text style={styles.listItem}>{"\u2022"} Physical Characteristics: Height, Weight, Age, Gender.</Text>
+          <Text style={styles.listItem}>{"\u2022"} Biometrics: Body measurements (neck, waist, hip), steps taken, daily activity levels.</Text>
 
           <Text style={styles.subTitle}>2. Device and Usage Data</Text>
-          <Text style={styles.listItem}>• Device Sensors: We utilize the pedometer (steps sensor) and accelerometer to calculate your estimated daily activity, track your workout progress, and maintain health statistics.</Text>
-          <Text style={styles.listItem}>• Log Data: Information on how the Service is accessed and used, including usage time, feature engagement, and crash reports.</Text>
+          <Text style={styles.listItem}>{"\u2022"} Device Sensors: We utilize the pedometer (steps sensor) and accelerometer to calculate your estimated daily activity, track your workout progress, and maintain health statistics.</Text>
+          <Text style={styles.listItem}>{"\u2022"} Log Data: Information on how the Service is accessed and used, including usage time, feature engagement, and crash reports.</Text>
         </View>
 
         <View style={styles.section}>
           <Text style={styles.sectionTitle}>How We Use Your Information</Text>
           <Text style={styles.paragraph}>We strictly use the collected data for the following core functionalities:</Text>
-          <Text style={styles.listItem}>• Health Calculations: Your height, weight, gender, and age are used locally to calculate fitness metrics such as Body Fat Percentage, Daily Caloric limits, and Basal Metabolic Rate (BMR).</Text>
-          <Text style={styles.listItem}>• Activity Tracking: Pedometer and sensor data are utilized strictly to count your real-time steps and estimate burned calories.</Text>
-          <Text style={styles.listItem}>• Account Maintenance: We use your email and name (through Firebase Authentication) to securely log you in and save your configurations across devices.</Text>
-          <Text style={styles.listItem}>• Community Features: If you explicitly choose to participate in our social features ("Share Profile", "Community Marketplace"), certain profile limits and user IDs are visible to your accepted friends.</Text>
+          <Text style={styles.listItem}>{"\u2022"} Health Calculations: Your height, weight, gender, and age are used locally to calculate fitness metrics such as Body Fat Percentage, Daily Caloric limits, and Basal Metabolic Rate (BMR).</Text>
+          <Text style={styles.listItem}>{"\u2022"} Activity Tracking: Pedometer and sensor data are utilized strictly to count your real-time steps and estimate burned calories.</Text>
+          <Text style={styles.listItem}>{"\u2022"} Account Maintenance: We use your email and name (through Firebase Authentication) to securely log you in and save your configurations across devices.</Text>
+          <Text style={styles.listItem}>{"\u2022"} Community Features: If you explicitly choose to participate in our social features ("Share Profile", "Community Marketplace"), certain profile limits and user IDs are visible to your accepted friends.</Text>
         </View>
 
         <View style={styles.section}>
@@ -72,15 +71,15 @@ export default function PrivacyPolicyScreen() {
             We retain your personal data only for as long as is necessary for the purposes set out in this Privacy Policy.
           </Text>
           <Text style={styles.paragraph}>
-            Account Deletion: You have the undeniable right to delete your personal data. You can delete your account entirely at any time directly through the App (Profile -&gt; Delete Account). Upon clicking "Delete Account", after a mandatory 10-second safety cooldown, your Firebase Authentication credentials and all corresponding primary cloud data are permanently and irrevocably deleted.
+            Account Deletion: You have the undeniable right to delete your personal data. You can delete your account entirely at any time directly through the App (Profile to Delete Account). Upon clicking "Delete Account", after a mandatory 10-second safety cooldown, your Firebase Authentication credentials and all corresponding primary cloud data are permanently and irrevocably deleted.
           </Text>
         </View>
 
         <View style={styles.section}>
           <Text style={styles.sectionTitle}>Third-Party Services</Text>
           <Text style={styles.paragraph}>We use third-party services that may collect information used to identify you:</Text>
-          <Text style={styles.listItem}>• Firebase Authentication & Firestore: Used for secure login and encrypted data storage.</Text>
-          <Text style={styles.listItem}>• Google Sign-in: Enables fast onboarding.</Text>
+          <Text style={styles.listItem}>{"\u2022"} Firebase Authentication & Firestore: Used for secure login and encrypted data storage.</Text>
+          <Text style={styles.listItem}>{"\u2022"} Google Sign-in: Enables fast onboarding.</Text>
           <Text style={styles.paragraph}>
             These third-party services possess their own Privacy Policies dictating how they handle data. We do not sell, trade, or otherwise transfer your sensitive personal data to outside parties for marketing or advertising purposes.
           </Text>
