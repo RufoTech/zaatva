@@ -20,6 +20,7 @@ import { LinearGradient } from 'expo-linear-gradient';
 import auth from '@react-native-firebase/auth';
 import firestore from '@react-native-firebase/firestore';
 import { CustomAlert } from '@/utils/CustomAlert';
+import { CommunityListSkeleton } from '@/components/SkeletonLoader';
 
 const API_URL = Platform.OS === 'android' ? 'http://10.0.2.2:8080' : 'http://localhost:8080';
 
@@ -364,9 +365,7 @@ export default function CommunityMarketplaceScreen() {
 
       {/* List */}
       {loading ? (
-        <View style={styles.centerContainer}>
-          <ActivityIndicator size="large" color={PRIMARY} />
-        </View>
+        <CommunityListSkeleton count={4} />
       ) : items.length === 0 ? (
         <View style={styles.centerContainer}>
           <MaterialIcons name="public" size={64} color="#334155" />

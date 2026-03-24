@@ -269,6 +269,29 @@ export const WeeklyProgramListSkeleton: React.FC = () => (
   </View>
 );
 
+// --- Community Item Skeleton ---
+export const CommunityItemSkeleton: React.FC = () => (
+  <View style={skeletonStyles.communityCard}>
+    <SkeletonBone width="100%" height={180} borderRadius={0} />
+    <View style={{ padding: 16 }}>
+      <SkeletonBone width="60%" height={20} borderRadius={6} style={{ marginBottom: 6 }} />
+      <SkeletonBone width="40%" height={14} borderRadius={4} style={{ marginBottom: 16 }} />
+      <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' }}>
+        <SkeletonBone width={40} height={14} borderRadius={4} />
+        <SkeletonBone width={60} height={32} borderRadius={16} />
+      </View>
+    </View>
+  </View>
+);
+
+export const CommunityListSkeleton: React.FC<{ count?: number }> = ({ count = 3 }) => (
+  <View style={{ gap: 20, paddingHorizontal: 20, paddingTop: 10, paddingBottom: 100 }}>
+    {Array.from({ length: count }).map((_, i) => (
+      <CommunityItemSkeleton key={i} />
+    ))}
+  </View>
+);
+
 // ============================================================
 const skeletonStyles = StyleSheet.create({
   exerciseCard: {
@@ -318,6 +341,13 @@ const skeletonStyles = StyleSheet.create({
     borderStyle: 'dashed',
     justifyContent: 'center',
     height: 80,
+  },
+  communityCard: {
+    backgroundColor: '#0f1108',
+    borderRadius: 16,
+    overflow: 'hidden',
+    borderWidth: 1,
+    borderColor: 'rgba(255, 255, 255, 0.05)',
   },
 });
 
