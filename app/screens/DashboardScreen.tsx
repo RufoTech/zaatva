@@ -20,11 +20,40 @@ import {
     TouchableOpacity,
     View
 } from 'react-native';
+import Animated, {
+    useSharedValue,
+    useAnimatedStyle,
+    withSpring,
+    interpolate,
+    Extrapolate,
+    useAnimatedScrollHandler
+} from 'react-native-reanimated';
 import { BatteryOptEnabled, RequestDisableOptimization } from 'react-native-battery-optimization-check';
 import { getStoredSteps } from '../utils/stepManager';
 import { useAchievements } from '../utils/useAchievements';
 import { getWaterLogs } from '../utils/waterManager';
 import { CustomAlert } from '@/utils/CustomAlert';
+
+const AnimatedTouchableOpacity = Animated.createAnimatedComponent(TouchableOpacity);
+
+const QuickActionButton = ({ onPress, style, children }: any) => {
+  const scale = useSharedValue(1);
+  const animatedStyle = useAnimatedStyle(() => ({
+    transform: [{ scale: scale.value }]
+  }));
+  
+  return (
+    <AnimatedTouchableOpacity
+      style={[style, animatedStyle]}
+      activeOpacity={0.8}
+      onPressIn={() => (scale.value = withSpring(0.92, { damping: 10, stiffness: 400 }))}
+      onPressOut={() => (scale.value = withSpring(1, { damping: 10, stiffness: 400 }))}
+      onPress={onPress}
+    >
+      {children}
+    </AnimatedTouchableOpacity>
+  );
+};
 
 const { width } = Dimensions.get('window');
 
@@ -57,6 +86,22 @@ export default function DashboardScreen() {
   const [isDark, setIsDark] = useState(true);
   const currentTheme = isDark ? theme.dark : theme.light;
   const user = auth().currentUser;
+  
+  const scrollY = useSharedValue(0);
+  const scrollHandler = useAnimatedScrollHandler({
+    onScroll: (event) => {
+      scrollY.value = event.contentOffset.y;
+    },
+  });
+
+  const headerAnimatedStyle = useAnimatedStyle(() => {
+    const opacity = interpolate(scrollY.value, [0, 50], [1, 0], Extrapolate.CLAMP);
+    const translateY = interpolate(scrollY.value, [0, 50], [0, -20], Extrapolate.CLAMP);
+    return {
+      opacity,
+      transform: [{ translateY }],
+    };
+  });
   
   // Initialize initial achievements check
   useAchievements();
@@ -286,14 +331,16 @@ export default function DashboardScreen() {
     <SafeAreaView style={[styles.container, { backgroundColor: currentTheme.bg }]}>
       <StatusBar barStyle={isDark ? "light-content" : "dark-content"} backgroundColor={currentTheme.bg} />
       
-      <ScrollView 
+      <Animated.ScrollView 
         contentContainerStyle={styles.scrollContent} 
         showsVerticalScrollIndicator={false}
         style={{ backgroundColor: currentTheme.bg }}
+        onScroll={scrollHandler}
+        scrollEventThrottle={16}
       >
         
         {/* Header Section */}
-        <View style={[styles.header, { backgroundColor: isDark ? 'rgba(31, 35, 15, 0.8)' : 'rgba(248, 248, 245, 0.8)' }]}>
+        <Animated.View style={[styles.header, { backgroundColor: 'transparent' }, headerAnimatedStyle]}>
           <View style={styles.headerLeft}>
             <View style={styles.profileContainer}>
               <View style={[styles.profileImageWrapper, { borderColor: currentTheme.primary }]}>
@@ -313,12 +360,12 @@ export default function DashboardScreen() {
           <View style={styles.headerRight}>
             
           </View>
-        </View>
+        </Animated.View>
 
         {/* Weekly Summary Section */}
         <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={styles.summaryContainer}>
           {/* Energy Card */}
-          <View style={[styles.summaryCard, { backgroundColor: isDark ? currentTheme.cardBg : '#ffffff', borderColor: isDark ? currentTheme.cardBorder : '#e2e8f0' }]}>
+          <View style={[styles.summaryCard, { backgroundColor: isDark ? 'rgba(255, 255, 255, 0.05)' : '#ffffff', borderColor: isDark ? 'rgba(204, 255, 0, 0.3)' : '#e2e8f0' }]}>
             <View style={styles.summaryHeader}>
               <MaterialIcons name="local-fire-department" size={20} color="#f97316" />
               <Text style={[styles.summaryTitle, { color: currentTheme.subtext }]}>Energy</Text>
@@ -334,7 +381,7 @@ export default function DashboardScreen() {
             </View>
           </View>
 
-          <View style={[styles.summaryCard, { backgroundColor: isDark ? currentTheme.cardBg : '#ffffff', borderColor: isDark ? currentTheme.cardBorder : '#e2e8f0' }]}>
+          <View style={[styles.summaryCard, { backgroundColor: isDark ? 'rgba(255, 255, 255, 0.05)' : '#ffffff', borderColor: isDark ? 'rgba(59, 130, 246, 0.3)' : '#e2e8f0' }]}>
             <View style={styles.summaryHeader}>
               <MaterialIcons name="water-drop" size={20} color="#3b82f6" />
               <Text style={[styles.summaryTitle, { color: currentTheme.subtext }]}>Water Intake</Text>
@@ -346,7 +393,7 @@ export default function DashboardScreen() {
             </View>
           </View>
 
-          <View style={[styles.summaryCard, { backgroundColor: isDark ? currentTheme.cardBg : '#ffffff', borderColor: isDark ? currentTheme.cardBorder : '#e2e8f0' }]}>
+          <View style={[styles.summaryCard, { backgroundColor: isDark ? 'rgba(255, 255, 255, 0.05)' : '#ffffff', borderColor: isDark ? 'rgba(34, 197, 94, 0.3)' : '#e2e8f0' }]}>
             <View style={styles.summaryHeader}>
               <MaterialCommunityIcons name="shoe-print" size={20} color={isDark ? '#22c55e' : '#15803d'} />
               <Text style={[styles.summaryTitle, { color: currentTheme.subtext }]}>Daily Steps</Text>
@@ -363,7 +410,7 @@ export default function DashboardScreen() {
         <View style={styles.section}>
           <Text style={[styles.sectionTitle, { color: currentTheme.subtext }]}>QUICK ACTIONS</Text>
           <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={styles.actionsContainer}>
-            <TouchableOpacity 
+            <QuickActionButton 
               style={styles.actionButton}
               onPress={handleAddStepsPress}
             >
@@ -371,9 +418,9 @@ export default function DashboardScreen() {
                 <MaterialCommunityIcons name="shoe-print" size={24} color={currentTheme.text} />
               </View>
               <Text style={[styles.actionText, { color: currentTheme.text }]}>Add Steps</Text>
-            </TouchableOpacity>
+            </QuickActionButton>
 
-            <TouchableOpacity 
+            <QuickActionButton 
               style={styles.actionButton}
               onPress={() => router.push('/screens/LogWaterScreen')}
             >
@@ -381,9 +428,9 @@ export default function DashboardScreen() {
                 <MaterialIcons name="water-drop" size={24} color={currentTheme.text} />
               </View>
               <Text style={[styles.actionText, { color: currentTheme.text }]}>Log Water</Text>
-            </TouchableOpacity>
+            </QuickActionButton>
 
-            <TouchableOpacity 
+            <QuickActionButton 
               style={styles.actionButton}
               onPress={() => router.push('/screens/AddMealScreen')}
             >
@@ -391,9 +438,9 @@ export default function DashboardScreen() {
                 <MaterialIcons name="restaurant" size={24} color={currentTheme.text} />
               </View>
               <Text style={[styles.actionText, { color: currentTheme.text }]}>Add Meal</Text>
-            </TouchableOpacity>
+            </QuickActionButton>
 
-            <TouchableOpacity 
+            <QuickActionButton 
               style={styles.actionButton}
               onPress={() => router.push('/screens/BodyFatCalculatorScreen')}
             >
@@ -401,9 +448,9 @@ export default function DashboardScreen() {
                 <MaterialCommunityIcons name="percent" size={24} color={currentTheme.text} />
               </View>
               <Text style={[styles.actionText, { color: currentTheme.text }]}>Body Fat</Text>
-            </TouchableOpacity>
+            </QuickActionButton>
 
-            <TouchableOpacity 
+            <QuickActionButton 
               style={styles.actionButton}
               onPress={() => router.push('/screens/CommunityMarketplaceScreen')}
             >
@@ -411,17 +458,17 @@ export default function DashboardScreen() {
                 <MaterialIcons name="public" size={24} color={currentTheme.text} />
               </View>
               <Text style={[styles.actionText, { color: currentTheme.text }]}>Community</Text>
-            </TouchableOpacity>
+            </QuickActionButton>
 
-            <TouchableOpacity 
+            <QuickActionButton 
               style={styles.actionButton}
               onPress={() => router.push('/screens/WorkoutLibraryScreen')}
             >
               <View style={[styles.actionIconContainer, { backgroundColor: isDark ? '#1e293b' : '#e2e8f0' }]}>
                 <MaterialIcons name="fitness-center" size={24} color={currentTheme.text} />
               </View>
-              <Text style={[styles.actionText, { color: currentTheme.text }]}>Workouts Library</Text>
-            </TouchableOpacity>
+              <Text style={[styles.actionText, { color: currentTheme.text }]}>Workouts</Text>
+            </QuickActionButton>
           </ScrollView>
         </View>
 
@@ -557,7 +604,7 @@ export default function DashboardScreen() {
         {/* Bottom Padding for TabBar */}
         <View style={{ height: 100 }} />
 
-      </ScrollView>
+      </Animated.ScrollView>
 
       {/* Warning Modal for Deleting Program */}
       <Modal

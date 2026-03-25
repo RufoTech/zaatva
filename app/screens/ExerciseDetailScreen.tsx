@@ -2,6 +2,7 @@ import firestore from '@react-native-firebase/firestore';
 import { useLocalSearchParams, useRouter } from 'expo-router';
 import React, { useEffect, useState } from 'react';
 import { ActivityIndicator, Dimensions, Image, Platform, SafeAreaView, ScrollView, StatusBar, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import Animated, { FadeInUp } from 'react-native-reanimated';
 import Svg, { Path } from 'react-native-svg';
 import { WebView } from 'react-native-webview';
 
@@ -37,33 +38,33 @@ const getYoutubeId = (url: string) => {
 
 // Icons
 const Icons = {
-  Back: () => (
-    <Svg height="24" viewBox="0 -960 960 960" width="24" fill="currentColor">
+  Back: ({ color = "currentColor" }) => (
+    <Svg height="24" viewBox="0 -960 960 960" width="24" fill={color}>
       <Path d="M360-240 120-480l240-240 56 56-144 144h568v80H272l144 144-56 56Z"/>
     </Svg>
   ),
-  Reps: () => (
-    <Svg height="20" viewBox="0 -960 960 960" width="20" fill="currentColor">
+  Reps: ({ color = "currentColor" }) => (
+    <Svg height="20" viewBox="0 -960 960 960" width="20" fill={color}>
       <Path d="M200-120v-680h360l16 80h224v400H520l-16-80H280v280h-80Z"/>
     </Svg>
   ),
-  Sets: () => (
-    <Svg height="20" viewBox="0 -960 960 960" width="20" fill="currentColor">
+  Sets: ({ color = "currentColor" }) => (
+    <Svg height="20" viewBox="0 -960 960 960" width="20" fill={color}>
       <Path d="M160-80v-160h-40v-320l80-240h480l80 240v320h-40v160h-80v-160H240v160h-80Z"/>
     </Svg>
   ),
-  Fitness: () => (
-    <Svg height="22" viewBox="0 -960 960 960" width="22" fill="currentColor">
+  Fitness: ({ color = "currentColor" }) => (
+    <Svg height="22" viewBox="0 -960 960 960" width="22" fill={color}>
       <Path d="M120-160v-80l80-80v160h-80Zm160 0v-240l80-80v320h-80Zm160 0v-320l80 81v239h-80Zm160 0v-239l80-80v319h-80Zm160 0v-400l80-80v480h-80ZM120-473v-113l320-320 320 320v113L440-793 120-473Z"/>
     </Svg>
   ),
-  ChevronLeft: () => (
-    <Svg height="24" viewBox="0 -960 960 960" width="24" fill="currentColor">
+  ChevronLeft: ({ color = "currentColor" }) => (
+    <Svg height="24" viewBox="0 -960 960 960" width="24" fill={color}>
       <Path d="M560-240 320-480l240-240 56 56-184 184 184 184-56 56Z"/>
     </Svg>
   ),
-  ChevronRight: () => (
-    <Svg height="24" viewBox="0 -960 960 960" width="24" fill="currentColor">
+  ChevronRight: ({ color = "currentColor" }) => (
+    <Svg height="24" viewBox="0 -960 960 960" width="24" fill={color}>
       <Path d="M504-480 320-664l56-56 240 240-240 240-56-56 184-184Z"/>
     </Svg>
   )
@@ -95,7 +96,7 @@ export default function ExerciseDetailScreen() {
         // 1. Try to fetch by exerciseId if available
         if (exercise.exerciseId) {
           const doc = await firestore().collection('workouts').doc(exercise.exerciseId).get();
-          if (doc.exists) {
+          if (typeof doc.exists === 'function' ? doc.exists() : doc.exists) {
             docData = doc.data();
           }
         }
@@ -202,9 +203,7 @@ export default function ExerciseDetailScreen() {
             style={styles.backButton}
             onPress={() => router.back()}
         >
-          <View style={{ color: '#f1f5f9' }}>
-             <Icons.Back />
-          </View>
+          <Icons.Back color="#f1f5f9" />
         </TouchableOpacity>
         <Text style={styles.appBarTitle}>Train Info</Text>
         <View style={{ width: 40 }} /> 
@@ -212,13 +211,13 @@ export default function ExerciseDetailScreen() {
 
       <ScrollView contentContainerStyle={styles.scrollContent}>
         {/* Exercise Header */}
-        <View style={styles.headerContainer}>
+        <Animated.View entering={FadeInUp.delay(100).springify()} style={styles.headerContainer}>
           <Text style={styles.exerciseTitle}>{exercise?.name || 'Unknown Exercise'}</Text>
           <Text style={styles.exerciseSubtitle}>{exercise?.category || 'General'}</Text>
-        </View>
+        </Animated.View>
 
         {/* Video Area */}
-        <View style={styles.videoContainer}>
+        <Animated.View entering={FadeInUp.delay(200).springify()} style={styles.videoContainer}>
           <View style={styles.videoWrapper}>
             {videoId ? (
                 <WebView
@@ -242,30 +241,30 @@ export default function ExerciseDetailScreen() {
                 </View>
             )}
           </View>
-        </View>
+        </Animated.View>
 
         {/* Stats Boxes */}
-        <View style={styles.statsContainer}>
+        <Animated.View entering={FadeInUp.delay(300).springify()} style={styles.statsContainer}>
             <View style={styles.statBox}>
                 <View style={styles.statHeader}>
-                    <View style={{ color: '#94a3b8' }}><Icons.Reps /></View>
+                    <Icons.Reps color="#94a3b8" />
                     <Text style={styles.statLabel}>Təkrar (Reps)</Text>
                 </View>
                 <Text style={styles.statValue}>{exercise?.reps || '-'}</Text>
             </View>
             <View style={styles.statBox}>
                 <View style={styles.statHeader}>
-                    <View style={{ color: '#94a3b8' }}><Icons.Sets /></View>
+                    <Icons.Sets color="#94a3b8" />
                     <Text style={styles.statLabel}>Set Sayı</Text>
                 </View>
                 <Text style={styles.statValue}>{exercise?.sets || '-'}</Text>
             </View>
-        </View>
+        </Animated.View>
 
         {/* Targeted Muscles */}
-        <View style={styles.musclesSection}>
+        <Animated.View entering={FadeInUp.delay(400).springify()} style={styles.musclesSection}>
             <View style={styles.musclesHeader}>
-                <View style={{ color: PRIMARY }}><Icons.Fitness /></View>
+                <Icons.Fitness color={PRIMARY} />
                 <Text style={styles.musclesTitle}>Hədəf Əzələlər / Targeted Muscles</Text>
             </View>
             
@@ -297,7 +296,7 @@ export default function ExerciseDetailScreen() {
                     )}
                 </View>
             </View>
-        </View>
+        </Animated.View>
 
         {/* Navigation Buttons - Optional, maybe remove or implement logic */}
         {/* Keeping them but they won't do much without logic */}
@@ -483,9 +482,10 @@ const styles = StyleSheet.create({
     letterSpacing: 0.5,
   },
   statValue: {
-    fontSize: 30,
+    fontSize: 40,
     fontWeight: '900',
-    color: PRIMARY,
+    color: '#fff',
+    fontStyle: 'italic',
   },
   musclesSection: {
     paddingHorizontal: 16,

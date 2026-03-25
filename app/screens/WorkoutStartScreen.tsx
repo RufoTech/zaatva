@@ -16,6 +16,7 @@ import {
   TouchableOpacity,
   View,
 } from 'react-native';
+import Animated, { FadeInUp, FadeIn, Layout, BounceIn } from 'react-native-reanimated';
 import { WorkoutStartSkeleton } from '@/components/SkeletonLoader';
 
 const { width, height } = Dimensions.get('window');
@@ -95,7 +96,7 @@ export default function WorkoutStartScreen() {
         </View>
 
         {/* Workout Detail Card */}
-        <View style={styles.cardContainer}>
+        <Animated.View style={styles.cardContainer} entering={FadeInUp.delay(200).springify()}>
             <View style={styles.workoutCard}>
                 <View style={styles.iconContainer}>
                     <MaterialIcons name="fitness-center" size={32} color={PRIMARY} />
@@ -119,20 +120,20 @@ export default function WorkoutStartScreen() {
                     </View>
                 </View>
             </View>
-        </View>
+        </Animated.View>
 
         {/* Tip Box */}
-        <View style={styles.tipContainer}>
+        <Animated.View style={styles.tipContainer} entering={FadeInUp.delay(400).springify()}>
             <View style={styles.tipBox}>
                 <MaterialIcons name="lightbulb" size={24} color={PRIMARY} />
                 <Text style={styles.tipText}>
                     {workout.note || "Focus on the eccentric phase (lowering the weight) for maximum muscle growth and strength gains."}
                 </Text>
             </View>
-        </View>
+        </Animated.View>
 
         {/* First Exercise Preview */}
-        <View style={styles.previewContainer}>
+        <Animated.View style={styles.previewContainer} entering={FadeInUp.delay(600).springify()}>
             <Text style={styles.previewTitle}>FIRST EXERCISE PREVIEW</Text>
             <View style={styles.previewCard}>
                 <View style={styles.previewImageContainer}>
@@ -158,13 +159,13 @@ export default function WorkoutStartScreen() {
                 </View>
                 <MaterialIcons name="chevron-right" size={24} color={SUBTEXT_COLOR} />
             </View>
-        </View>
+        </Animated.View>
 
         <View style={{ height: 100 }} />
       </ScrollView>
 
       {/* Action Buttons */}
-      <View style={styles.footer}>
+      <Animated.View style={styles.footer} entering={FadeInUp.delay(800).springify()}>
         <TouchableOpacity 
             style={styles.startNowButton}
             onPress={() => {
@@ -194,7 +195,7 @@ export default function WorkoutStartScreen() {
                 <Text style={styles.secondaryButtonTextOutline}>Not Now</Text>
             </TouchableOpacity>
         </View>
-      </View>
+      </Animated.View>
     </View>
   );
 }

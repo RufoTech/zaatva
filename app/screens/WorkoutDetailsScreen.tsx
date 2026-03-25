@@ -18,6 +18,14 @@ import {
   TouchableOpacity,
   View
 } from 'react-native';
+import Animated, {
+  useSharedValue,
+  useAnimatedScrollHandler,
+  useAnimatedStyle,
+  interpolate,
+  Extrapolation,
+  FadeInUp,
+} from 'react-native-reanimated';
 import { WorkoutDetailSkeleton } from '@/components/SkeletonLoader';
 import { SelectionStore } from '../utils/SelectionStore';
 
@@ -70,6 +78,31 @@ export default function WorkoutDetailsScreen() {
   const [savedDocId, setSavedDocId] = useState<string | null>(null);
   const [showLimitAlert, setShowLimitAlert] = useState(false);
   const [isShared, setIsShared] = useState(false);
+
+  const scrollY = useSharedValue(0);
+  const scrollHandler = useAnimatedScrollHandler({
+    onScroll: (event) => {
+      scrollY.value = event.contentOffset.y;
+    },
+  });
+
+  const headerAnimatedStyle = useAnimatedStyle(() => {
+    const scale = interpolate(
+      scrollY.value,
+      [-100, 0],
+      [1.5, 1],
+      Extrapolation.CLAMP
+    );
+    const translateY = interpolate(
+      scrollY.value,
+      [0, 300],
+      [0, -50],
+      Extrapolation.CLAMP
+    );
+    return {
+      transform: [{ scale }, { translateY }],
+    };
+  });
 
   useEffect(() => {
     if (!id) return;
@@ -192,7 +225,7 @@ export default function WorkoutDetailsScreen() {
                   let exerciseQuery;
                   if (movement.exerciseId) {
                     const exerciseDoc = await firestore().collection('workouts').doc(movement.exerciseId).get();
-                    if (exerciseDoc.exists) {
+                    if (typeof exerciseDoc.exists === 'function' ? exerciseDoc.exists() : exerciseDoc.exists) {
                       const exData = exerciseDoc.data();
                       imageUrl = exData?.mainImage || exData?.imageUrl || imageUrl;
                       videoUrl = exData?.videoUrl || '';
@@ -461,16 +494,19 @@ export default function WorkoutDetailsScreen() {
         </View>
       </View>
 
-      <ScrollView
+      <Animated.ScrollView
         style={styles.scrollView}
         contentContainerStyle={styles.scrollContent}
         showsVerticalScrollIndicator={false}
+        onScroll={scrollHandler}
+        scrollEventThrottle={16}
       >
         {/* Hero Section */}
         <View style={styles.heroContainer}>
           <View style={styles.heroImageWrapper}>
-            <ImageBackground
-              source={{ uri: workout.coverImage }}
+            <Animated.View style={[StyleSheet.absoluteFill, headerAnimatedStyle]}>
+              <ImageBackground
+                source={{ uri: workout.coverImage }}
               style={styles.heroImage}
               imageStyle={{ borderRadius: 12 }}
             >
@@ -485,6 +521,7 @@ export default function WorkoutDetailsScreen() {
                 <Text style={styles.workoutTitle}>{workout.name}</Text>
               </View>
             </ImageBackground>
+            </Animated.View>
           </View>
         </View>
 
@@ -545,9 +582,9 @@ export default function WorkoutDetailsScreen() {
                     <Text style={styles.setLabel}>{set.label}</Text>
                     <View style={styles.movementsList}>
                       {set.movements.map((movement, moveIndex) => (
-                        <TouchableOpacity
-                          key={`move-${blockIndex}-${setIndex}-${moveIndex}`}
-                          style={styles.movementItem}
+                        <Animated.View key={`move-${blockIndex}-${setIndex}-${moveIndex}`} entering={FadeInUp.delay(moveIndex * 100).springify()}>
+                          <TouchableOpacity
+                            style={styles.movementItem}
                           onPress={() => router.push({
                             pathname: '/screens/ExerciseDetailScreen',
                             params: {
@@ -571,7 +608,9 @@ export default function WorkoutDetailsScreen() {
                               {movement.setsCount} sets {movement.reps ? `x ${movement.reps} reps` : ''}
                             </Text>
                           </View>
+                          <MaterialIcons name="play-circle-outline" size={24} color="#ccff00" />
                         </TouchableOpacity>
+                        </Animated.View>
                       ))}
                     </View>
                     {set.rest ? (
@@ -586,7 +625,7 @@ export default function WorkoutDetailsScreen() {
             </View>
           ))}
         </View>
-      </ScrollView>
+      </Animated.ScrollView>
     </View>
   );
 }

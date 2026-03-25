@@ -4,9 +4,7 @@ import firestore from '@react-native-firebase/firestore';
 import { useLocalSearchParams, useRouter } from 'expo-router';
 import React, { useEffect, useRef } from 'react';
 import {
-    Animated,
     Dimensions,
-    Easing,
     Platform,
     SafeAreaView,
     ScrollView,
@@ -14,9 +12,24 @@ import {
     StyleSheet,
     Text,
     TouchableOpacity,
-    View
+    View,
 } from 'react-native';
+import Animated, { 
+  FadeIn, 
+  FadeInDown, 
+  FadeInUp, 
+  useSharedValue, 
+  useAnimatedStyle, 
+  withRepeat, 
+  withSequence, 
+  withTiming, 
+  withSpring,
+  useDerivedValue,
+  runOnJS
+} from 'react-native-reanimated';
 import { checkMuscleMaster } from '../utils/achievementManager';
+
+const AnimatedMaterialIcons = Animated.createAnimatedComponent(MaterialIcons);
 
 const { width } = Dimensions.get('window');
 
@@ -30,65 +43,58 @@ export default function WorkoutCompleteScreen() {
   const router = useRouter();
   const params = useLocalSearchParams();
 
-  // Animation values
-  const pulseAnim = useRef(new Animated.Value(1)).current;
+  // Reanimated values
+  const pulse = useSharedValue(1);
 
   useEffect(() => {
-    // Heartbeat pulsing animation
-    Animated.loop(
-      Animated.sequence([
-        Animated.timing(pulseAnim, {
-          toValue: 1.2,
-          duration: 800,
-          useNativeDriver: true,
-          easing: Easing.inOut(Easing.ease),
-        }),
-        Animated.timing(pulseAnim, {
-          toValue: 1,
-          duration: 800,
-          useNativeDriver: true,
-          easing: Easing.inOut(Easing.ease),
-        }),
-      ])
-    ).start();
-  }, [pulseAnim]);
-
-  useEffect(() => {
-    const saveProgress = async () => {
-      const { programId, week, day } = params;
-      if (programId && week && day) {
-        const user = auth().currentUser;
-        if (user) {
-          try {
-            const docRef = firestore()
-              .collection('users')
-              .doc(user.uid)
-              .collection('program_progress')
-              .doc(programId as string);
-            
-            // Format: { "WEEK 1": { "1": true } }
-            await docRef.set({
-              [week as string]: {
-                [day as string]: true
-              }
-            }, { merge: true });
-
-            // Check Muscle Master achievement locally
-            await checkMuscleMaster();
-
-            console.log("Progress saved successfully!");
-          } catch (e) {
-            console.error("Error saving progress:", e);
-          }
-        }
-      }
-    };
-    saveProgress();
-  }, [params]);
+    pulse.value = withRepeat(
+      withSequence(
+        withTiming(1.15, { duration: 1500 }),
+        withTiming(1, { duration: 1500 })
+      ),
+      -1,
+      true
+    );
+  }, []);
 
   // Get passed stats or use defaults
-  const calories = params.calories || '340';
-  const sets = params.sets || '18';
+  const calories = parseInt(params.calories as string || '0', 10) || 340;
+  const sets = parseInt(params.sets as string || '0', 10) || 18;
+
+  const countValue = useSharedValue(0);
+  useEffect(() => {
+    countValue.value = withTiming(1, { duration: 2000 });
+  }, []);
+
+  const animatedCalories = useDerivedValue(() => {
+    return Math.floor(countValue.value * calories);
+  });
+
+  const animatedSets = useDerivedValue(() => {
+    return Math.floor(countValue.value * sets);
+  });
+
+  const StatItem = ({ label, value, index, icon }: { label: string, value: any, index: number, icon: string }) => {
+    return (
+      <Animated.View 
+        entering={FadeInUp.delay(600 + index * 100).springify()}
+        style={styles.statCard}
+      >
+        <MaterialIcons name={icon as any} size={20} color={PRIMARY} style={{ marginBottom: 8 }} />
+        <Text style={styles.statLabel}>{label}</Text>
+        <Text style={styles.statValue}>{value}</Text>
+      </Animated.View>
+    );
+  };
+
+  const pulseStyle = useAnimatedStyle(() => ({
+    transform: [{ scale: pulse.value }],
+    opacity: 0.1,
+  }));
+
+  const trophyStyle = useAnimatedStyle(() => ({
+    transform: [{ scale: withSpring(countValue.value) }],
+  }));
 
   return (
     <SafeAreaView style={styles.container}>
@@ -99,7 +105,7 @@ export default function WorkoutCompleteScreen() {
         <View style={styles.header}>
           <TouchableOpacity 
             style={styles.iconButton}
-            onPress={() => router.replace('/(tabs)/')}
+            onPress={() => router.replace('/')}
           >
             {/* Empty TouchableOpacity for spacing/alignment if needed, or remove completely */}
           </TouchableOpacity>
@@ -108,48 +114,62 @@ export default function WorkoutCompleteScreen() {
 
         <ScrollView contentContainerStyle={styles.scrollContent} showsVerticalScrollIndicator={false}>
           {/* Hero Section / Celebration Header */}
-          <View style={styles.heroContainer}>
+          <Animated.View style={styles.heroContainer} entering={FadeInDown.delay(200).springify()}>
             <View style={styles.badgeContainer}>
               <Text style={styles.badgeText}>SUCCESS</Text>
             </View>
             <Text style={styles.heroTitle}>WORKOUT COMPLETE!</Text>
             <Text style={styles.heroSubtitle}>MƏŞQ TAMAMLANDI!</Text>
-          </View>
+          </Animated.View>
 
           {/* Central Graphic */}
           <View style={styles.graphicContainer}>
             <View style={styles.graphicBox}>
-              {/* Radial Gradient Background using ImageBackground or multiple Views since React Native doesn't support complex CSS radial gradients natively easily */}
               <View style={styles.radialBackground}>
-                 <Animated.View style={[styles.radialCircle1, { transform: [{ scale: pulseAnim }], opacity: 0.03 }]} />
-                 <Animated.View style={[styles.radialCircle2, { transform: [{ scale: pulseAnim }], opacity: 0.06 }]} />
-                 <Animated.View style={[styles.radialCircle3, { transform: [{ scale: pulseAnim }] }]} />
+                 <Animated.View style={[styles.radialCircle1, pulseStyle]} />
+                 <Animated.View style={[styles.radialCircle2, pulseStyle]} />
+                 <Animated.View style={[styles.radialCircle3, pulseStyle]} />
               </View>
               
-              <View style={styles.trophyWrapper}>
+              <Animated.View style={[styles.trophyWrapper, trophyStyle]}>
                 <MaterialIcons name="emoji-events" size={120} color={PRIMARY} style={styles.trophyIcon} />
                 <View style={styles.starsContainer}>
                   <MaterialIcons name="star" size={24} color="rgba(204, 255, 0, 0.6)" />
                   <MaterialIcons name="star" size={24} color={PRIMARY} />
                   <MaterialIcons name="star" size={24} color="rgba(204, 255, 0, 0.6)" />
                 </View>
-              </View>
+              </Animated.View>
             </View>
           </View>
 
           {/* Statistics Grid */}
-          {/* REMOVED: Kcal and Sets cards as requested */}
-          {/* If you want to display nothing here, we can remove the View entirely or leave it empty. 
-              Based on "sil" (delete), I will remove the content but keep the container structure 
-              if you plan to add something else, or remove the container if it's meant to be empty.
-              Assuming complete removal of these specific cards. */}
-          {/* <View style={styles.statsContainer}> ... </View> */ }
+          <View style={styles.statsContainer}>
+            <StatItem 
+              label="CALORIES" 
+              value={calories} 
+              index={0} 
+              icon="local-fire-department" 
+            />
+            <StatItem 
+              label="SETS" 
+              value={sets} 
+              index={1} 
+              icon="fitness-center" 
+            />
+            <StatItem 
+              label="XP GAINED" 
+              value={Math.round(calories / 10)} 
+              index={2} 
+              icon="trending-up" 
+            />
+          </View>
         </ScrollView>
 
         {/* Action Buttons (Fixed at bottom) */}
-        <View style={styles.actionsContainer}>
+        <Animated.View style={styles.actionsContainer} entering={FadeInUp.delay(1000)}>
           <TouchableOpacity 
             style={styles.primaryButton}
+            activeOpacity={0.8}
             onPress={() => {
               if (params.programId) {
                 router.replace({ 
@@ -157,7 +177,7 @@ export default function WorkoutCompleteScreen() {
                   params: { programId: params.programId } 
                 });
               } else {
-                router.replace('/(tabs)/');
+                router.replace('/');
               }
             }}
           >
@@ -169,12 +189,13 @@ export default function WorkoutCompleteScreen() {
 
           <TouchableOpacity 
             style={styles.secondaryButton}
+            activeOpacity={0.8}
             // Share logic can be added here
           >
             <MaterialIcons name="share" size={24} color={TEXT_LIGHT} />
             <Text style={styles.secondaryButtonText}>Share Progress</Text>
           </TouchableOpacity>
-        </View>
+        </Animated.View>
         
         {/* Subtle Background Glow at bottom */}
         <View style={styles.bottomGlow} pointerEvents="none" />

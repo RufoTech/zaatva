@@ -1,11 +1,19 @@
+import { CustomAlert } from '@/utils/CustomAlert';
 import { MaterialIcons } from '@expo/vector-icons';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import auth from '@react-native-firebase/auth';
 import firestore from '@react-native-firebase/firestore';
 import { useRouter } from 'expo-router';
 import React, { useEffect, useState } from 'react';
-import { ActivityIndicator, Alert, Image, Modal, Platform, SafeAreaView, ScrollView, StatusBar, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
-import { CustomAlert } from '@/utils/CustomAlert';
+import { ActivityIndicator, Image, Modal, Platform, SafeAreaView, ScrollView, StatusBar, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
+import Animated, {
+  FadeIn,
+  FadeInDown,
+  Layout,
+  useAnimatedStyle,
+  useSharedValue,
+  withSpring
+} from 'react-native-reanimated';
 
 const PRIMARY = "#ccff00";
 const BG_DARK = "#0d0f06";
@@ -17,13 +25,13 @@ const TERTIARY = "#edd13a";
 const OUTLINE = "rgba(117, 119, 104, 0.1)";
 
 interface MealItemProps {
-    icon?: string;
-    imageUrl?: string;
-    name: string;
-    detail: string;
-    onAdd?: (item: any) => void;
-    onDelete?: (id: string) => void; // New prop for deleting
-    data: any; // Full food data
+  icon?: string;
+  imageUrl?: string;
+  name: string;
+  detail: string;
+  onAdd?: (item: any) => void;
+  onDelete?: (id: string) => void; // New prop for deleting
+  data: any; // Full food data
 }
 
 const MealItem = ({ icon, imageUrl, name, detail, onAdd, onDelete, data }: MealItemProps) => {
@@ -34,10 +42,10 @@ const MealItem = ({ icon, imageUrl, name, detail, onAdd, onDelete, data }: MealI
   const handleMealPress = (item: any) => {
     router.push({
       pathname: "/screens/MealDetailsScreen",
-      params: { 
-        name: item.name, 
-        detail: item.detail, 
-        icon: item.icon, 
+      params: {
+        name: item.name,
+        detail: item.detail,
+        icon: item.icon,
         imageUrl: item.imageUrl,
         // Pass nutritional data
         id: data.id,
@@ -67,43 +75,48 @@ const MealItem = ({ icon, imageUrl, name, detail, onAdd, onDelete, data }: MealI
 
 
   return (
-    <TouchableOpacity 
+    <Animated.View
+      entering={FadeInDown.springify().damping(20)}
+      layout={Layout.springify()}
+    >
+      <TouchableOpacity
         style={styles.oldMealItem}
         onPress={() => handleMealPress({ name, detail, icon, imageUrl })}
         activeOpacity={0.7}
-    >
-      <View style={styles.oldMealLeft}>
-        <View style={styles.oldMealIconContainer}>
-          {imageUrl ? (
-             <Image source={{ uri: imageUrl }} style={styles.oldMealImage} resizeMode="cover" />
-          ) : (
-             <MaterialIcons name={icon as any || "restaurant"} size={24} color={PRIMARY} />
-          )}
+      >
+        <View style={styles.oldMealLeft}>
+          <View style={styles.oldMealIconContainer}>
+            {imageUrl ? (
+              <Image source={{ uri: imageUrl }} style={styles.oldMealImage} resizeMode="cover" />
+            ) : (
+              <MaterialIcons name={icon as any || "restaurant"} size={24} color={PRIMARY} />
+            )}
+          </View>
+          <View style={styles.oldMealNameContainer}>
+            <Text style={styles.oldMealName}>{name}</Text>
+            {data.isCustom && onDelete && (
+              <TouchableOpacity
+                style={styles.deleteButton}
+                onPress={() => onDelete(data.id)}
+              >
+                <MaterialIcons name="delete-outline" size={20} color="#ff4444" />
+              </TouchableOpacity>
+            )}
+          </View>
+          <Text style={styles.oldMealDetail}>{detail}</Text>
         </View>
-        <View style={styles.oldMealNameContainer}>
-          <Text style={styles.oldMealName}>{name}</Text>
-          {data.isCustom && onDelete && (
-            <TouchableOpacity 
-              style={styles.deleteButton} 
-              onPress={() => onDelete(data.id)}
-            >
-              <MaterialIcons name="delete-outline" size={20} color="#ff4444" />
-            </TouchableOpacity>
-          )}
-        </View>
-        <Text style={styles.oldMealDetail}>{detail}</Text>
-      </View>
-      <TouchableOpacity
-        onPress={handleAdd}
-        style={[
+        <TouchableOpacity
+          onPress={handleAdd}
+          style={[
             styles.oldAddButton,
             added ? styles.oldAddButtonAdded : styles.oldAddButtonNormal
-        ]}
-        activeOpacity={0.8}
-      >
-        <MaterialIcons name={added ? "check" : "add"} size={24} color="#1f230f" />
+          ]}
+          activeOpacity={0.8}
+        >
+          <MaterialIcons name={added ? "check" : "add"} size={24} color="#1f230f" />
+        </TouchableOpacity>
       </TouchableOpacity>
-    </TouchableOpacity>
+    </Animated.View>
   );
 };
 
@@ -116,12 +129,12 @@ export default function AddMealScreen() {
   const [addedItems, setAddedItems] = useState<any[]>([]);
   const [isOldUiVisible, setIsOldUiVisible] = useState(false);
   const [activeMealType, setActiveMealType] = useState<string>("BREAKFAST");
-  
+
   // Takvim ve Gün Yönetimi
   const [currentDate, setCurrentDate] = useState(new Date());
   const [selectedDateStr, setSelectedDateStr] = useState(new Date().toISOString().split('T')[0]); // YYYY-MM-DD
   const [goalCalories, setGoalCalories] = useState("2400"); // Dinamik kalori hədəfi
-  
+
   // Seçilen güne ait öğünler
   const [dailyMeals, setDailyMeals] = useState<{
     BREAKFAST: any[];
@@ -187,7 +200,7 @@ export default function AddMealScreen() {
           });
           foodList = [...foodList, ...customFoods];
         }
-        
+
         // Extract unique categories (trim and handle casing to ensure no duplicates)
         const uniqueCategories = Array.from(
           new Set(
@@ -196,44 +209,44 @@ export default function AddMealScreen() {
               .filter(Boolean)
           )
         ) as string[];
-        
+
         // Add "All" at the beginning
         setCategories(["All", ...uniqueCategories]);
         setFoods(foodList);
-        
+
       } catch (error) {
         console.error("Error fetching foods:", error);
       } finally {
         setLoading(false);
       }
     };
-    
+
     fetchFoods();
   }, [isOldUiVisible]);
 
   const getFilteredFoods = () => {
     let filtered = foods;
-    
+
     // For "Custom" category, maybe also filter by mealType if you want them strictly bound to the meal you're adding to.
     // E.g., if activeCategory === 'Custom' && activeMealType matches food.mealType. 
     // Currently, it just shows all 'Custom' foods in the Custom tab.
 
     // Filter by category
     if (activeCategory && activeCategory !== "All") {
-        filtered = filtered.filter(f => f.category?.trim() === activeCategory);
+      filtered = filtered.filter(f => f.category?.trim() === activeCategory);
     }
-    
+
     // Filter by search
     if (search) {
-        filtered = filtered.filter(f => f.name.toLowerCase().includes(search.toLowerCase()));
+      filtered = filtered.filter(f => f.name.toLowerCase().includes(search.toLowerCase()));
     }
-    
+
     return filtered;
   };
 
   const handleAdd = (item: any) => {
     setAddedItems((prev) => [...prev, item]); // Modal içi sepet (isteğe bağlı kullanılabilir)
-    
+
     // Aktif öğüne ekle
     setDailyMeals(prev => {
       const updated = {
@@ -325,7 +338,7 @@ export default function AddMealScreen() {
   const totalProtein = calculateTotal('protein');
   const totalCarbs = calculateTotal('carbs');
   const totalFat = calculateTotal('fat');
-  
+
   const GOAL_CALORIES = parseInt(goalCalories) || 2400;
   const progressPercent = Math.min((totalCalories / GOAL_CALORIES) * 100, 100).toFixed(0);
 
@@ -347,57 +360,78 @@ export default function AddMealScreen() {
 
   const weekDays = generateWeekDays();
 
+  const MacroBar = ({ percentage, color }: { percentage: number, color: string }) => {
+    const width = useSharedValue(0);
+
+    useEffect(() => {
+      width.value = withSpring(Math.min(percentage, 100), { damping: 15 });
+    }, [percentage]);
+
+    const animatedStyle = useAnimatedStyle(() => ({
+      width: `${width.value}%` as any,
+    }));
+
+    return (
+      <View style={styles.macroBarBg}>
+        <Animated.View style={[styles.macroBarFill, animatedStyle, { backgroundColor: color }]} />
+      </View>
+    );
+  };
+
 
   return (
     <SafeAreaView style={styles.container}>
       <StatusBar barStyle="light-content" backgroundColor={BG_DARK} />
-      
+
       {/* Header Section */}
       <View style={styles.header}>
         <View style={styles.headerTop}>
-            <TouchableOpacity 
-                style={styles.iconButton}
-                onPress={() => router.back()}
-            >
-                <MaterialIcons name="arrow-back" size={24} color="#f1f5f9" />
-            </TouchableOpacity>
-            <View style={styles.headerTitleContainer}>
-              <Text style={styles.headerTitle}>{currentDate.toLocaleString('default', { month: 'long' })}</Text>
-              <Text style={styles.headerSubtitle}>WEEK {Math.ceil(currentDate.getDate() / 7)}</Text>
-            </View>
-            <View style={styles.placeholderButton} />
+          <TouchableOpacity
+            style={styles.iconButton}
+            onPress={() => router.back()}
+          >
+            <MaterialIcons name="arrow-back" size={24} color="#f1f5f9" />
+          </TouchableOpacity>
+          <View style={styles.headerTitleContainer}>
+            <Text style={styles.headerTitle}>{currentDate.toLocaleString('default', { month: 'long' })}</Text>
+            <Text style={styles.headerSubtitle}>WEEK {Math.ceil(currentDate.getDate() / 7)}</Text>
+          </View>
+          <View style={styles.placeholderButton} />
         </View>
 
         {/* Horizontal Calendar */}
         <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={styles.calendarContainer}>
-            {weekDays.map((dayObj, index) => {
-                const isActive = dayObj.dateStr === selectedDateStr;
-                return (
-                    <TouchableOpacity 
-                      key={dayObj.dateStr} 
-                      style={[styles.dayCard, isActive && styles.dayCardActive]}
-                      onPress={() => setSelectedDateStr(dayObj.dateStr)}
-                    >
-                        <Text style={[styles.dayName, isActive && styles.dayTextActive]}>{dayObj.dayName}</Text>
-                        <Text style={[styles.dayNumber, isActive && styles.dayTextActive]}>{dayObj.dayNum}</Text>
-                    </TouchableOpacity>
-                );
-            })}
+          {weekDays.map((dayObj, index) => {
+            const isActive = dayObj.dateStr === selectedDateStr;
+            return (
+              <TouchableOpacity
+                key={dayObj.dateStr}
+                style={[styles.dayCard, isActive && styles.dayCardActive]}
+                onPress={() => setSelectedDateStr(dayObj.dateStr)}
+              >
+                <Text style={[styles.dayName, isActive && styles.dayTextActive]}>{dayObj.dayName}</Text>
+                <Text style={[styles.dayNumber, isActive && styles.dayTextActive]}>{dayObj.dayNum}</Text>
+              </TouchableOpacity>
+            );
+          })}
         </ScrollView>
       </View>
 
       <ScrollView contentContainerStyle={styles.scrollContent}>
         {/* Daily Nutrition Summary */}
-        <View style={styles.nutritionCard}>
+        <Animated.View
+          style={styles.nutritionCard}
+          entering={FadeInDown.delay(100).springify()}
+        >
           <View style={styles.nutritionGlow} />
-          
+
           <View style={styles.nutritionHeader}>
             <View>
               <Text style={styles.nutritionLabel}>DAILY ENERGY</Text>
               <View style={styles.caloriesRow}>
                 <Text style={styles.caloriesValue}>{totalCalories}</Text>
                 <Text style={styles.caloriesTarget}>/</Text>
-                <TextInput 
+                <TextInput
                   style={styles.goalInput}
                   value={goalCalories}
                   onChangeText={handleSaveGoal}
@@ -407,14 +441,14 @@ export default function AddMealScreen() {
                 <Text style={styles.caloriesTarget}>kcal</Text>
               </View>
             </View>
-            <View style={styles.targetBadge}>
+            <Animated.View style={styles.targetBadge} entering={FadeIn.delay(800)}>
               <Text style={styles.targetBadgeText}>{progressPercent}% TARGET</Text>
-            </View>
+            </Animated.View>
           </View>
 
           {/* Main Progress Bar */}
           <View style={styles.mainProgressBarBg}>
-            <View style={[styles.mainProgressBarFill, { width: `${progressPercent}%` as any }]} />
+            <MacroBar percentage={Number(progressPercent)} color={PRIMARY} />
           </View>
 
           {/* Macro Breakdown */}
@@ -424,9 +458,7 @@ export default function AddMealScreen() {
                 <Text style={styles.macroLabel}>PROTEIN</Text>
                 <Text style={styles.macroValue}>{totalProtein}g</Text>
               </View>
-              <View style={styles.macroBarBg}>
-                <View style={[styles.macroBarFill, { width: `${Math.min((totalProtein / 150) * 100, 100)}%` as any, backgroundColor: SECONDARY }]} />
-              </View>
+              <MacroBar percentage={(totalProtein / 150) * 100} color={SECONDARY} />
             </View>
 
             <View style={styles.macroCol}>
@@ -434,9 +466,7 @@ export default function AddMealScreen() {
                 <Text style={styles.macroLabel}>CARBS</Text>
                 <Text style={styles.macroValue}>{totalCarbs}g</Text>
               </View>
-              <View style={styles.macroBarBg}>
-                <View style={[styles.macroBarFill, { width: `${Math.min((totalCarbs / 250) * 100, 100)}%` as any, backgroundColor: TERTIARY }]} />
-              </View>
+              <MacroBar percentage={(totalCarbs / 250) * 100} color={TERTIARY} />
             </View>
 
             <View style={styles.macroCol}>
@@ -444,16 +474,14 @@ export default function AddMealScreen() {
                 <Text style={styles.macroLabel}>FATS</Text>
                 <Text style={styles.macroValue}>{totalFat}g</Text>
               </View>
-              <View style={styles.macroBarBg}>
-                <View style={[styles.macroBarFill, { width: `${Math.min((totalFat / 80) * 100, 100)}%` as any, backgroundColor: TEXT_MUTED }]} />
-              </View>
+              <MacroBar percentage={(totalFat / 80) * 100} color={TEXT_MUTED} />
             </View>
           </View>
-        </View>
+        </Animated.View>
 
         {/* Meal List Sections */}
         <View style={styles.mealSections}>
-          
+
           {/* Breakfast */}
           <View style={styles.mealSection}>
             <View style={styles.mealSectionHeader}>
@@ -642,7 +670,7 @@ export default function AddMealScreen() {
       </ScrollView>
 
       {/* FAB */}
-      <TouchableOpacity 
+      <TouchableOpacity
         style={styles.fab}
         activeOpacity={0.9}
         onPress={() => setIsOldUiVisible(true)}
@@ -653,120 +681,120 @@ export default function AddMealScreen() {
       {/* Old UI Modal */}
       <Modal visible={isOldUiVisible} animationType="slide" transparent={false}>
         <SafeAreaView style={[styles.container, { flex: 1, paddingTop: Platform.OS === 'android' ? StatusBar.currentHeight : 0 }]}>
-            <View style={[styles.header, { paddingHorizontal: 0, paddingTop: 0, paddingBottom: 0 }]}>
-                <View style={styles.oldHeaderTop}>
-                    <TouchableOpacity 
-                        style={styles.oldIconButton}
-                        onPress={() => setIsOldUiVisible(false)}
+          <View style={[styles.header, { paddingHorizontal: 0, paddingTop: 0, paddingBottom: 0 }]}>
+            <View style={styles.oldHeaderTop}>
+              <TouchableOpacity
+                style={styles.oldIconButton}
+                onPress={() => setIsOldUiVisible(false)}
+              >
+                <MaterialIcons name="close" size={24} color="#f1f5f9" />
+              </TouchableOpacity>
+              <Text style={styles.oldHeaderTitle}>Add Meal</Text>
+              {addedItems.length > 0 ? (
+                <View style={styles.oldCounterBadge}>
+                  <Text style={styles.oldCounterText}>{addedItems.length}</Text>
+                </View>
+              ) : (
+                <View style={styles.oldPlaceholderButton} />
+              )}
+            </View>
+
+            {/* Search Input */}
+            <View style={styles.oldSearchContainer}>
+              <View style={styles.oldSearchBar}>
+                <MaterialIcons name="search" size={24} color="rgba(204,255,0,0.6)" style={{ marginRight: 8 }} />
+                <TextInput
+                  style={styles.oldSearchInput}
+                  placeholder="Search food"
+                  placeholderTextColor="rgba(204,255,0,0.4)"
+                  value={search}
+                  onChangeText={setSearch}
+                />
+                <TouchableOpacity>
+                  <MaterialIcons name="qr-code-scanner" size={24} color="rgba(204,255,0,0.6)" />
+                </TouchableOpacity>
+              </View>
+            </View>
+
+            {/* Category Tabs */}
+            <View style={{ height: 50 }}>
+              {loading ? (
+                <View style={{ paddingLeft: 16, justifyContent: 'center' }}>
+                  <ActivityIndicator size="small" color={PRIMARY} />
+                </View>
+              ) : (
+                <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={styles.oldTabsContainer}>
+                  {categories.map((cat) => (
+                    <TouchableOpacity
+                      key={cat}
+                      onPress={() => setActiveCategory(cat)}
+                      style={[
+                        styles.oldTabButton,
+                        activeCategory === cat ? styles.oldTabButtonActive : styles.oldTabButtonInactive
+                      ]}
                     >
-                        <MaterialIcons name="close" size={24} color="#f1f5f9" />
+                      <Text style={[
+                        styles.oldTabText,
+                        activeCategory === cat ? styles.oldTabTextActive : styles.oldTabTextInactive
+                      ]}>{cat}</Text>
                     </TouchableOpacity>
-                    <Text style={styles.oldHeaderTitle}>Add Meal</Text>
-                    {addedItems.length > 0 ? (
-                        <View style={styles.oldCounterBadge}>
-                            <Text style={styles.oldCounterText}>{addedItems.length}</Text>
-                        </View>
-                    ) : (
-                        <View style={styles.oldPlaceholderButton} />
-                    )}
-                </View>
-
-                {/* Search Input */}
-                <View style={styles.oldSearchContainer}>
-                    <View style={styles.oldSearchBar}>
-                        <MaterialIcons name="search" size={24} color="rgba(204,255,0,0.6)" style={{ marginRight: 8 }} />
-                        <TextInput
-                            style={styles.oldSearchInput}
-                            placeholder="Search food"
-                            placeholderTextColor="rgba(204,255,0,0.4)"
-                            value={search}
-                            onChangeText={setSearch}
-                        />
-                        <TouchableOpacity>
-                            <MaterialIcons name="qr-code-scanner" size={24} color="rgba(204,255,0,0.6)" />
-                        </TouchableOpacity>
-                    </View>
-                </View>
-
-                {/* Category Tabs */}
-                <View style={{ height: 50 }}>
-                    {loading ? (
-                        <View style={{ paddingLeft: 16, justifyContent: 'center' }}>
-                            <ActivityIndicator size="small" color={PRIMARY} />
-                        </View>
-                    ) : (
-                        <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={styles.oldTabsContainer}>
-                            {categories.map((cat) => (
-                                <TouchableOpacity
-                                    key={cat}
-                                    onPress={() => setActiveCategory(cat)}
-                                    style={[
-                                        styles.oldTabButton,
-                                        activeCategory === cat ? styles.oldTabButtonActive : styles.oldTabButtonInactive
-                                    ]}
-                                >
-                                    <Text style={[
-                                        styles.oldTabText,
-                                        activeCategory === cat ? styles.oldTabTextActive : styles.oldTabTextInactive
-                                    ]}>{cat}</Text>
-                                </TouchableOpacity>
-                            ))}
-                        </ScrollView>
-                    )}
-                </View>
+                  ))}
+                </ScrollView>
+              )}
             </View>
+          </View>
 
-            <View style={{ paddingHorizontal: 16, marginBottom: 12, flexDirection: 'row', justifyContent: 'flex-end' }}>
-                <TouchableOpacity 
-                    style={{ flexDirection: 'row', alignItems: 'center', backgroundColor: 'rgba(204,255,0,0.1)', paddingHorizontal: 12, paddingVertical: 6, borderRadius: 12, borderWidth: 1, borderColor: 'rgba(204,255,0,0.3)' }}
-                    onPress={() => { 
-                        setIsOldUiVisible(false); 
-                        router.push('/screens/CreateCustomFoodScreen'); 
-                    }}
-                >
-                    <MaterialIcons name="add-circle-outline" size={16} color="#ccff00" />
-                    <Text style={{ color: '#ccff00', fontSize: 12, fontWeight: 'bold', marginLeft: 4 }}>CREATE CUSTOM FOOD</Text>
-                </TouchableOpacity>
-            </View>
+          <View style={{ paddingHorizontal: 16, marginBottom: 12, flexDirection: 'row', justifyContent: 'flex-end' }}>
+            <TouchableOpacity
+              style={{ flexDirection: 'row', alignItems: 'center', backgroundColor: 'rgba(204,255,0,0.1)', paddingHorizontal: 12, paddingVertical: 6, borderRadius: 12, borderWidth: 1, borderColor: 'rgba(204,255,0,0.3)' }}
+              onPress={() => {
+                setIsOldUiVisible(false);
+                router.push('/screens/CreateCustomFoodScreen');
+              }}
+            >
+              <MaterialIcons name="add-circle-outline" size={16} color="#ccff00" />
+              <Text style={{ color: '#ccff00', fontSize: 12, fontWeight: 'bold', marginLeft: 4 }}>CREATE CUSTOM FOOD</Text>
+            </TouchableOpacity>
+          </View>
 
-            {/* Content Section */}
-            <ScrollView contentContainerStyle={styles.oldScrollContent}>
-                {loading ? (
-                    <View style={{ padding: 20, alignItems: 'center' }}>
-                        <ActivityIndicator size="large" color={PRIMARY} />
-                        <Text style={{ color: 'rgba(255,255,255,0.5)', marginTop: 10 }}>Loading foods...</Text>
-                    </View>
-                ) : (
-                    <View style={styles.oldMealsList}>
-                        {getFilteredFoods().map((food: any) => (
-                            <MealItem 
-                                key={food.id} 
-                                name={food.name || 'Unknown Food'}
-                                detail={food.detail || `${food.measureType || 'g'} • ${food.calories || 0} kcal`}
-                                imageUrl={food.image}
-                                onAdd={handleAdd} 
-                                onDelete={handleDeleteCustomFood}
-                                data={food}
-                            />
-                        ))}
-                        {getFilteredFoods().length === 0 && (
-                            <Text style={styles.oldEmptyText}>No foods found for this category</Text>
-                        )}
-                    </View>
+          {/* Content Section */}
+          <ScrollView contentContainerStyle={styles.oldScrollContent}>
+            {loading ? (
+              <View style={{ padding: 20, alignItems: 'center' }}>
+                <ActivityIndicator size="large" color={PRIMARY} />
+                <Text style={{ color: 'rgba(255,255,255,0.5)', marginTop: 10 }}>Loading foods...</Text>
+              </View>
+            ) : (
+              <View style={styles.oldMealsList}>
+                {getFilteredFoods().map((food: any) => (
+                  <MealItem
+                    key={food.id}
+                    name={food.name || 'Unknown Food'}
+                    detail={food.detail || `${food.measureType || 'g'} • ${food.calories || 0} kcal`}
+                    imageUrl={food.image}
+                    onAdd={handleAdd}
+                    onDelete={handleDeleteCustomFood}
+                    data={food}
+                  />
+                ))}
+                {getFilteredFoods().length === 0 && (
+                  <Text style={styles.oldEmptyText}>No foods found for this category</Text>
                 )}
-            </ScrollView>
+              </View>
+            )}
+          </ScrollView>
 
-            {/* Fixed Footer Action */}
-            <View style={styles.oldFooter}>
-                <TouchableOpacity 
-                    style={styles.oldCustomMealButton} 
-                    activeOpacity={0.9}
-                    onPress={handleSaveMeals}
-                >
-                    <MaterialIcons name="save" size={24} color="#1f230f" />
-                    <Text style={styles.oldCustomMealText}>Save Meals</Text>
-                </TouchableOpacity>
-            </View>
+          {/* Fixed Footer Action */}
+          <View style={styles.oldFooter}>
+            <TouchableOpacity
+              style={styles.oldCustomMealButton}
+              activeOpacity={0.9}
+              onPress={handleSaveMeals}
+            >
+              <MaterialIcons name="save" size={24} color="#1f230f" />
+              <Text style={styles.oldCustomMealText}>Save Meals</Text>
+            </TouchableOpacity>
+          </View>
         </SafeAreaView>
       </Modal>
 
@@ -1105,7 +1133,7 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.4,
     shadowRadius: 30,
   },
-  
+
   // --- Old UI Styles for Modal ---
   oldHeaderTop: {
     flexDirection: 'row',
@@ -1275,7 +1303,7 @@ const styles = StyleSheet.create({
     right: 0,
     padding: 16,
     paddingTop: 32,
-    backgroundColor: 'rgba(13,15,6,0.9)', 
+    backgroundColor: 'rgba(13,15,6,0.9)',
     borderTopWidth: 1,
     borderTopColor: 'rgba(255,255,255,0.05)',
   },

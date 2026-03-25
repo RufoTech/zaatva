@@ -1,12 +1,13 @@
-import React, { useState, useCallback } from 'react';
-import { View, Text, TouchableOpacity, ScrollView, StyleSheet, SafeAreaView, StatusBar, ActivityIndicator, Platform } from 'react-native';
-import { MaterialIcons, FontAwesome6 } from '@expo/vector-icons';
-import { useRouter, useFocusEffect } from 'expo-router';
+import { FontAwesome6, MaterialIcons } from '@expo/vector-icons';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import auth from '@react-native-firebase/auth';
 import firestore from '@react-native-firebase/firestore';
-import AsyncStorage from '@react-native-async-storage/async-storage';
-import { getWaterLogs, DailyWater } from '../utils/waterManager';
+import { useFocusEffect, useRouter } from 'expo-router';
+import React, { useCallback, useState } from 'react';
+import { ActivityIndicator, Platform, SafeAreaView, ScrollView, StatusBar, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import Animated, { FadeIn, FadeInDown, FadeInUp, Layout } from 'react-native-reanimated';
 import { getStoredSteps } from '../utils/stepManager';
+import { DailyWater, getWaterLogs } from '../utils/waterManager';
 
 const PRIMARY = "#ccff00";
 const BG_DARK = "#1f230f";
@@ -20,10 +21,10 @@ const API_URL = Platform.OS === 'android' ? 'http://10.0.2.2:8080' : 'http://loc
 
 export default function CalendarScreen() {
   const router = useRouter();
-  
+
   const [currentDate, setCurrentDate] = useState(new Date());
   const [selectedDay, setSelectedDay] = useState(currentDate.getDate());
-  
+
   const [activeProgramId, setActiveProgramId] = useState<string | null>(null);
   const [schedule, setSchedule] = useState<any[]>([]);
   const [completedWorkouts, setCompletedWorkouts] = useState<any>({});
@@ -43,7 +44,7 @@ export default function CalendarScreen() {
       const dateStr = dateObj.toISOString().split('T')[0];
       const storedMeals = await AsyncStorage.getItem(`meals_${dateStr}`);
       const storedGoal = await AsyncStorage.getItem('goalCalories');
-      
+
       let cals = 0, prot = 0, car = 0, f = 0;
       if (storedMeals) {
         const parsedMeals = JSON.parse(storedMeals);
@@ -56,7 +57,7 @@ export default function CalendarScreen() {
           });
         });
       }
-      
+
       setNutritionData({
         calories: Math.round(cals),
         protein: Math.round(prot),
@@ -90,13 +91,13 @@ export default function CalendarScreen() {
           await fetchNutritionForDate(selectedDateObj);
 
           const userDoc = await firestore().collection('users').doc(user.uid).get();
-          if (userDoc.exists) {
+          if (typeof userDoc.exists === 'function' ? userDoc.exists() : userDoc.exists) {
             const progId = userDoc.data()?.activeProgramId;
             setActiveProgramId(progId || null);
 
             if (progId) {
               const progDoc = await firestore().collection('users').doc(user.uid).collection('program_progress').doc(progId).get();
-              if (progDoc.exists) {
+              if (typeof progDoc.exists === 'function' ? progDoc.exists() : progDoc.exists) {
                 setCompletedWorkouts(progDoc.data() || {});
               }
 
@@ -116,7 +117,7 @@ export default function CalendarScreen() {
                   duration: item.subtitle ? parseInt(String(item.subtitle).split('•')[1] || '45') : 45,
                   note: item.subtitle || (item.type === 'rest' ? "Rest & Recover" : "")
                 })).sort((a: any, b: any) => a.day - b.day);
-                
+
                 setSchedule(formattedSchedule);
               }
             } else {
@@ -136,7 +137,7 @@ export default function CalendarScreen() {
 
   const getDayStyle = (day: number) => {
     if (day === selectedDay && currentDate.getMonth() === new Date().getMonth() && currentDate.getFullYear() === new Date().getFullYear()) {
-        return styles.dayCellActive;
+      return styles.dayCellActive;
     }
     if (day === selectedDay) return styles.dayCellActive;
     return styles.dayCell;
@@ -158,7 +159,7 @@ export default function CalendarScreen() {
   const handleDayPress = async (day: number) => {
     setSelectedDay(day);
     const selectedDateObj = new Date(currentYear, currentDate.getMonth(), day);
-    
+
     // Update local data specifically for this day without reloading everything
     const water = await getWaterLogs(selectedDateObj);
     setWaterData(water);
@@ -172,7 +173,7 @@ export default function CalendarScreen() {
   return (
     <SafeAreaView style={styles.container}>
       <StatusBar barStyle="light-content" backgroundColor={BG_DARK} />
-      
+
       {/* Top Navigation Bar */}
       <View style={styles.header}>
         <TouchableOpacity onPress={() => router.back()} style={styles.iconButton}>
@@ -185,7 +186,7 @@ export default function CalendarScreen() {
       </View>
 
       <ScrollView contentContainerStyle={styles.content}>
-        
+
         {/* Month Navigation Header */}
         <View style={styles.monthNav}>
           <Text style={styles.monthTitle}>{currentMonthName} {currentYear}</Text>
@@ -207,24 +208,24 @@ export default function CalendarScreen() {
               <Text key={index} style={styles.weekDayText}>{day}</Text>
             ))}
           </View>
-          
+
           {/* Days Grid */}
           <View style={styles.daysGrid}>
             {/* Empty cells for offset */}
             {Array.from({ length: firstDayOfMonth }).map((_, i) => (
               <View key={`empty-${i}`} style={styles.dayCell} />
             ))}
-            
+
             {daysInMonth.map((day) => (
-              <TouchableOpacity 
-                key={day} 
+              <TouchableOpacity
+                key={day}
                 style={getDayStyle(day)}
                 onPress={() => handleDayPress(day)}
               >
                 <Text style={getTextStyle(day)}>{day}</Text>
               </TouchableOpacity>
             ))}
-            
+
             {/* Trailing empty cells to fill the grid if necessary */}
             {Array.from({ length: (42 - (firstDayOfMonth + daysInMonthCount)) % 7 }).map((_, i) => (
               <Text key={`trailing-${i}`} style={styles.dayTextTrailing}>{i + 1}</Text>
@@ -261,10 +262,10 @@ export default function CalendarScreen() {
               return schedule.map((item) => {
                 const isCompleted = completedWorkouts && completedWorkouts['WEEK 1'] ? completedWorkouts['WEEK 1'][item.day] === true : false;
                 const isNextWorkout = nextWorkout && item.day === nextWorkout.day;
-                
+
                 if (item.type === 'rest') {
                   return (
-                    <View key={item.day} style={styles.restDayCard}>
+                    <Animated.View key={item.day} style={styles.restDayCard} entering={FadeInDown.delay(100).springify()} layout={Layout.springify()}>
                       <View style={styles.restIconBox}>
                         <MaterialIcons name="bedtime" size={24} color={TEXT_MUTED} />
                       </View>
@@ -272,12 +273,12 @@ export default function CalendarScreen() {
                         <Text style={styles.restTitle}>Active Recovery - Day {item.day}</Text>
                         <Text style={styles.restSubtitle}>{item.note}</Text>
                       </View>
-                    </View>
+                    </Animated.View>
                   );
                 }
 
                 return (
-                  <View key={item.day} style={isCompleted ? styles.scheduleCardCompleted : styles.scheduleCardUpcoming}>
+                  <Animated.View key={item.day} style={isCompleted ? styles.scheduleCardCompleted : styles.scheduleCardUpcoming} entering={FadeInDown.delay(150).springify()} layout={Layout.springify()}>
                     <View style={styles.scheduleRow}>
                       <View>
                         <Text style={styles.scheduleTitle}>{item.title} - Day {item.day}</Text>
@@ -292,7 +293,7 @@ export default function CalendarScreen() {
                           <Text style={styles.statusTextCompleted}>COMPLETED</Text>
                         </View>
                       ) : isNextWorkout ? (
-                        <TouchableOpacity 
+                        <TouchableOpacity
                           style={styles.startButton}
                           activeOpacity={0.8}
                           onPress={() => router.push({
@@ -309,7 +310,7 @@ export default function CalendarScreen() {
                         </View>
                       )}
                     </View>
-                  </View>
+                  </Animated.View>
                 );
               });
             })()
@@ -317,11 +318,11 @@ export default function CalendarScreen() {
         </View>
 
         {/* Daily Activity */}
-        <View style={styles.section}>
+        <Animated.View style={styles.section} entering={FadeIn.delay(300)}>
           <Text style={styles.sectionTitle}>Daily Activity</Text>
-          
+
           {/* Energy Summary Card */}
-          <View style={[styles.energyCard, { marginBottom: 16 }]}>
+          <Animated.View style={[styles.energyCard, { marginBottom: 16 }]} entering={FadeInUp.delay(400).springify()}>
             <View style={styles.activityHeader}>
               <MaterialIcons name="local-fire-department" size={20} color="#f97316" />
               <Text style={styles.activityLabel}>ENERGY</Text>
@@ -338,9 +339,9 @@ export default function CalendarScreen() {
             <View style={[styles.progressBarBg, { marginTop: 12 }]}>
               <View style={[styles.progressBarFill, { width: `${Math.min((nutritionData.calories / nutritionData.goalCalories) * 100, 100)}%`, backgroundColor: '#f97316' }]} />
             </View>
-          </View>
+          </Animated.View>
 
-          <View style={styles.activityGrid}>
+          <Animated.View style={styles.activityGrid} entering={FadeInUp.delay(500).springify()}>
             {/* Steps */}
             <View style={styles.activityCard}>
               <View style={styles.activityHeader}>
@@ -370,8 +371,8 @@ export default function CalendarScreen() {
                 <View style={[styles.progressBarFill, { width: `${Math.min(((waterData?.totalConsumed || 0) / (waterData?.goal || 2500)) * 100, 100)}%` }]} />
               </View>
             </View>
-          </View>
-        </View>
+          </Animated.View>
+        </Animated.View>
 
         {/* Bottom Spacer */}
         <View style={{ height: 100 }} />

@@ -13,6 +13,7 @@ import {
   ImageBackground,
   Alert
 } from 'react-native';
+import Animated, { FadeInUp, FadeInRight, FadeIn, Layout } from 'react-native-reanimated';
 import { MaterialIcons, Feather, MaterialCommunityIcons } from '@expo/vector-icons';
 import { useFocusEffect, useRouter } from 'expo-router';
 import { LinearGradient } from 'expo-linear-gradient';
@@ -35,7 +36,7 @@ export default function ProgramsScreen() {
         .collection('users')
         .doc(user.uid)
         .onSnapshot(async (doc) => {
-          if (doc.exists) {
+          if (typeof doc.exists === 'function' ? doc.exists() : doc.exists) {
             const userData = doc.data();
             if (userData?.activeProgramId) {
               try {
@@ -44,7 +45,7 @@ export default function ProgramsScreen() {
                   .doc(userData.activeProgramId)
                   .get();
                 
-                if (programDoc.exists) {
+                if (typeof programDoc.exists === 'function' ? programDoc.exists() : programDoc.exists) {
                   const data: any = programDoc.data();
                   let workoutCount = typeof data.workoutCount === 'number' ? data.workoutCount : 0;
                   let totalDuration = typeof data.totalDuration === 'number' ? data.totalDuration : 0;
@@ -162,11 +163,12 @@ export default function ProgramsScreen() {
       <ScrollView contentContainerStyle={styles.content} showsVerticalScrollIndicator={false}>
         
         {/* Active Program Section */}
-        <View style={styles.section}>
+        <Animated.View style={styles.section} entering={FadeIn.delay(100)}>
           <Text style={styles.sectionLabel}>YOUR PROGRAM</Text>
           
-          <TouchableOpacity 
-            style={[styles.workoutCard, { borderColor: 'rgba(204, 255, 0, 0.1)' }]}
+          <Animated.View entering={FadeInUp.delay(200).springify()}>
+            <TouchableOpacity 
+              style={[styles.workoutCard, { borderColor: 'rgba(204, 255, 0, 0.1)' }]}
             activeOpacity={0.9}
             onPress={() => {
               if (activeProgram?.id) {
@@ -251,8 +253,9 @@ export default function ProgramsScreen() {
                 )}
               </View>
             </ImageBackground>
-          </TouchableOpacity>
-        </View>
+            </TouchableOpacity>
+          </Animated.View>
+        </Animated.View>
 
         {/* Create Custom Program Section */}
         <View style={styles.section}>
@@ -282,7 +285,7 @@ export default function ProgramsScreen() {
         </View>
         
         {/* Recommended Section */}
-        <View style={styles.section}>
+        <Animated.View style={styles.section} entering={FadeIn.delay(400)}>
           <View style={styles.sectionHeader}>
             <Text style={styles.sectionTitle}>RECOMMENDED</Text>
             <TouchableOpacity style={styles.seeAllButton}>
@@ -292,10 +295,10 @@ export default function ProgramsScreen() {
           </View>
 
           <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={styles.recommendedContainer}>
-            {recommendedPrograms.map((program) => (
-              <TouchableOpacity 
-                key={program.id} 
-                style={styles.recommendedCard}
+            {recommendedPrograms.map((program, index) => (
+              <Animated.View key={program.id} entering={FadeInRight.delay(index * 150 + 500).springify()}>
+                <TouchableOpacity 
+                  style={styles.recommendedCard}
                 onPress={() => router.push({
                   pathname: '/screens/WorkoutDetailsScreen',
                   params: {
@@ -318,17 +321,18 @@ export default function ProgramsScreen() {
                   </View>
                 </View>
                 
-                <View style={styles.recommendedContent}>
-                  <Text style={styles.recommendedTitle}>{program.name}</Text>
-                  <View style={styles.durationContainer}>
-                    <Feather name="clock" size={14} color="#ccff00" />
-                    <Text style={styles.durationText}>{program.duration} mins</Text>
+                  <View style={styles.recommendedContent}>
+                    <Text style={styles.recommendedTitle}>{program.name}</Text>
+                    <View style={styles.durationContainer}>
+                      <Feather name="clock" size={14} color="#ccff00" />
+                      <Text style={styles.durationText}>{program.duration} mins</Text>
+                    </View>
                   </View>
-                </View>
-              </TouchableOpacity>
+                </TouchableOpacity>
+              </Animated.View>
             ))}
           </ScrollView>
-        </View>
+        </Animated.View>
 
         {/* Bottom Padding */}
         <View style={{ height: 100 }} />

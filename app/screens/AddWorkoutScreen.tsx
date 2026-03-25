@@ -17,6 +17,7 @@ import {
   TouchableOpacity,
   View
 } from 'react-native';
+import Animated, { FadeInUp, Layout } from 'react-native-reanimated';
 import { AddWorkoutListSkeleton } from '@/components/SkeletonLoader';
 import { SelectionStore } from '../utils/SelectionStore';
 import { CustomAlert } from '@/utils/CustomAlert';
@@ -296,13 +297,13 @@ export default function AddWorkoutScreen() {
         {loading ? (
           <AddWorkoutListSkeleton count={4} />
         ) : (
-          filteredWorkouts.map((workout) => {
+          filteredWorkouts.map((workout, index) => {
             const isNoImage = workout.category === 'Custom' && (!workout.image || workout.image === 'https://via.placeholder.com/300');
 
             if (isNoImage) {
               return (
+                <Animated.View key={workout.id} entering={FadeInUp.delay(index * 50).springify()} layout={Layout.springify()}>
                 <TouchableOpacity 
-                  key={workout.id} 
                   activeOpacity={0.9}
                   style={styles.noImageCard}
                   onPress={() => router.push({
@@ -360,12 +361,13 @@ export default function AddWorkoutScreen() {
                     </TouchableOpacity>
                   </View>
                 </TouchableOpacity>
+                </Animated.View>
               );
             }
 
             return (
+              <Animated.View key={workout.id} entering={FadeInUp.delay(index * 50).springify()} layout={Layout.springify()}>
               <TouchableOpacity 
-                key={workout.id} 
                 activeOpacity={0.9}
                 style={styles.card}
                 onPress={() => router.push({
@@ -432,6 +434,7 @@ export default function AddWorkoutScreen() {
                   </TouchableOpacity>
                 </View>
               </TouchableOpacity>
+              </Animated.View>
             );
           })
         )}

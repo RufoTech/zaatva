@@ -18,6 +18,7 @@ import {
   TouchableOpacity,
   View
 } from 'react-native';
+import Animated, { FadeInUp, FadeOut, Layout } from 'react-native-reanimated';
 
 const { width } = Dimensions.get('window');
 
@@ -95,7 +96,14 @@ export default function ExerciseLibraryScreen() {
     
     const matchesSearch = name.includes(searchText) || muscle.includes(searchText);
     
-    return matchesSearch;
+    let matchesCategory = true;
+    if (activeCategory === "Custom") {
+        matchesCategory = ex.isCustom;
+    } else if (activeCategory !== "All") {
+        matchesCategory = muscle.includes(activeCategory.toLowerCase());
+    }
+
+    return matchesSearch && matchesCategory;
   });
 
   return (
@@ -127,6 +135,21 @@ export default function ExerciseLibraryScreen() {
         </View>
       </View>
 
+      {/* Categories */}
+      <View style={styles.categoriesContainer}>
+        <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={styles.categoriesContent}>
+          {CATEGORIES.map(cat => (
+            <TouchableOpacity 
+              key={cat} 
+              style={[styles.categoryChip, activeCategory === cat ? styles.categoryChipActive : styles.categoryChipInactive]}
+              onPress={() => setActiveCategory(cat)}
+            >
+              <Text style={[styles.categoryText, activeCategory === cat ? styles.categoryTextActive : styles.categoryTextInactive]}>{cat}</Text>
+            </TouchableOpacity>
+          ))}
+        </ScrollView>
+      </View>
+
       {/* Exercise List */}
       <ScrollView 
         style={styles.scrollView} 
@@ -136,13 +159,13 @@ export default function ExerciseLibraryScreen() {
         {loading ? (
           <ActivityIndicator size="large" color={PRIMARY} style={{ marginTop: 20 }} />
         ) : (
-          filteredExercises.map((workout) => {
+          filteredExercises.map((workout, index) => {
             const isNoImage = workout.isCustom && (!workout.image || workout.image === 'https://via.placeholder.com/300');
 
             if (isNoImage) {
               return (
+                <Animated.View key={workout.id} entering={FadeInUp.delay(index * 50).springify()} exiting={FadeOut} layout={Layout.springify()}>
                 <TouchableOpacity 
-                  key={workout.id} 
                   activeOpacity={0.9}
                   style={styles.noImageCard}
                   onPress={() => {
@@ -207,12 +230,13 @@ export default function ExerciseLibraryScreen() {
                     </TouchableOpacity>
                   </View>
                 </TouchableOpacity>
+                </Animated.View>
               );
             }
 
             return (
+              <Animated.View key={workout.id} entering={FadeInUp.delay(index * 50).springify()} exiting={FadeOut} layout={Layout.springify()}>
               <TouchableOpacity 
-                key={workout.id} 
                 activeOpacity={0.9}
                 style={styles.card}
                 onPress={() => {
@@ -281,6 +305,7 @@ export default function ExerciseLibraryScreen() {
                   </TouchableOpacity>
                 </View>
               </TouchableOpacity>
+              </Animated.View>
             );
           })
         )}
@@ -382,7 +407,7 @@ const styles = StyleSheet.create({
     overflow: 'hidden',
   },
   cardImage: {
-    height: 160,
+    height: 200,
     justifyContent: 'flex-end',
     padding: 12,
     width: '100%',

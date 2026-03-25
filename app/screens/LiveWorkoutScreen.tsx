@@ -19,6 +19,7 @@ import {
     TouchableOpacity,
     View
 } from 'react-native';
+import Animated, { SlideInRight, SlideOutLeft, Layout, FadeIn } from 'react-native-reanimated';
 import { WebView } from 'react-native-webview';
 import { CustomAlert } from '@/utils/CustomAlert';
 import { LiveWorkoutSkeleton } from '@/components/SkeletonLoader';
@@ -45,7 +46,9 @@ interface Movement {
   image?: string;
   videoUrl?: string;
   instructions?: string;
-  muscleGroups?: { name: string; imageUrl: string }[]; // Optional, might need to fetch separately if not in initial load
+  muscleGroups?: { name: string; imageUrl: string }[];
+  muscleGroupName?: string;
+  muscleGroupImage?: string;
 }
 
 interface WorkoutSet {
@@ -144,14 +147,14 @@ export default function LiveWorkoutScreen() {
       try {
         // Try standard workout_programs first
         const workoutDoc = await firestore().collection('workout_programs').doc(String(workoutId)).get();
-        if (workoutDoc.exists) {
+        if (typeof workoutDoc.exists === 'function' ? workoutDoc.exists() : workoutDoc.exists) {
             rawData = workoutDoc.data();
             rawData.id = workoutDoc.id;
             isFoundLocally = true;
         } else {
             // Try customUserWorkouts next
             const customDoc = await firestore().collection('customUserWorkouts').doc(String(workoutId)).get();
-            if (customDoc.exists) {
+            if (typeof customDoc.exists === 'function' ? customDoc.exists() : customDoc.exists) {
                 rawData = customDoc.data();
                 rawData.id = customDoc.id;
                 isFoundLocally = true;
@@ -193,11 +196,11 @@ export default function LiveWorkoutScreen() {
           // Let's try to enrich it from Firestore if fields are missing.
           try {
               let enrichedDoc = await firestore().collection('workout_programs').doc(String(workoutId)).get();
-              if (!enrichedDoc.exists) {
+              if (!(typeof enrichedDoc.exists === 'function' ? enrichedDoc.exists() : enrichedDoc.exists)) {
                   enrichedDoc = await firestore().collection('customUserWorkouts').doc(String(workoutId)).get();
               }
               
-              if (enrichedDoc.exists) {
+              if (typeof enrichedDoc.exists === 'function' ? enrichedDoc.exists() : enrichedDoc.exists) {
                   const enrichedData = enrichedDoc.data();
                   if (enrichedData) {
                       data.duration = data.duration || enrichedData.duration;
@@ -611,6 +614,7 @@ export default function LiveWorkoutScreen() {
         }}
         scrollEventThrottle={16}
       >
+        <Animated.View key={`exercise-${currentIndex}`} entering={FadeIn.duration(300)}>
         <View style={styles.videoContainer}>
             {videoId ? (
                 <View style={styles.videoWrapper}>
@@ -722,6 +726,7 @@ export default function LiveWorkoutScreen() {
                 </View>
             </View>
         </TouchableOpacity>
+        </Animated.View>
 
         {/* Muscle Info Modal - Custom Implementation */}
         {isMuscleModalVisible && (
@@ -969,8 +974,8 @@ const styles = StyleSheet.create({
   },
   videoContainer: {
     width: '100%',
-    aspectRatio: 16/9,
-    borderRadius: 12,
+    aspectRatio: 4/3,
+    borderRadius: 24,
     overflow: 'hidden',
     backgroundColor: '#1e293b',
     borderWidth: 1,

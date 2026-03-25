@@ -13,6 +13,19 @@ import {
     View
 } from 'react-native';
 import Svg, { Circle } from 'react-native-svg';
+import Animated, { 
+  FadeIn, 
+  FadeInDown, 
+  useAnimatedProps, 
+  useSharedValue, 
+  withTiming, 
+  Easing,
+  useAnimatedStyle,
+  withSequence,
+  withSpring
+} from 'react-native-reanimated';
+
+const AnimatedCircle = Animated.createAnimatedComponent(Circle);
 
 const { width } = Dimensions.get('window');
 const PRIMARY = "#ccff00";
@@ -31,12 +44,16 @@ export default function RestTimerScreen() {
   const nextExerciseReps = params.nextExerciseReps as string || '-';
   
   const [timeLeft, setTimeLeft] = useState(initialDuration);
-  const [progress, setProgress] = useState(100);
   const totalDuration = useRef(initialDuration);
+  
+  // Reanimated values
+  const progressSV = useSharedValue(1);
+  const scaleSV = useSharedValue(1);
   
   useEffect(() => {
     totalDuration.current = initialDuration;
     setTimeLeft(initialDuration);
+    progressSV.value = 1; // Reset progress
   }, [initialDuration]);
 
   useEffect(() => {
@@ -48,9 +65,18 @@ export default function RestTimerScreen() {
     const timer = setInterval(() => {
       setTimeLeft((prev) => {
         const newVal = prev - 1;
-        // Update progress circle
-        const newProgress = (newVal / totalDuration.current) * 100;
-        setProgress(newProgress);
+        // Update progress SV smoothly
+        progressSV.value = withTiming(newVal / totalDuration.current, {
+           duration: 1000,
+           easing: Easing.linear
+        });
+
+        // Pulse scale on each tick
+        scaleSV.value = withSequence(
+          withTiming(1.05, { duration: 100 }),
+          withTiming(1, { duration: 100 })
+        );
+
         return newVal;
       });
     }, 1000);
@@ -61,6 +87,8 @@ export default function RestTimerScreen() {
   const handleAdd30s = () => {
     setTimeLeft((prev) => prev + 30);
     totalDuration.current += 30;
+    // Adjust progress SV immediately
+    progressSV.value = timeLeft / totalDuration.current;
   };
 
   const handleSkip = () => {
@@ -73,11 +101,21 @@ export default function RestTimerScreen() {
   const strokeWidth = 4;
   const radius = (size - strokeWidth) / 2;
   const circumference = radius * 2 * Math.PI;
-  const strokeDashoffset = circumference - (progress / 100) * circumference;
+
+  const animatedProps = useAnimatedProps(() => {
+    const strokeDashoffset = circumference - progressSV.value * circumference;
+    return {
+      strokeDashoffset,
+    };
+  });
+
+  const timerAnimatedStyle = useAnimatedStyle(() => ({
+    transform: [{ scale: scaleSV.value }]
+  }));
 
   const formatTime = (seconds: number) => {
     const mins = Math.floor(seconds / 60);
-    const secs = seconds % 60;
+    const secs = Math.floor(Math.max(0, seconds % 60));
     return `${mins < 10 ? '0' : ''}${mins}:${secs < 10 ? '0' : ''}${secs}`;
   };
 
@@ -104,7 +142,7 @@ export default function RestTimerScreen() {
               fill="none"
             />
             {/* Progress Circle */}
-            <Circle
+            <AnimatedCircle
               cx={size / 2}
               cy={size / 2}
               r={radius}
@@ -112,32 +150,40 @@ export default function RestTimerScreen() {
               strokeWidth={strokeWidth}
               fill="none"
               strokeDasharray={`${circumference} ${circumference}`}
-              strokeDashoffset={strokeDashoffset}
+              animatedProps={animatedProps}
               strokeLinecap="round"
               transform={`rotate(-90 ${size / 2} ${size / 2})`}
             />
           </Svg>
-          <View style={styles.timerTextContainer}>
+          <Animated.View style={[styles.timerTextContainer, timerAnimatedStyle]}>
             <Text style={styles.timerValue}>{formatTime(timeLeft)}</Text>
             <Text style={styles.timerLabel}>Saniyə qalıb</Text>
-          </View>
+          </Animated.View>
         </View>
 
         {/* Controls */}
-        <View style={styles.controlsContainer}>
-          <TouchableOpacity style={styles.addButton} onPress={handleAdd30s}>
+        <Animated.View style={styles.controlsContainer} entering={FadeInDown.delay(200)}>
+          <TouchableOpacity 
+            style={styles.addButton} 
+            onPress={handleAdd30s}
+            activeOpacity={0.7}
+          >
             <MaterialIcons name="add" size={24} color="#fff" />
             <Text style={styles.addButtonText}>+30s</Text>
           </TouchableOpacity>
           
-          <TouchableOpacity style={styles.skipButton} onPress={handleSkip}>
+          <TouchableOpacity 
+            style={styles.skipButton} 
+            onPress={handleSkip}
+            activeOpacity={0.8}
+          >
             <MaterialIcons name="fast-forward" size={24} color={BG_DARK} />
             <Text style={styles.skipButtonText}>İstirahəti ötür</Text>
           </TouchableOpacity>
-        </View>
+        </Animated.View>
 
         {/* Next Exercise Card */}
-        <View style={styles.nextCard}>
+        <Animated.View style={styles.nextCard} entering={FadeInDown.delay(400).springify()}>
           <View style={styles.nextCardHeader}>
             <Text style={styles.nextLabel}>NÖVBƏTİ MƏŞQ</Text>
             <Text style={styles.nextSetInfo}>{nextExerciseSet}</Text>
@@ -158,7 +204,7 @@ export default function RestTimerScreen() {
               </Text>
             </View>
           </View>
-        </View>
+        </Animated.View>
       </View>
     </SafeAreaView>
   );

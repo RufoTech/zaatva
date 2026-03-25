@@ -20,6 +20,7 @@ import {
     TouchableOpacity,
     View
 } from 'react-native';
+import Animated, { FadeInUp, FadeIn, Layout } from 'react-native-reanimated';
 import { WeeklyProgramListSkeleton } from '@/components/SkeletonLoader';
 
 const { width, height } = Dimensions.get('window');
@@ -62,8 +63,7 @@ export default function WeeklyProgramScreen() {
         .collection('program_progress')
         .doc(programId as string)
         .get();
-      
-      if (docRef.exists) {
+      if (typeof docRef.exists === 'function' ? docRef.exists() : docRef.exists) {
         setCompletedWorkouts(docRef.data());
       }
     } catch (e) {
@@ -236,8 +236,8 @@ export default function WeeklyProgramScreen() {
             </View>
         ) : (
             /* Day List */
-            <View style={styles.daysList}>
-                {weekSchedule.map((item) => {
+            <Animated.View style={styles.daysList} entering={FadeIn.delay(300)}>
+                {weekSchedule.map((item, index) => {
                     const isCompleted = completedWorkouts && completedWorkouts[activeWeek] ? completedWorkouts[activeWeek][item.day] === true : false;
 
                     if (item.type !== 'rest') {
@@ -246,7 +246,7 @@ export default function WeeklyProgramScreen() {
 
                         if (isNoImage) {
                             return (
-                                <View key={item.day} style={styles.noImageCard}>
+                                <Animated.View key={item.day} style={styles.noImageCard} entering={FadeInUp.delay(index * 100).springify()} layout={Layout.springify()}>
                                     <View style={styles.noImageHeader}>
                                         <View style={styles.noImageHeaderLeft}>
                                             <Text style={styles.noImageLevelText}>DAY {item.day}</Text>
@@ -286,12 +286,12 @@ export default function WeeklyProgramScreen() {
                                             <MaterialIcons name={isCompleted ? "replay" : "play-arrow"} size={24} color="#1f230f" />
                                         </TouchableOpacity>
                                     </View>
-                                </View>
+                                </Animated.View>
                             );
                         }
 
                         return (
-                            <View key={item.day} style={item.isCurrent ? styles.currentDayCard : styles.dayCard}>
+                            <Animated.View key={item.day} style={item.isCurrent ? styles.currentDayCard : styles.dayCard} entering={FadeInUp.delay(index * 100).springify()} layout={Layout.springify()}>
                                 <View style={styles.currentDayHeader}>
                                     <View style={styles.dayInfo}>
                                         {item.isCurrent && (
@@ -350,13 +350,13 @@ export default function WeeklyProgramScreen() {
                                     <MaterialIcons name={isCompleted ? "replay" : "play-circle-filled"} size={24} color={BG_DARK} />
                                     <Text style={styles.startWorkoutText}>{isCompleted ? "AGAIN WORKOUT" : "START WORKOUT"}</Text>
                                 </TouchableOpacity>
-                            </View>
+                            </Animated.View>
                         );
                     }
 
                     if (item.type === 'rest') {
                         return (
-                            <View key={item.day} style={styles.restDayCard}>
+                            <Animated.View key={item.day} style={styles.restDayCard} entering={FadeInUp.delay(index * 100).springify()} layout={Layout.springify()}>
                                 <View style={styles.restDayContent}>
                                     <View style={styles.dayInfo}>
                                         <Text style={styles.dayTitle}>Day {item.day}: {item.title}</Text>
@@ -368,13 +368,12 @@ export default function WeeklyProgramScreen() {
                                         color="rgba(204, 255, 0, 0.6)" 
                                     />
                                 </View>
-                            </View>
+                            </Animated.View>
                         );
                     }
 
-                    return null;
                 })}
-            </View>
+            </Animated.View>
         )}
 
         <View style={{ height: 100 }} />

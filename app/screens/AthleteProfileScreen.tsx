@@ -1,24 +1,25 @@
+import { CustomAlert } from '@/utils/CustomAlert';
 import { MaterialIcons } from '@expo/vector-icons';
 import auth from '@react-native-firebase/auth';
 import firestore from '@react-native-firebase/firestore';
-import { useRouter, useLocalSearchParams, useFocusEffect } from 'expo-router';
-import React, { useEffect, useState, useCallback } from 'react';
-import { CustomAlert } from '@/utils/CustomAlert';
 import * as Linking from 'expo-linking';
+import { useFocusEffect, useLocalSearchParams, useRouter } from 'expo-router';
+import React, { useCallback, useEffect, useState } from 'react';
 import {
-    ActivityIndicator,
-    Image,
-    ImageBackground,
-    Platform,
-    SafeAreaView,
-    ScrollView,
-    Share,
-    StatusBar,
-    StyleSheet,
-    Text,
-    TouchableOpacity,
-    View
+  ActivityIndicator,
+  Image,
+  ImageBackground,
+  Platform,
+  SafeAreaView,
+  ScrollView,
+  Share,
+  StatusBar,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View
 } from 'react-native';
+import Animated, { Extrapolate, FadeIn, FadeInDown, FadeInUp, interpolate, useAnimatedScrollHandler, useAnimatedStyle, useSharedValue } from 'react-native-reanimated';
 
 const BG_DARK = "#0d0f06";
 const PRIMARY = "#ccff00";
@@ -34,6 +35,23 @@ const OUTLINE_VARIANT = "rgba(71, 73, 60, 0.2)";
 const API_URL = Platform.OS === 'android' ? 'http://10.0.2.2:8080' : 'http://localhost:8080';
 
 export default function AthleteProfileScreen() {
+  const scrollY = useSharedValue(0);
+  const scrollHandler = useAnimatedScrollHandler(
+    (event) => {
+      scrollY.value = event.contentOffset.y;
+    }
+  );
+
+  const profileAnimatedStyle = useAnimatedStyle(() => {
+    const scale = interpolate(scrollY.value, [0, 150], [1, 0.95], Extrapolate.CLAMP);
+    const translateY = interpolate(scrollY.value, [0, 150], [0, 30], Extrapolate.CLAMP);
+    const opacity = interpolate(scrollY.value, [0, 100], [1, 0.3], Extrapolate.CLAMP);
+    return {
+      transform: [{ scale }, { translateY }],
+      opacity,
+    };
+  });
+
   const router = useRouter();
   const { userId } = useLocalSearchParams();
   const currentUser = auth().currentUser;
@@ -60,153 +78,153 @@ export default function AthleteProfileScreen() {
 
   useFocusEffect(
     useCallback(() => {
-    if (!profileUserId) return;
+      if (!profileUserId) return;
 
-    const loadProfileData = async () => {
-      try {
-        // 1. Load User Info from user_about
-        const userDoc = await firestore().collection('user_about').doc(profileUserId).get();
-        const userExists = typeof userDoc.exists === 'function' ? userDoc.exists() : userDoc.exists;
-        if (userExists) {
-          setUserData(userDoc.data());
-        }
+      const loadProfileData = async () => {
+        try {
+          // 1. Load User Info from user_about
+          const userDoc = await firestore().collection('user_about').doc(profileUserId).get();
+          const userExists = typeof userDoc.exists === 'function' ? userDoc.exists() : userDoc.exists;
+          if (userExists) {
+            setUserData(userDoc.data());
+          }
 
-        // 2. Count Friends (where status is 'accepted' and current user is either sender or receiver)
-        const sentFriendsSnapshot = await firestore()
-          .collection('friend_requests')
-          .where('senderId', '==', profileUserId)
-          .where('status', '==', 'accepted')
-          .get();
-          
-        const receivedFriendsSnapshot = await firestore()
-          .collection('friend_requests')
-          .where('receiverId', '==', profileUserId)
-          .where('status', '==', 'accepted')
-          .get();
-          
-        setFriendsCount(sentFriendsSnapshot.size + receivedFriendsSnapshot.size);
+          // 2. Count Friends (where status is 'accepted' and current user is either sender or receiver)
+          const sentFriendsSnapshot = await firestore()
+            .collection('friend_requests')
+            .where('senderId', '==', profileUserId)
+            .where('status', '==', 'accepted')
+            .get();
 
-        // 3. Load Shared Workouts from community_shared_workouts
-        const workoutsSnapshot = await firestore()
-          .collection('community_shared_workouts')
-          .where('authorId', '==', profileUserId)
-          .get();
-        
-        const workoutsList = workoutsSnapshot.docs.map(doc => ({
-          id: doc.id,
-          ...doc.data()
-        }));
-        setSharedWorkouts(workoutsList);
+          const receivedFriendsSnapshot = await firestore()
+            .collection('friend_requests')
+            .where('receiverId', '==', profileUserId)
+            .where('status', '==', 'accepted')
+            .get();
 
-        // 4. Load Shared Monthly Programs (community_shared_programs) -> mapping to 'Posts' tab
-        const programsSnapshot = await firestore()
-          .collection('community_shared_programs')
-          .where('authorId', '==', profileUserId)
-          .get();
-          
-        const programsList = programsSnapshot.docs.map(doc => ({
-          id: doc.id,
-          ...doc.data()
-        }));
-        setSharedPrograms(programsList);
+          setFriendsCount(sentFriendsSnapshot.size + receivedFriendsSnapshot.size);
 
-        // 5. Load Completed Achievements
-        const achievementsSnapshot = await firestore()
-          .collection('user_achievements')
-          .where('userId', '==', profileUserId)
-          .where('completed', '==', true)
-          .get();
-          
-        const achievementsList = achievementsSnapshot.docs.map(doc => ({
-          id: doc.id,
-          ...doc.data()
-        }));
-        setCompletedAchievements(achievementsList);
+          // 3. Load Shared Workouts from community_shared_workouts
+          const workoutsSnapshot = await firestore()
+            .collection('community_shared_workouts')
+            .where('authorId', '==', profileUserId)
+            .get();
 
-        // 6. Check Friendship Status if NOT own profile
-        if (!isOwnProfile && currentUser) {
-          const checkStatus = async () => {
-             const req1 = await firestore().collection('friend_requests')
-               .where('senderId', '==', currentUser.uid)
-               .where('receiverId', '==', profileUserId)
-               .get();
-             
-             const req2 = await firestore().collection('friend_requests')
-               .where('senderId', '==', profileUserId)
-               .where('receiverId', '==', currentUser.uid)
-               .get();
+          const workoutsList = workoutsSnapshot.docs.map(doc => ({
+            id: doc.id,
+            ...doc.data()
+          }));
+          setSharedWorkouts(workoutsList);
 
-             if (!req1.empty) {
+          // 4. Load Shared Monthly Programs (community_shared_programs) -> mapping to 'Posts' tab
+          const programsSnapshot = await firestore()
+            .collection('community_shared_programs')
+            .where('authorId', '==', profileUserId)
+            .get();
+
+          const programsList = programsSnapshot.docs.map(doc => ({
+            id: doc.id,
+            ...doc.data()
+          }));
+          setSharedPrograms(programsList);
+
+          // 5. Load Completed Achievements
+          const achievementsSnapshot = await firestore()
+            .collection('user_achievements')
+            .where('userId', '==', profileUserId)
+            .where('completed', '==', true)
+            .get();
+
+          const achievementsList = achievementsSnapshot.docs.map(doc => ({
+            id: doc.id,
+            ...doc.data()
+          }));
+          setCompletedAchievements(achievementsList);
+
+          // 6. Check Friendship Status if NOT own profile
+          if (!isOwnProfile && currentUser) {
+            const checkStatus = async () => {
+              const req1 = await firestore().collection('friend_requests')
+                .where('senderId', '==', currentUser.uid)
+                .where('receiverId', '==', profileUserId)
+                .get();
+
+              const req2 = await firestore().collection('friend_requests')
+                .where('senderId', '==', profileUserId)
+                .where('receiverId', '==', currentUser.uid)
+                .get();
+
+              if (!req1.empty) {
                 setFriendshipStatus(req1.docs[0].data().status);
-             } else if (!req2.empty) {
+              } else if (!req2.empty) {
                 const req2Status = req2.docs[0].data().status;
                 // If it's pending and receiver is us, maybe show action? Keeping it 'pending' logic for now.
                 setFriendshipStatus(req2Status);
-             } else {
+              } else {
                 setFriendshipStatus('none');
-             }
-          };
-          await checkStatus();
+              }
+            };
+            await checkStatus();
+          }
+
+        } catch (error) {
+          console.error("Error loading athlete profile:", error);
+        } finally {
+          setLoading(false);
         }
+      };
 
-      } catch (error) {
-        console.error("Error loading athlete profile:", error);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    loadProfileData();
-  }, [profileUserId]));
+      loadProfileData();
+    }, [profileUserId]));
 
   const displayName = userData?.fullname || userData?.displayName || userData?.name || userData?.mail || currentUser?.email || 'Athlete';
   const displayPhoto = userData?.photoURL || userData?.avatar || 'https://via.placeholder.com/150';
 
   const handleDeleteActivity = (item: any, type: 'workout' | 'program') => {
     import('react-native').then(({ Alert }) => {
-        CustomAlert.show(
-          "Silinməni Təsdiqlə",
-          "Bu məşqi profilinizdən və icmadan (community) silmək istədiyinizə əminsiniz?",
-          [
-            { text: "Ləğv et", style: "cancel" },
-            { 
-              text: "Sil", 
-              style: "destructive",
-              onPress: async () => {
-                 if (!currentUser) return;
-                 setDeletingId(item.id);
-                 try {
-                    const token = await currentUser.getIdToken();
-                    const endpoint = type === 'program' ? '/api/community/delete-program' : '/api/community/delete-workout';
-                    
-                    const response = await fetch(`${API_URL}${endpoint}`, {
-                      method: 'POST',
-                      headers: {
-                        'Authorization': `Bearer ${token}`,
-                        'Content-Type': 'application/json'
-                      },
-                      body: JSON.stringify({ itemId: item.id })
-                    });
-    
-                    if (!response.ok) {
-                      throw new Error('Failed to delete item');
-                    }
-    
-                    if (type === 'workout') {
-                        setSharedWorkouts(prev => prev.filter(i => i.id !== item.id));
-                    } else {
-                        setSharedPrograms(prev => prev.filter(i => i.id !== item.id));
-                    }
-                 } catch (error) {
-                    console.error("Error deleting item:", error);
-                    CustomAlert.show("Xəta", "Silinmə zamanı xəta baş verdi.");
-                 } finally {
-                    setDeletingId(null);
-                 }
+      CustomAlert.show(
+        "Silinməni Təsdiqlə",
+        "Bu məşqi profilinizdən və icmadan (community) silmək istədiyinizə əminsiniz?",
+        [
+          { text: "Ləğv et", style: "cancel" },
+          {
+            text: "Sil",
+            style: "destructive",
+            onPress: async () => {
+              if (!currentUser) return;
+              setDeletingId(item.id);
+              try {
+                const token = await currentUser.getIdToken();
+                const endpoint = type === 'program' ? '/api/community/delete-program' : '/api/community/delete-workout';
+
+                const response = await fetch(`${API_URL}${endpoint}`, {
+                  method: 'POST',
+                  headers: {
+                    'Authorization': `Bearer ${token}`,
+                    'Content-Type': 'application/json'
+                  },
+                  body: JSON.stringify({ itemId: item.id })
+                });
+
+                if (!response.ok) {
+                  throw new Error('Failed to delete item');
+                }
+
+                if (type === 'workout') {
+                  setSharedWorkouts(prev => prev.filter(i => i.id !== item.id));
+                } else {
+                  setSharedPrograms(prev => prev.filter(i => i.id !== item.id));
+                }
+              } catch (error) {
+                console.error("Error deleting item:", error);
+                CustomAlert.show("Xəta", "Silinmə zamanı xəta baş verdi.");
+              } finally {
+                setDeletingId(null);
               }
             }
-          ]
-        );
+          }
+        ]
+      );
     });
   };
 
@@ -252,7 +270,7 @@ export default function AthleteProfileScreen() {
   return (
     <SafeAreaView style={styles.container}>
       <StatusBar barStyle="light-content" backgroundColor={BG_DARK} />
-      
+
       {/* Header */}
       <View style={styles.header}>
         <TouchableOpacity style={styles.backButton} onPress={() => router.back()}>
@@ -262,15 +280,20 @@ export default function AthleteProfileScreen() {
         <View style={{ width: 40 }} />
       </View>
 
-      <ScrollView contentContainerStyle={styles.content} showsVerticalScrollIndicator={false}>
-        
+      <Animated.ScrollView
+        contentContainerStyle={styles.content}
+        showsVerticalScrollIndicator={false}
+        onScroll={scrollHandler}
+        scrollEventThrottle={16}
+      >
+
         {/* Profile Info Section */}
-        <View style={styles.profileSection}>
+        <Animated.View style={[styles.profileSection, profileAnimatedStyle]} entering={FadeInDown.duration(600).springify()}>
           <View style={styles.avatarWrapper}>
             <View style={styles.avatarGradient}>
-              <Image 
-                source={{ uri: displayPhoto }} 
-                style={styles.avatar} 
+              <Image
+                source={{ uri: displayPhoto }}
+                style={styles.avatar}
               />
             </View>
             <View style={styles.eliteBadge}>
@@ -279,7 +302,7 @@ export default function AthleteProfileScreen() {
           </View>
 
           <Text style={styles.profileName}>{displayName}</Text>
-          
+
           <Text style={styles.profileBio}>
             {userData?.bio || "Fitness enthusiast. Ready to crush goals!"}
           </Text>
@@ -287,7 +310,7 @@ export default function AthleteProfileScreen() {
           <View style={styles.actionButtons}>
             {isOwnProfile ? (
               <>
-                <TouchableOpacity 
+                <TouchableOpacity
                   style={styles.actionBtn}
                   onPress={() => router.push('/screens/EditProfileScreen')}
                 >
@@ -317,7 +340,7 @@ export default function AthleteProfileScreen() {
               </View>
             ) : null}
           </View>
-        </View>
+        </Animated.View>
 
         {/* Stats Bar */}
         <View style={styles.statsBar}>
@@ -335,16 +358,16 @@ export default function AthleteProfileScreen() {
               <Text style={styles.viewAllText}>VIEW ALL</Text>
             </TouchableOpacity>
           </View>
-          
+
           <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={styles.badgesList}>
             {completedAchievements.length > 0 ? (
               completedAchievements.map((achievement, index) => (
-                <View key={achievement.id || index} style={styles.badgeCard}>
+                <Animated.View key={achievement.id || index} style={styles.badgeCard} entering={FadeIn.delay(index * 150 + 200)}>
                   <View style={[styles.badgeIconWrapper, { backgroundColor: 'rgba(204,255,0,0.1)' }]}>
                     <MaterialIcons name="emoji-events" size={32} color={PRIMARY} />
                   </View>
                   <Text style={styles.badgeText}>{achievement.title || 'ACHIEVEMENT'}</Text>
-                </View>
+                </Animated.View>
               ))
             ) : (
               <View style={[styles.badgeCard, { opacity: 0.4, width: 200 }]}>
@@ -357,8 +380,8 @@ export default function AthleteProfileScreen() {
         {/* Activity Tabs */}
         <View style={styles.tabsContainer}>
           {(['Workouts', 'Monthly', 'Badges'] as const).map((tab) => (
-            <TouchableOpacity 
-              key={tab} 
+            <TouchableOpacity
+              key={tab}
               style={[styles.tabBtn, activeTab === tab && styles.activeTabBtn]}
               onPress={() => setActiveTab(tab)}
             >
@@ -373,55 +396,56 @@ export default function AthleteProfileScreen() {
         {activeTab === 'Workouts' && (
           <View style={styles.workoutsList}>
             {sharedWorkouts.length > 0 ? (
-              sharedWorkouts.map((workout) => (
-                <TouchableOpacity 
-                  key={workout.id} 
-                  style={styles.workoutCard} 
-                  activeOpacity={0.9}
-                  onPress={() => router.push({
-                    pathname: '/screens/WorkoutDetailsScreen',
-                    params: { id: workout.id, fromLibrary: 'true' }
-                  })}
-                >
-                  <ImageBackground 
-                    source={{ uri: workout.coverImage || workout.image || 'https://via.placeholder.com/400x200' }}
-                    style={styles.workoutImage}
+              sharedWorkouts.map((workout, index) => (
+                <Animated.View key={workout.id} entering={FadeInUp.delay(index * 100).springify()}>
+                  <TouchableOpacity
+                    style={styles.workoutCard}
+                    activeOpacity={0.9}
+                    onPress={() => router.push({
+                      pathname: '/screens/WorkoutDetailsScreen',
+                      params: { id: workout.id, fromLibrary: 'true' }
+                    })}
                   >
-                    <View style={styles.workoutImageOverlay} />
-                    <View style={styles.workoutTags}>
-                      <View style={styles.workoutTagPrimary}>
-                        <Text style={styles.workoutTagPrimaryText}>WORKOUT</Text>
+                    <ImageBackground
+                      source={{ uri: workout.coverImage || workout.image || 'https://via.placeholder.com/400x200' }}
+                      style={styles.workoutImage}
+                    >
+                      <View style={styles.workoutImageOverlay} />
+                      <View style={styles.workoutTags}>
+                        <View style={styles.workoutTagPrimary}>
+                          <Text style={styles.workoutTagPrimaryText}>WORKOUT</Text>
+                        </View>
+                        <View style={styles.workoutTagDark}>
+                          <Text style={styles.workoutTagDarkText}>{workout.duration || 0} MIN</Text>
+                        </View>
                       </View>
-                      <View style={styles.workoutTagDark}>
-                        <Text style={styles.workoutTagDarkText}>{workout.duration || 0} MIN</Text>
+                    </ImageBackground>
+                    <View style={styles.workoutInfo}>
+                      <View style={styles.workoutTitleRow}>
+                        <Text style={styles.workoutTitle}>{workout.title || workout.name || 'Untitled'}</Text>
+                        {isOwnProfile && (
+                          <TouchableOpacity
+                            onPress={(e) => { e.stopPropagation(); handleDeleteActivity(workout, 'workout'); }}
+                            disabled={deletingId === workout.id}
+                            style={{ padding: 4 }}
+                          >
+                            {deletingId === workout.id ? (
+                              <ActivityIndicator size="small" color="#ef4444" />
+                            ) : (
+                              <MaterialIcons name="delete" size={20} color="#ef4444" />
+                            )}
+                          </TouchableOpacity>
+                        )}
+                      </View>
+                      <View style={styles.workoutDetailsRow}>
+                        <View style={styles.workoutDetailItem}>
+                          <MaterialIcons name="fitness-center" size={14} color={PRIMARY} />
+                          <Text style={[styles.workoutDetailText, { color: TEXT_MUTED }]}>{workout.difficulty || 'General'}</Text>
+                        </View>
                       </View>
                     </View>
-                  </ImageBackground>
-                  <View style={styles.workoutInfo}>
-                    <View style={styles.workoutTitleRow}>
-                      <Text style={styles.workoutTitle}>{workout.title || workout.name || 'Untitled'}</Text>
-                      {isOwnProfile && (
-                        <TouchableOpacity 
-                          onPress={(e) => { e.stopPropagation(); handleDeleteActivity(workout, 'workout'); }}
-                          disabled={deletingId === workout.id}
-                          style={{ padding: 4 }}
-                        >
-                          {deletingId === workout.id ? (
-                             <ActivityIndicator size="small" color="#ef4444" />
-                          ) : (
-                             <MaterialIcons name="delete" size={20} color="#ef4444" />
-                          )}
-                        </TouchableOpacity>
-                      )}
-                    </View>
-                    <View style={styles.workoutDetailsRow}>
-                      <View style={styles.workoutDetailItem}>
-                        <MaterialIcons name="fitness-center" size={14} color={PRIMARY} />
-                        <Text style={[styles.workoutDetailText, { color: TEXT_MUTED }]}>{workout.difficulty || 'General'}</Text>
-                      </View>
-                    </View>
-                  </View>
-                </TouchableOpacity>
+                  </TouchableOpacity>
+                </Animated.View>
               ))
             ) : (
               <View style={styles.endOfActivity}>
@@ -440,54 +464,55 @@ export default function AthleteProfileScreen() {
         {activeTab === 'Monthly' && (
           <View style={styles.workoutsList}>
             {sharedPrograms.length > 0 ? (
-              sharedPrograms.map((program) => (
-                <TouchableOpacity 
-                  key={program.id} 
-                  style={styles.workoutCard} 
-                  activeOpacity={0.9}
-                  onPress={() => router.push({
-                    pathname: '/screens/WeeklyProgramScreen',
-                    params: { programId: program.id }
-                  })}
-                >
-                  <ImageBackground 
-                    source={{ uri: program.coverImage || 'https://via.placeholder.com/400x200' }}
-                    style={styles.workoutImage}
+              sharedPrograms.map((program, index) => (
+                <Animated.View key={program.id} entering={FadeInUp.delay(index * 100).springify()}>
+                  <TouchableOpacity
+                    style={styles.workoutCard}
+                    activeOpacity={0.9}
+                    onPress={() => router.push({
+                      pathname: '/screens/WeeklyProgramScreen',
+                      params: { programId: program.id }
+                    })}
                   >
-                    <View style={styles.workoutImageOverlay} />
-                    <View style={styles.workoutTags}>
-                      <View style={[styles.workoutTagPrimary, { backgroundColor: SECONDARY }]}>
-                        <Text style={[styles.workoutTagPrimaryText, { color: '#565400' }]}>PROGRAM</Text>
+                    <ImageBackground
+                      source={{ uri: program.coverImage || 'https://via.placeholder.com/400x200' }}
+                      style={styles.workoutImage}
+                    >
+                      <View style={styles.workoutImageOverlay} />
+                      <View style={styles.workoutTags}>
+                        <View style={[styles.workoutTagPrimary, { backgroundColor: SECONDARY }]}>
+                          <Text style={[styles.workoutTagPrimaryText, { color: '#565400' }]}>PROGRAM</Text>
+                        </View>
+                        <View style={styles.workoutTagDark}>
+                          <Text style={styles.workoutTagDarkText}>{program.workoutCount || 0} WORKOUTS</Text>
+                        </View>
                       </View>
-                      <View style={styles.workoutTagDark}>
-                        <Text style={styles.workoutTagDarkText}>{program.workoutCount || 0} WORKOUTS</Text>
+                    </ImageBackground>
+                    <View style={styles.workoutInfo}>
+                      <View style={styles.workoutTitleRow}>
+                        <Text style={styles.workoutTitle}>{program.name || 'Untitled Program'}</Text>
+                        {isOwnProfile && (
+                          <TouchableOpacity
+                            onPress={(e) => { e.stopPropagation(); handleDeleteActivity(program, 'program'); }}
+                            disabled={deletingId === program.id}
+                            style={{ padding: 4 }}
+                          >
+                            {deletingId === program.id ? (
+                              <ActivityIndicator size="small" color="#ef4444" />
+                            ) : (
+                              <MaterialIcons name="delete" size={20} color="#ef4444" />
+                            )}
+                          </TouchableOpacity>
+                        )}
+                      </View>
+                      <View style={styles.workoutDetailsRow}>
+                        <View style={styles.workoutDetailItem}>
+                          <Text style={styles.workoutDetailText}>{program.goal || 'General'}</Text>
+                        </View>
                       </View>
                     </View>
-                  </ImageBackground>
-                  <View style={styles.workoutInfo}>
-                    <View style={styles.workoutTitleRow}>
-                      <Text style={styles.workoutTitle}>{program.name || 'Untitled Program'}</Text>
-                      {isOwnProfile && (
-                        <TouchableOpacity 
-                          onPress={(e) => { e.stopPropagation(); handleDeleteActivity(program, 'program'); }}
-                          disabled={deletingId === program.id}
-                          style={{ padding: 4 }}
-                        >
-                          {deletingId === program.id ? (
-                             <ActivityIndicator size="small" color="#ef4444" />
-                          ) : (
-                             <MaterialIcons name="delete" size={20} color="#ef4444" />
-                          )}
-                        </TouchableOpacity>
-                      )}
-                    </View>
-                    <View style={styles.workoutDetailsRow}>
-                      <View style={styles.workoutDetailItem}>
-                        <Text style={styles.workoutDetailText}>{program.goal || 'General'}</Text>
-                      </View>
-                    </View>
-                  </View>
-                </TouchableOpacity>
+                  </TouchableOpacity>
+                </Animated.View>
               ))
             ) : (
               <View style={styles.endOfActivity}>
@@ -502,7 +527,7 @@ export default function AthleteProfileScreen() {
           </View>
         )}
 
-      </ScrollView>
+      </Animated.ScrollView>
     </SafeAreaView>
   );
 }

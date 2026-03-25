@@ -20,36 +20,37 @@ import {
   Modal,
   ActivityIndicator
 } from 'react-native';
-
 // MenuItem Component
-const MenuItem = ({ icon, title, onPress, isLogout = false }: { icon: any, title: string, onPress?: () => void, isLogout?: boolean }) => (
-  <TouchableOpacity 
-    onPress={onPress}
-    activeOpacity={0.7}
-    style={[
-      styles.menuItem,
-      isLogout && styles.logoutItem
-    ]}
-  >
-    <View style={[
-      styles.menuIconContainer,
-      isLogout ? styles.logoutIconContainer : styles.normalIconContainer
-    ]}>
-      <MaterialIcons 
-        name={icon} 
-        size={24} 
-        color={isLogout ? '#ef4444' : '#ffffff'} 
-      />
-    </View>
-    <Text style={[
-      styles.menuText,
-      isLogout && styles.logoutText
-    ]}>{title}</Text>
-    {!isLogout && (
-      <MaterialIcons name="chevron-right" size={24} color="rgba(255, 255, 255, 0.5)" />
-    )}
-  </TouchableOpacity>
-);
+const MenuItem = ({ icon, title, onPress, isLogout = false, index = 0 }: { icon: any, title: string, onPress?: () => void, isLogout?: boolean, index?: number }) => {
+  return (
+    <TouchableOpacity 
+      onPress={onPress}
+      activeOpacity={0.8}
+      style={[
+        styles.menuItem,
+        isLogout && styles.logoutItem
+      ]}
+    >
+      <View style={[
+        styles.menuIconContainer,
+        isLogout ? styles.logoutIconContainer : styles.normalIconContainer
+      ]}>
+        <MaterialIcons 
+          name={icon} 
+          size={24} 
+          color={isLogout ? '#ef4444' : '#ffffff'} 
+        />
+      </View>
+      <Text style={[
+        styles.menuText,
+        isLogout && styles.logoutText
+      ]}>{title}</Text>
+      {!isLogout && (
+        <MaterialIcons name="chevron-right" size={24} color="rgba(255, 255, 255, 0.5)" />
+      )}
+    </TouchableOpacity>
+  );
+};
 
 export default function ProfileScreen() {
   const router = useRouter();
@@ -161,26 +162,31 @@ export default function ProfileScreen() {
           <MenuItem 
             icon="badge" 
             title="Account Details" 
+            index={0}
             onPress={() => router.push('/screens/AthleteProfileScreen')}
           />
           <MenuItem 
             icon="emoji-events" 
             title="Achievements" 
+            index={1}
             onPress={() => router.push('/screens/AchievementsScreen')}
           />
           <MenuItem 
             icon="group" 
             title="Friends" 
+            index={2}
             onPress={() => router.push('/screens/FriendsScreen')}
           />
           <MenuItem 
             icon="help" 
             title="Help & Support" 
+            index={3}
             onPress={() => router.push('/screens/FAQScreen')}
           />
           <MenuItem 
             icon="privacy-tip" 
             title="Privacy Policy" 
+            index={4}
             onPress={() => router.push('/screens/PrivacyPolicyScreen')}
           />
           
@@ -189,12 +195,14 @@ export default function ProfileScreen() {
           <MenuItem 
             icon="logout" 
             title="Logout" 
+            index={5}
             isLogout 
             onPress={handleLogout} 
           />
           <MenuItem 
             icon="person-remove" 
             title="Delete Account" 
+            index={6}
             isLogout 
             onPress={() => { setDeleteCountdown(10); setDeleteModalVisible(true); }} 
           />
