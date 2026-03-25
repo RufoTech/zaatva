@@ -147,6 +147,11 @@ export default function RootLayout() {
     }
   }, [loaded, initializing]);
 
+  // Enable crashlytics in debug mode
+  useEffect(() => {
+    crashlytics().setCrashlyticsCollectionEnabled(true).catch(err => console.error('Crashlytics enable error:', err));
+  }, []);
+
   // Track screen views
   useEffect(() => {
     if (pathname && !initializing) {
