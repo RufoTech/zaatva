@@ -2,10 +2,12 @@ import { Inter_400Regular, Inter_500Medium, Inter_600SemiBold, Inter_700Bold, In
 import auth, { FirebaseAuthTypes } from '@react-native-firebase/auth';
 import messaging from '@react-native-firebase/messaging';
 import firestore from '@react-native-firebase/firestore';
+import analytics from '@react-native-firebase/analytics';
+import crashlytics from '@react-native-firebase/crashlytics';
 import { DarkTheme, DefaultTheme, ThemeProvider } from '@react-navigation/native';
 import * as NavigationBar from 'expo-navigation-bar';
 import * as Notifications from 'expo-notifications';
-import { Stack, useRouter } from 'expo-router';
+import { Stack, useRouter, usePathname, useSegments } from 'expo-router';
 import * as SplashScreen from 'expo-splash-screen';
 import { StatusBar } from 'expo-status-bar';
 import { useEffect, useRef, useState } from 'react';
@@ -39,6 +41,8 @@ export default function RootLayout() {
   const [initializing, setInitializing] = useState(true);
   const [user, setUser] = useState<FirebaseAuthTypes.User | null>(null);
   const router = useRouter();
+  const pathname = usePathname();
+  const segments = useSegments();
   
   // Fontları yükle
   const [loaded, error] = useFonts({
@@ -137,8 +141,22 @@ export default function RootLayout() {
       // Hide navigation bar
       NavigationBar.setVisibilityAsync("hidden");
       NavigationBar.setBehaviorAsync("overlay-swipe");
+      
+      // Log app open
+      analytics().logAppOpen().catch(err => console.error('Analytics logAppOpen error:', err));
     }
   }, [loaded, initializing]);
+
+  // Track screen views
+  useEffect(() => {
+    if (pathname && !initializing) {
+      const screenName = segments.join('/') || 'home';
+      analytics().logScreenView({
+        screen_name: screenName,
+        screen_class: screenName,
+      }).catch(err => console.error('Analytics logScreenView error:', err));
+    }
+  }, [pathname, segments, initializing]);
 
   if (!loaded || initializing) {
     return null;

@@ -49,8 +49,8 @@ export default function LevelSelectionScreen() {
   ];
 
   const handleFinish = () => {
-    // Navigate to Personal Data Screen
-    router.push({ pathname: '/screens/PersonalDataScreen', params: { hideBackButton: 'true' } });
+    // Navigate to Dashboard
+    router.replace('/(tabs)');
   };
 
   return (
