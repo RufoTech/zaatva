@@ -283,6 +283,18 @@ export default function LiveWorkoutScreen() {
                   snapshot.forEach(doc => {
                       workoutDetailsMap[doc.data().name] = doc.data();
                   });
+
+                  // Try to fetch missing details from custom user exercises
+                  const customSnapshot = await firestore()
+                      .collection('customUserExercises')
+                      .where('name', 'in', chunk)
+                      .get();
+                  
+                  customSnapshot.forEach(doc => {
+                      if (!workoutDetailsMap[doc.data().name]) {
+                          workoutDetailsMap[doc.data().name] = doc.data();
+                      }
+                  });
               }
           } catch (e) {
               console.error("Error fetching exercise details:", e);

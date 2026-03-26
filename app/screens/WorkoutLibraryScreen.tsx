@@ -1,8 +1,9 @@
+import { ExerciseListSkeleton } from '@/components/SkeletonLoader';
 import { MaterialIcons } from '@expo/vector-icons';
 import auth from '@react-native-firebase/auth';
 import firestore from '@react-native-firebase/firestore';
-import { useLocalSearchParams, useRouter } from 'expo-router';
 import * as ImagePicker from 'expo-image-picker';
+import { useLocalSearchParams, useRouter } from 'expo-router';
 import React, { useEffect, useState } from 'react';
 import {
   ActivityIndicator,
@@ -21,7 +22,6 @@ import {
   TouchableOpacity,
   View
 } from 'react-native';
-import { ExerciseListSkeleton } from '@/components/SkeletonLoader';
 
 // Cloudinary config
 const CLOUDINARY_CLOUD_NAME = 'dplgyvrof';
@@ -55,6 +55,7 @@ interface Workout {
   reps?: string;
   sets?: string;
   isMulti?: boolean; // Optional, derived or from DB
+  isUserCustom?: boolean; // True if created by current user
 }
 
 import { SelectionStore } from '../utils/SelectionStore';
@@ -63,7 +64,9 @@ export default function WorkoutLibraryScreen() {
   const router = useRouter();
   const [selectedCategory, setSelectedCategory] = useState("All");
   const [searchQuery, setSearchQuery] = useState("");
-  const [workouts, setWorkouts] = useState<Workout[]>([]);
+  const [globalWorkouts, setGlobalWorkouts] = useState<Workout[]>([]);
+  const [customExercises, setCustomExercises] = useState<Workout[]>([]);
+  const workouts = [...globalWorkouts, ...customExercises];
   const [categories, setCategories] = useState<string[]>(["All"]);
   const [loading, setLoading] = useState(true);
 
@@ -82,7 +85,7 @@ export default function WorkoutLibraryScreen() {
   const [uploadingIcon, setUploadingIcon] = useState(false);
   const [uploadingVideo, setUploadingVideo] = useState(false);
   const [uploadingTargetMuscle, setUploadingTargetMuscle] = useState(false);
-  
+
   // Parse parameters
   const params = useLocalSearchParams();
   const selectionMode = params.selectionMode === 'true';
@@ -248,10 +251,10 @@ export default function WorkoutLibraryScreen() {
 
       const user = auth().currentUser;
       if (user) {
-        docData.createdBy = user.uid;
+        docData.userId = user.uid;
       }
 
-      await firestore().collection('workouts').add(docData);
+      await firestore().collection('customUserExercises').add(docData);
 
       resetForm();
       setModalVisible(false);
@@ -264,16 +267,59 @@ export default function WorkoutLibraryScreen() {
     }
   };
 
+  const handleDeleteExercise = (id: string, name: string) => {
+    Alert.alert(
+      "Delete Exercise",
+      `Are you sure you want to delete "${name}"?`,
+      [
+        { text: "Cancel", style: "cancel" },
+        { 
+          text: "Delete", 
+          style: "destructive",
+          onPress: async () => {
+            try {
+              await firestore().collection('customUserExercises').doc(id).delete();
+              Alert.alert("Success", "Exercise deleted out of library.");
+            } catch (error) {
+              console.error("Error deleting exercise:", error);
+              Alert.alert("Error", "Failed to delete exercise.");
+            }
+          }
+        }
+      ]
+    );
+  };
+
   useEffect(() => {
-    const unsubscribe = firestore()
+    let unsubscribeGlobal = () => {};
+    let unsubscribeCustom = () => {};
+    
+    const user = auth().currentUser;
+
+    const fetchCategories = (globalList: Workout[], customList: Workout[]) => {
+      const catSet = new Set<string>(["All"]);
+      [...globalList, ...customList].forEach(w => {
+        if (w.type) catSet.add(w.type);
+      });
+      const sorted = Array.from(catSet).sort((a, b) => {
+          if (a === 'All') return -1;
+          if (b === 'All') return 1;
+          return a.localeCompare(b);
+      });
+      setCategories(sorted);
+    };
+
+    // 1. Fetch Global Workouts
+    unsubscribeGlobal = firestore()
       .collection('workouts')
       .onSnapshot(querySnapshot => {
-        const fetchedWorkouts: Workout[] = [];
-        const fetchedCategories = new Set<string>(["All"]);
-
+        const fetchedGlobal: Workout[] = [];
         querySnapshot.forEach(doc => {
           const data = doc.data();
-          const workout: Workout = {
+          // Skip any legacy custom exercises that might still be in the global collection
+          if (data.isCustomExercise) return;
+          
+          fetchedGlobal.push({
             id: doc.id,
             name: data.name || 'Untitled Workout',
             type: data.type || 'General',
@@ -282,31 +328,63 @@ export default function WorkoutLibraryScreen() {
             videoUrl: data.videoUrl || '',
             reps: data.reps || '-',
             sets: data.sets || '-',
-            isMulti: false // You might want to calculate this or fetch it if exists
-          };
-          fetchedWorkouts.push(workout);
-
-          if (workout.type) {
-            fetchedCategories.add(workout.type);
-          }
+            isMulti: false
+          });
         });
-
-        setWorkouts(fetchedWorkouts);
-        // Sort categories to have specific order if needed, or just alphabetical after 'All'
-        const sortedCategories = Array.from(fetchedCategories).sort((a, b) => {
-            if (a === 'All') return -1;
-            if (b === 'All') return 1;
-            return a.localeCompare(b);
-        });
-        setCategories(sortedCategories);
+        setGlobalWorkouts(fetchedGlobal);
         setLoading(false);
       }, error => {
-        console.error("Error fetching workouts:", error);
+        console.error("Error fetching global workouts:", error);
         setLoading(false);
       });
 
-    return () => unsubscribe();
+    // 2. Fetch Custom User Exercises
+    if (user) {
+      unsubscribeCustom = firestore()
+        .collection('customUserExercises')
+        .where('userId', '==', user.uid)
+        .onSnapshot(querySnapshot => {
+          const fetchedCustom: Workout[] = [];
+          querySnapshot.forEach(doc => {
+            const data = doc.data();
+            fetchedCustom.push({
+              id: doc.id,
+              name: data.name || 'Untitled Custom Exercise',
+              type: data.type || 'Custom',
+              muscleGroups: data.muscleGroups || [],
+              mainImage: data.mainImage || 'https://via.placeholder.com/150',
+              videoUrl: data.videoUrl || '',
+              reps: data.reps || '-',
+              sets: data.sets || '-',
+              isMulti: false,
+              isUserCustom: true
+            });
+          });
+          setCustomExercises(fetchedCustom);
+        }, error => {
+          console.error("Error fetching custom user exercises:", error);
+        });
+    }
+
+    return () => {
+      unsubscribeGlobal();
+      unsubscribeCustom();
+    };
   }, []);
+
+  // Update categories whenever globalWorkouts or customExercises change
+  useEffect(() => {
+    const catSet = new Set<string>(["All"]);
+    workouts.forEach(w => {
+      if (w.type) catSet.add(w.type);
+    });
+    const sorted = Array.from(catSet).sort((a, b) => {
+        if (a === 'All') return -1;
+        if (b === 'All') return 1;
+        return a.localeCompare(b);
+    });
+    setCategories(sorted);
+  }, [globalWorkouts, customExercises]);
 
   const filteredWorkouts = workouts.filter(workout => {
     const matchesCategory = selectedCategory === "All" || workout.type === selectedCategory;
@@ -317,7 +395,7 @@ export default function WorkoutLibraryScreen() {
   return (
     <SafeAreaView style={styles.container}>
       <StatusBar barStyle="light-content" backgroundColor={BACKGROUND_DARK} />
-      
+
       {/* Header */}
       <View style={styles.header}>
         <TouchableOpacity onPress={() => router.back()} style={styles.backButton}>
@@ -345,8 +423,8 @@ export default function WorkoutLibraryScreen() {
 
       {/* Categories */}
       <View style={styles.categoriesContainer}>
-        <ScrollView 
-          horizontal 
+        <ScrollView
+          horizontal
           showsHorizontalScrollIndicator={false}
           contentContainerStyle={styles.categoriesContent}
         >
@@ -355,16 +433,16 @@ export default function WorkoutLibraryScreen() {
               key={index}
               style={[
                 styles.categoryChip,
-                cat === selectedCategory 
-                  ? styles.categoryChipActive 
+                cat === selectedCategory
+                  ? styles.categoryChipActive
                   : styles.categoryChipInactive
               ]}
               onPress={() => setSelectedCategory(cat)}
             >
               <Text style={[
                 styles.categoryText,
-                cat === selectedCategory 
-                  ? styles.categoryTextActive 
+                cat === selectedCategory
+                  ? styles.categoryTextActive
                   : styles.categoryTextInactive
               ]}>
                 {cat}
@@ -389,70 +467,78 @@ export default function WorkoutLibraryScreen() {
       {/* Exercise List */}
       <ScrollView style={styles.listContainer} contentContainerStyle={styles.listContent}>
         {loading ? (
-           <ExerciseListSkeleton count={5} />
+          <ExerciseListSkeleton count={5} />
         ) : (
-            <View style={styles.exerciseList}>
+          <View style={styles.exerciseList}>
             {filteredWorkouts.map((exercise) => (
-                <View key={exercise.id} style={styles.exerciseCard}>
+              <View key={exercise.id} style={styles.exerciseCard}>
                 <View style={styles.cardInfo}>
-                    <View style={styles.cardHeader}>
+                  <View style={styles.cardHeader}>
                     <View style={styles.titleRow}>
-                        <Text style={styles.exerciseName}>{exercise.name}</Text>
-                        {exercise.isMulti && (
+                      <Text style={styles.exerciseName}>{exercise.name}</Text>
+                      {exercise.isMulti && (
                         <View style={styles.multiBadge}>
-                            <Text style={styles.multiText}>MULTI</Text>
+                          <Text style={styles.multiText}>MULTI</Text>
                         </View>
-                        )}
+                      )}
+                      {exercise.isUserCustom && (
+                        <TouchableOpacity 
+                          style={{ marginLeft: 8 }}
+                          onPress={() => handleDeleteExercise(exercise.id, exercise.name)}
+                        >
+                          <MaterialIcons name="delete-outline" size={20} color="#ef4444" />
+                        </TouchableOpacity>
+                      )}
                     </View>
                     <Text style={styles.targetLabel}>TARGET</Text>
                     <Text style={styles.targetText}>
-                        {exercise.muscleGroups && exercise.muscleGroups.length > 0 
-                            ? exercise.muscleGroups.map(m => m.name).join(', ') 
-                            : 'General'}
+                      {exercise.muscleGroups && exercise.muscleGroups.length > 0
+                        ? exercise.muscleGroups.map(m => m.name).join(', ')
+                        : 'General'}
                     </Text>
-                    </View>
-                    
-                    {selectionMode ? (
-                      <TouchableOpacity 
-                        style={styles.addButton}
-                        onPress={() => handleSelect(exercise)}
-                      >
-                        <MaterialIcons name="add" size={24} color={BACKGROUND_DARK} />
-                      </TouchableOpacity>
-                    ) : (
-                      <TouchableOpacity 
-                        style={styles.viewDetailsButton}
-                        onPress={() => {
-                          const exerciseData = {
-                            name: exercise.name,
-                            category: exercise.type,
-                            videoUrl: exercise.videoUrl,
-                            reps: exercise.reps,
-                            sets: exercise.sets,
-                            targetMuscleImage: exercise.mainImage,
-                            muscleNames: exercise.muscleGroups.map(m => m.name)
-                          };
-                          router.push({
-                            pathname: '/screens/ExerciseDetailScreen',
-                            params: { exercise: JSON.stringify(exerciseData) }
-                          });
-                        }}
-                      >
+                  </View>
+
+                  {selectionMode ? (
+                    <TouchableOpacity
+                      style={styles.addButton}
+                      onPress={() => handleSelect(exercise)}
+                    >
+                      <MaterialIcons name="add" size={24} color={BACKGROUND_DARK} />
+                    </TouchableOpacity>
+                  ) : (
+                    <TouchableOpacity
+                      style={styles.viewDetailsButton}
+                      onPress={() => {
+                        const exerciseData = {
+                          name: exercise.name,
+                          category: exercise.type,
+                          videoUrl: exercise.videoUrl,
+                          reps: exercise.reps,
+                          sets: exercise.sets,
+                          targetMuscleImage: exercise.mainImage,
+                          muscleNames: exercise.muscleGroups.map(m => m.name)
+                        };
+                        router.push({
+                          pathname: '/screens/ExerciseDetailScreen',
+                          params: { exercise: JSON.stringify(exerciseData) }
+                        });
+                      }}
+                    >
                       <Text style={styles.viewDetailsText}>View Details</Text>
                       <MaterialIcons name="chevron-right" size={18} color={PRIMARY} />
-                      </TouchableOpacity>
-                    )}
+                    </TouchableOpacity>
+                  )}
                 </View>
 
                 <View style={styles.imageContainer}>
-                    <Image 
-                    source={{ uri: exercise.mainImage }} 
+                  <Image
+                    source={{ uri: exercise.mainImage }}
                     style={styles.exerciseImage}
-                    />
+                  />
                 </View>
-                </View>
+              </View>
             ))}
-            </View>
+          </View>
         )}
         <View style={{ height: 100 }} />
       </ScrollView>

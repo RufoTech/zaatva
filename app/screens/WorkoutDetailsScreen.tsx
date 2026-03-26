@@ -1,3 +1,4 @@
+import { WorkoutDetailSkeleton } from '@/components/SkeletonLoader';
 import { CustomAlert } from '@/utils/CustomAlert';
 import { MaterialIcons } from '@expo/vector-icons';
 import auth from '@react-native-firebase/auth';
@@ -10,7 +11,6 @@ import {
   Image,
   ImageBackground,
   Platform,
-  ScrollView,
   Share,
   StatusBar,
   StyleSheet,
@@ -19,15 +19,14 @@ import {
   View
 } from 'react-native';
 import Animated, {
-  useSharedValue,
-  useAnimatedScrollHandler,
-  useAnimatedStyle,
-  interpolate,
   Extrapolation,
   FadeInUp,
+  interpolate,
+  useAnimatedScrollHandler,
+  useAnimatedStyle,
+  useSharedValue,
 } from 'react-native-reanimated';
-import { WorkoutDetailSkeleton } from '@/components/SkeletonLoader';
-import { SelectionStore } from '../utils/SelectionStore';
+import { SelectionStore } from '../_utils/SelectionStore';
 
 const API_URL = Platform.OS === 'android' ? 'http://10.0.2.2:8080' : 'http://localhost:8080';
 
@@ -508,20 +507,20 @@ export default function WorkoutDetailsScreen() {
             <Animated.View style={[StyleSheet.absoluteFill, headerAnimatedStyle]}>
               <ImageBackground
                 source={{ uri: workout.coverImage }}
-              style={styles.heroImage}
-              imageStyle={{ borderRadius: 12 }}
-            >
-              <LinearGradient
-                colors={['transparent', 'rgba(31, 35, 15, 0.8)']}
-                style={styles.heroOverlay}
-              />
-              <View style={styles.heroContent}>
-                <View style={styles.levelBadge}>
-                  <Text style={styles.levelText}>{workout.level}</Text>
+                style={styles.heroImage}
+                imageStyle={{ borderRadius: 12 }}
+              >
+                <LinearGradient
+                  colors={['transparent', 'rgba(31, 35, 15, 0.8)']}
+                  style={styles.heroOverlay}
+                />
+                <View style={styles.heroContent}>
+                  <View style={styles.levelBadge}>
+                    <Text style={styles.levelText}>{workout.level}</Text>
+                  </View>
+                  <Text style={styles.workoutTitle}>{workout.name}</Text>
                 </View>
-                <Text style={styles.workoutTitle}>{workout.name}</Text>
-              </View>
-            </ImageBackground>
+              </ImageBackground>
             </Animated.View>
           </View>
         </View>
@@ -586,31 +585,31 @@ export default function WorkoutDetailsScreen() {
                         <Animated.View key={`move-${blockIndex}-${setIndex}-${moveIndex}`} entering={FadeInUp.delay(moveIndex * 100).springify()}>
                           <TouchableOpacity
                             style={styles.movementItem}
-                          onPress={() => router.push({
-                            pathname: '/screens/ExerciseDetailScreen',
-                            params: {
-                              exercise: JSON.stringify({
-                                ...movement,
-                                sets: movement.setsCount,
-                                muscles: [movement.category]
-                              })
-                            }
-                          })}
-                        >
-                          <Image source={{ uri: movement.image }} style={styles.movementImage} />
-                          <View style={styles.movementInfo}>
-                            <View style={styles.movementHeader}>
-                              <Text style={styles.movementName} numberOfLines={1}>{movement.name}</Text>
-                              <View style={styles.categoryBadge}>
-                                <Text style={styles.categoryText}>{movement.category}</Text>
+                            onPress={() => router.push({
+                              pathname: '/screens/ExerciseDetailScreen',
+                              params: {
+                                exercise: JSON.stringify({
+                                  ...movement,
+                                  sets: movement.setsCount,
+                                  muscles: [movement.category]
+                                })
+                              }
+                            })}
+                          >
+                            <Image source={{ uri: movement.image }} style={styles.movementImage} />
+                            <View style={styles.movementInfo}>
+                              <View style={styles.movementHeader}>
+                                <Text style={styles.movementName} numberOfLines={1}>{movement.name}</Text>
+                                <View style={styles.categoryBadge}>
+                                  <Text style={styles.categoryText}>{movement.category}</Text>
+                                </View>
                               </View>
+                              <Text style={styles.movementDetails}>
+                                {movement.setsCount} sets {movement.reps ? `x ${movement.reps} reps` : ''}
+                              </Text>
                             </View>
-                            <Text style={styles.movementDetails}>
-                              {movement.setsCount} sets {movement.reps ? `x ${movement.reps} reps` : ''}
-                            </Text>
-                          </View>
-                          <MaterialIcons name="play-circle-outline" size={24} color="#ccff00" />
-                        </TouchableOpacity>
+                            <MaterialIcons name="play-circle-outline" size={24} color="#ccff00" />
+                          </TouchableOpacity>
                         </Animated.View>
                       ))}
                     </View>
