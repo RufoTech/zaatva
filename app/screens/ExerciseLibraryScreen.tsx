@@ -32,8 +32,6 @@ const TEXT_LIGHT = "#0f172a";
 const TEXT_DARK = "#f1f5f9";
 const TEXT_MUTED_DARK = "#94a3b8";
 
-const CATEGORIES = ["All", "Custom", "Chest", "Back", "Legs", "Shoulders", "Arms"];
-
 const EXERCISES: any[] = [];
 
 export default function ExerciseLibraryScreen() {
@@ -42,6 +40,7 @@ export default function ExerciseLibraryScreen() {
   const [activeCategory, setActiveCategory] = useState("All");
   const [customWorkouts, setCustomWorkouts] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
+  const [dynamicCategories, setDynamicCategories] = useState<string[]>(['All']);
 
   useFocusEffect(
     useCallback(() => {
@@ -62,11 +61,13 @@ export default function ExerciseLibraryScreen() {
               if (levelLower.includes('beginner')) levelColor = '#3b82f6'; // Blue
               else if (levelLower.includes('advanced')) levelColor = '#ef4444'; // Red
 
+              const muscleStr = (Array.isArray(data.targetMuscles) && data.targetMuscles.length > 0 ? data.targetMuscles.join(', ') : null) || data.target || data.targetMuscle || 'General';
+
               return {
                 id: doc.id,
                 ...data,
-                muscle: data.target || 'Full Body', // Map target to muscle for filtering
-                name: data.name || data.title || 'Custom Workout', // Map title to name (new workouts use name, old use title)
+                muscle: muscleStr,
+                name: data.name || data.title || 'Custom Workout',
                 level: data.level || 'Custom',
                 levelColor: levelColor,
                 duration: data.duration ? (data.duration.toString().includes('min') ? data.duration : `${data.duration} mins`) : '0 mins',
@@ -75,6 +76,13 @@ export default function ExerciseLibraryScreen() {
               };
             });
             setCustomWorkouts(fetchedWorkouts);
+
+            // Build dynamic categories from target muscles
+            const muscleSet = new Set<string>();
+            fetchedWorkouts.forEach(w => {
+              if (w.muscle && w.muscle !== 'General') muscleSet.add(w.muscle);
+            });
+            setDynamicCategories(['All', ...Array.from(muscleSet)]);
           }
         } catch (error) {
           console.error("Error fetching custom workouts:", error);
@@ -97,9 +105,7 @@ export default function ExerciseLibraryScreen() {
     const matchesSearch = name.includes(searchText) || muscle.includes(searchText);
     
     let matchesCategory = true;
-    if (activeCategory === "Custom") {
-        matchesCategory = ex.isCustom;
-    } else if (activeCategory !== "All") {
+    if (activeCategory !== "All") {
         matchesCategory = muscle.includes(activeCategory.toLowerCase());
     }
 
@@ -138,7 +144,7 @@ export default function ExerciseLibraryScreen() {
       {/* Categories */}
       <View style={styles.categoriesContainer}>
         <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={styles.categoriesContent}>
-          {CATEGORIES.map(cat => (
+          {dynamicCategories.map(cat => (
             <TouchableOpacity 
               key={cat} 
               style={[styles.categoryChip, activeCategory === cat ? styles.categoryChipActive : styles.categoryChipInactive]}
