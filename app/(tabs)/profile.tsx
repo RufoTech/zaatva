@@ -3,7 +3,6 @@ import auth from '@react-native-firebase/auth';
 import { GoogleSignin } from '@react-native-google-signin/google-signin';
 import * as Clipboard from 'expo-clipboard';
 import firestore from '@react-native-firebase/firestore';
-import crashlytics from '@react-native-firebase/crashlytics';
 import { useRouter } from 'expo-router';
 import React, { useState, useEffect } from 'react';
 import { CustomAlert } from '@/utils/CustomAlert';
@@ -190,35 +189,20 @@ export default function ProfileScreen() {
             index={4}
             onPress={() => router.push('/screens/PrivacyPolicyScreen')}
           />
-          <MenuItem 
-            icon="bug-report" 
-            title="Test Crash" 
-            index={5}
-            onPress={() => {
-              CustomAlert.show(
-                "Test Crash", 
-                "Uygulama indi qəsdən dayandırılacaq (Crash testi). Davam edilsin?",
-                [
-                  { text: "Ləğv et", style: "cancel" },
-                  { text: "Davam et", onPress: () => crashlytics().crash() }
-                ]
-              );
-            }}
-          />
           
           <View style={styles.divider} />
           
           <MenuItem 
             icon="logout" 
             title="Logout" 
-            index={6}
+            index={5}
             isLogout 
             onPress={handleLogout} 
           />
           <MenuItem 
             icon="person-remove" 
             title="Delete Account" 
-            index={7}
+            index={6}
             isLogout 
             onPress={() => { setDeleteCountdown(10); setDeleteModalVisible(true); }} 
           />

@@ -11,8 +11,15 @@ import { Stack, useRouter, usePathname, useSegments } from 'expo-router';
 import * as SplashScreen from 'expo-splash-screen';
 import { StatusBar } from 'expo-status-bar';
 import { useEffect, useRef, useState } from 'react';
-import { AppState } from 'react-native';
+import { AppState, LogBox } from 'react-native';
 import 'react-native-reanimated';
+
+// Suppress known library-level deprecation warnings
+LogBox.ignoreLogs([
+  'This method is deprecated',
+  'SafeAreaView has been deprecated',
+  '`setBehaviorAsync` is not supported',
+]);
 
 import { useColorScheme } from '@/hooks/use-color-scheme';
 import AchievementToast from './components/AchievementToast';
@@ -140,7 +147,6 @@ export default function RootLayout() {
       SplashScreen.hideAsync();
       // Hide navigation bar
       NavigationBar.setVisibilityAsync("hidden");
-      NavigationBar.setBehaviorAsync("overlay-swipe");
       
       // Log app open
       analytics().logAppOpen().catch(err => console.error('Analytics logAppOpen error:', err));
