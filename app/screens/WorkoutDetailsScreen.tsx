@@ -335,6 +335,7 @@ export default function WorkoutDetailsScreen() {
         setIsSaved(true);
         setSavedDocId(docRef.id);
         CustomAlert.show('Workout saved to library!');
+        router.push('/screens/ProgramLibraryScreen');
       }
     } catch (error) {
       console.error("Error toggling library status:", error);
@@ -538,7 +539,7 @@ export default function WorkoutDetailsScreen() {
               onPress={handleToggleLibrary}
             >
               <Text style={[styles.saveToLibraryText, isSaved && styles.savedButtonText]}>
-                {isSaved ? 'Saved' : 'Save to Library'}
+                {isSaved ? 'Remove from Library' : 'Add to Library'}
               </Text>
             </TouchableOpacity>
           )}

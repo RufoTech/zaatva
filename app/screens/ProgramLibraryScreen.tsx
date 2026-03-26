@@ -203,7 +203,7 @@ export default function ProgramLibraryScreen() {
           <View style={styles.workoutsList}>
             {filteredWorkouts.length === 0 ? (
               <Text style={{ color: SUBTEXT_COLOR, textAlign: 'center', marginTop: 40 }}>
-                No workouts savssed yet.
+                No workouts saved yet.
               </Text>
             ) : (
               filteredWorkouts.map((item) => (

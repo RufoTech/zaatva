@@ -47,6 +47,9 @@ export default function AddWorkoutScreen() {
   const [workouts, setWorkouts] = useState<Workout[]>([]);
   const [loading, setLoading] = useState(true);
   const [categoryList, setCategoryList] = useState(categories);
+  const [savedProgramWorkouts, setSavedProgramWorkouts] = useState<Workout[]>([]);
+  const [savedProgramsLoading, setSavedProgramsLoading] = useState(false);
+  const [savedProgramsFetched, setSavedProgramsFetched] = useState(false);
 
   useFocusEffect(
     useCallback(() => {
@@ -142,6 +145,7 @@ export default function AddWorkoutScreen() {
   const updateWorkoutsState = (fetchedCategories: Set<string>, workoutsData: Workout[]) => {
     const newCategories = [
       { id: 'all', label: 'All' },
+      { id: 'saved_programs', label: '💾 Saved Programs' },
       ...Array.from(fetchedCategories).map(cat => ({
         id: cat,
         label: cat
@@ -151,6 +155,49 @@ export default function AddWorkoutScreen() {
     setCategoryList(newCategories);
     setWorkouts(workoutsData);
     setLoading(false);
+  };
+
+  const fetchSavedPrograms = async () => {
+    const user = auth().currentUser;
+    if (!user) return;
+    
+    setSavedProgramsLoading(true);
+    try {
+      const savedSnapshot = await firestore()
+        .collection('saved_workouts')
+        .where('userId', '==', user.uid)
+        .orderBy('savedAt', 'desc')
+        .get();
+
+      const savedWorkouts: Workout[] = [];
+
+      for (const doc of savedSnapshot.docs) {
+        const data = doc.data();
+        let levelColor = '#ccff00';
+        const levelLower = (data.level || '').toLowerCase();
+        if (levelLower.includes('beginner')) levelColor = '#3b82f6';
+        else if (levelLower.includes('advanced')) levelColor = '#ef4444';
+
+        savedWorkouts.push({
+          id: data.originalId || doc.id,
+          title: data.title || 'Untitled Workout',
+          duration: data.duration || '0',
+          exercises: data.exerciseCount || 0,
+          level: data.level || 'General',
+          levelColor,
+          image: data.image || 'https://via.placeholder.com/300',
+          category: 'Saved',
+          targetMuscle: data.target || 'Full Body',
+        });
+      }
+
+      setSavedProgramWorkouts(savedWorkouts);
+      setSavedProgramsFetched(true);
+    } catch (error) {
+      console.error('Error fetching saved programs:', error);
+    } finally {
+      setSavedProgramsLoading(false);
+    }
   };
 
   const handleAddWorkout = (workout: Workout) => {
@@ -204,12 +251,21 @@ export default function AddWorkoutScreen() {
     );
   };
 
-  const filteredWorkouts = workouts.filter(workout => {
-    const matchesSearch = workout.title.toLowerCase().includes(searchQuery.toLowerCase());
-    const matchesCategory = selectedCategory === 'all' || 
-                            (workout.category && workout.category.toLowerCase().includes(selectedCategory.toLowerCase())); // Simple category matching
-    return matchesSearch && matchesCategory;
-  });
+  const handleCategorySelect = (catId: string) => {
+    setSelectedCategory(catId);
+    if (catId === 'saved_programs' && !savedProgramsFetched) {
+      fetchSavedPrograms();
+    }
+  };
+
+  const filteredWorkouts = selectedCategory === 'saved_programs'
+    ? savedProgramWorkouts.filter(w => w.title.toLowerCase().includes(searchQuery.toLowerCase()))
+    : workouts.filter(workout => {
+        const matchesSearch = workout.title.toLowerCase().includes(searchQuery.toLowerCase());
+        const matchesCategory = selectedCategory === 'all' || 
+                                (workout.category && workout.category.toLowerCase().includes(selectedCategory.toLowerCase()));
+        return matchesSearch && matchesCategory;
+      });
 
   return (
     <SafeAreaView style={styles.container}>
@@ -249,7 +305,7 @@ export default function AddWorkoutScreen() {
           {categoryList.map((cat) => (
             <TouchableOpacity
               key={cat.id}
-              onPress={() => setSelectedCategory(cat.id)}
+              onPress={() => handleCategorySelect(cat.id)}
               style={[
                 styles.categoryChip,
                 selectedCategory === cat.id ? styles.categoryChipSelected : styles.categoryChipUnselected
@@ -294,8 +350,15 @@ export default function AddWorkoutScreen() {
         </TouchableOpacity>
       </View>
 
-        {loading ? (
+        {(loading || (selectedCategory === 'saved_programs' && savedProgramsLoading)) ? (
           <AddWorkoutListSkeleton count={4} />
+        ) : (selectedCategory === 'saved_programs' && filteredWorkouts.length === 0) ? (
+          <View style={{ alignItems: 'center', marginTop: 40, paddingHorizontal: 32 }}>
+            <MaterialIcons name="bookmark-border" size={48} color="#94a3b8" />
+            <Text style={{ color: '#94a3b8', fontSize: 16, textAlign: 'center', marginTop: 12 }}>
+              No saved programs yet. Save workouts from the workout details screen!
+            </Text>
+          </View>
         ) : (
           filteredWorkouts.map((workout, index) => {
             const isNoImage = workout.category === 'Custom' && (!workout.image || workout.image === 'https://via.placeholder.com/300');
@@ -311,7 +374,7 @@ export default function AddWorkoutScreen() {
                     params: { 
                       id: workout.id,
                       isCustom: workout.category === 'Custom' ? 'true' : 'false',
-                      fromLibrary: workout.category !== 'Custom' ? 'true' : 'false'
+                      fromLibrary: 'false'
                     }
                   })}
                 >
@@ -375,7 +438,7 @@ export default function AddWorkoutScreen() {
                   params: { 
                     id: workout.id,
                     isCustom: workout.category === 'Custom' ? 'true' : 'false',
-                    fromLibrary: workout.category !== 'Custom' ? 'true' : 'false'
+                    fromLibrary: 'false'
                   }
                 })}
               >
