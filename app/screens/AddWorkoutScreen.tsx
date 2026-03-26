@@ -33,6 +33,7 @@ interface Workout {
   image: string;
   category: string;
   targetMuscle?: string;
+  isCustom?: boolean;
 }
 
 const categories = [
@@ -107,6 +108,8 @@ export default function AddWorkoutScreen() {
               .then(customSnapshot => {
                 customSnapshot.forEach(doc => {
                   const data = doc.data();
+                  const targetMuscleStr = (Array.isArray(data.targetMuscles) && data.targetMuscles.length > 0 ? data.targetMuscles.join(', ') : null) || data.target || data.targetMuscle || 'General';
+                  
                   workoutsData.push({
                     id: doc.id,
                     title: data.name || data.title || 'Custom Workout',
@@ -115,10 +118,11 @@ export default function AddWorkoutScreen() {
                     level: data.level || data.difficulty || 'Custom',
                     levelColor: '#ccff00', // Green for custom
                     image: data.image || data.coverImage || 'https://via.placeholder.com/300',
-                    category: 'Custom',
-                    targetMuscle: data.target || data.targetMuscle || 'Full Body'
+                    category: targetMuscleStr, // Set category to target muscle
+                    targetMuscle: targetMuscleStr,
+                    isCustom: true
                   });
-                  fetchedCategories.add('Custom');
+                  fetchedCategories.add(targetMuscleStr);
                 });
     
                 // Update state
@@ -361,7 +365,7 @@ export default function AddWorkoutScreen() {
           </View>
         ) : (
           filteredWorkouts.map((workout, index) => {
-            const isNoImage = workout.category === 'Custom' && (!workout.image || workout.image === 'https://via.placeholder.com/300');
+            const isNoImage = workout.isCustom && (!workout.image || workout.image === 'https://via.placeholder.com/300');
 
             if (isNoImage) {
               return (
@@ -373,7 +377,7 @@ export default function AddWorkoutScreen() {
                     pathname: '/screens/WorkoutDetailsScreen',
                     params: { 
                       id: workout.id,
-                      isCustom: workout.category === 'Custom' ? 'true' : 'false',
+                      isCustom: workout.isCustom ? 'true' : 'false',
                       fromLibrary: 'false'
                     }
                   })}
@@ -386,7 +390,7 @@ export default function AddWorkoutScreen() {
                       </View>
                       <Text style={styles.noImageTitle}>{workout.title}</Text>
                     </View>
-                    {workout.category === 'Custom' && (
+                    {workout.isCustom && (
                       <TouchableOpacity 
                         style={styles.noImageDeleteButton}
                         onPress={(e) => handleDeleteCustomWorkout(workout.id, e)}
@@ -437,7 +441,7 @@ export default function AddWorkoutScreen() {
                   pathname: '/screens/WorkoutDetailsScreen',
                   params: { 
                     id: workout.id,
-                    isCustom: workout.category === 'Custom' ? 'true' : 'false',
+                    isCustom: workout.isCustom ? 'true' : 'false',
                     fromLibrary: 'false'
                   }
                 })}
@@ -456,7 +460,7 @@ export default function AddWorkoutScreen() {
                   </View>
 
                   {/* Delete Button for Custom Workouts */}
-                  {workout.category === 'Custom' && (
+                  {workout.isCustom && (
                     <TouchableOpacity 
                       style={styles.deleteButton}
                       onPress={(e) => handleDeleteCustomWorkout(workout.id, e)}
