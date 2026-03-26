@@ -1,4 +1,5 @@
 import { ExerciseListSkeleton } from '@/components/SkeletonLoader';
+import { CustomAlert } from '@/utils/CustomAlert';
 import { MaterialIcons } from '@expo/vector-icons';
 import auth from '@react-native-firebase/auth';
 import firestore from '@react-native-firebase/firestore';
@@ -268,21 +269,20 @@ export default function WorkoutLibraryScreen() {
   };
 
   const handleDeleteExercise = (id: string, name: string) => {
-    Alert.alert(
+    CustomAlert.show(
       "Delete Exercise",
       `Are you sure you want to delete "${name}"?`,
       [
         { text: "Cancel", style: "cancel" },
         { 
           text: "Delete", 
-          style: "destructive",
           onPress: async () => {
             try {
               await firestore().collection('customUserExercises').doc(id).delete();
-              Alert.alert("Success", "Exercise deleted out of library.");
+              CustomAlert.show("Success", "Exercise deleted out of library.");
             } catch (error) {
               console.error("Error deleting exercise:", error);
-              Alert.alert("Error", "Failed to delete exercise.");
+              CustomAlert.show("Error", "Failed to delete exercise.");
             }
           }
         }
