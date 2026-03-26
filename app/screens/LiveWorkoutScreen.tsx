@@ -123,18 +123,14 @@ export default function LiveWorkoutScreen() {
   };
 
   const fetchWorkoutData = async () => {
-    console.log("fetchWorkoutData STARTED");
     if (!workoutId) {
-        console.log("fetchWorkoutData ABORTED: No workoutId provided");
         setLoading(false);
         return;
     }
 
     try {
-      console.log("Getting current user...");
       const user = auth().currentUser;
       if (!user) {
-          console.log("fetchWorkoutData ABORTED: No user logged in");
           return;
       }
 
@@ -161,21 +157,16 @@ export default function LiveWorkoutScreen() {
             }
         }
       } catch (err) {
-        console.log("Error checking local firestore:", err);
       }
 
       let data: any;
 
       if (isFoundLocally && rawData) {
-          console.log("Workout Plan fetched from Firestore directly");
           data = rawData;
       } else {
-          // Fallback to Go API if not found in Firestore directly (for backwards compatibility)
-          console.log("Getting ID token...");
+          // Fallback to Go API if not found in Firestore directly
           const token = await user.getIdToken();
-          
           const url = `${API_URL}/api/workout-plan?workoutId=${workoutId}`;
-          console.log(`Fetching workout plan from Go API: ${url}`);
 
           const response = await fetch(url, {
               method: 'GET',
@@ -190,7 +181,6 @@ export default function LiveWorkoutScreen() {
           }
 
           data = await response.json();
-          console.log("Workout Plan Received from API");
 
           // The Go API might only return { name, exercises } for nested plan generation.
           // Let's try to enrich it from Firestore if fields are missing.
@@ -210,17 +200,10 @@ export default function LiveWorkoutScreen() {
                   }
               }
           } catch (enrichErr) {
-              console.log("Failed to enrich data from Firestore:", enrichErr);
           }
       }
 
-      console.log("Fetched Workout Data:", JSON.stringify({
-          id: data.id,
-          name: data.name || data.title,
-          duration: data.duration,
-          equipment: data.equipment,
-          targetMuscles: data.targetMuscles
-      }, null, 2));
+
 
       setWorkoutName(data.name || data.title || "Workout");
       setWorkoutDuration(data.duration?.toString() || "45");
@@ -301,7 +284,6 @@ export default function LiveWorkoutScreen() {
                       workoutDetailsMap[doc.data().name] = doc.data();
                   });
               }
-              console.log("Fetched detailed info for exercises:", Object.keys(workoutDetailsMap));
           } catch (e) {
               console.error("Error fetching exercise details:", e);
           }
@@ -331,10 +313,7 @@ export default function LiveWorkoutScreen() {
                   ? mergedMovement.muscleGroups[0] 
                   : undefined;
 
-                console.log(`[DEBUG] Processing Movement: ${mergedMovement.name}`);
-                console.log(`[DEBUG] Final Video URL: ${mergedMovement.videoUrl}`);
-                console.log(`[DEBUG] Final MuscleGroups:`, JSON.stringify(mergedMovement.muscleGroups));
-                  
+
                 const enrichedMovement = {
                     ...mergedMovement,
                     image: movementImage,
@@ -352,8 +331,8 @@ export default function LiveWorkoutScreen() {
                     movementIndex: mIdx,
                     // If totalSetsFromLabel is 0, default to 1
                     totalSets: totalSetsFromLabel || 1,
-                    // Simplify set number, if no label use sIdx + 1
-                    currentSetNumber: parseInt(set.label?.match(/\d+/)?.[0] || String(sIdx + 1), 10)
+                    // Simplify set number, safely handling null matches
+                    currentSetNumber: parseInt((set.label?.match(/\d+/)?.[0]) || String(sIdx + 1), 10) || (sIdx + 1)
                 });
             });
         });
@@ -525,6 +504,13 @@ export default function LiveWorkoutScreen() {
   const progressPercent = flatWorkoutQueue.length > 1 ? Math.round((currentIndex / (flatWorkoutQueue.length - 1)) * 100) : 0;
   
   const videoId = currentExercise.videoUrl ? getYoutubeId(currentExercise.videoUrl) : null;
+  // Check if it's a direct video URL (Cloudinary etc.) - not a YouTube URL
+  const isDirectVideoUrl = currentExercise.videoUrl && !videoId && (
+    currentExercise.videoUrl.includes('cloudinary') || 
+    currentExercise.videoUrl.match(/\.(mp4|webm|mov|avi)(\?|$)/i) ||
+    currentExercise.videoUrl.startsWith('http')
+  );
+  const hasAnyVideo = !!videoId || !!isDirectVideoUrl;
   const mainImage = currentExercise.image; 
   
   // Use muscleGroups from exercise data
@@ -542,7 +528,7 @@ export default function LiveWorkoutScreen() {
       }
   }
   
-  // Create Plyr HTML
+  // Create Plyr HTML for YouTube
   const plyrHTML = `
     <!DOCTYPE html>
     <html>
@@ -571,6 +557,26 @@ export default function LiveWorkoutScreen() {
              youtube: { noCookie: true, rel: 0, showinfo: 0, iv_load_policy: 3, modestbranding: 1 }
         });
       </script>
+    </body>
+    </html>
+  `;
+
+  // Create HTML for direct video (Cloudinary etc.)
+  const directVideoHTML = `
+    <!DOCTYPE html>
+    <html>
+    <head>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+      <style>
+        body { margin: 0; padding: 0; background-color: #000; display: flex; justify-content: center; align-items: center; height: 100vh; overflow: hidden; }
+        video { width: 100%; height: 100%; object-fit: contain; }
+      </style>
+    </head>
+    <body>
+      <video controls playsinline preload="auto">
+        <source src="${currentExercise.videoUrl}" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
     </body>
     </html>
   `;
@@ -615,6 +621,7 @@ export default function LiveWorkoutScreen() {
         scrollEventThrottle={16}
       >
         <Animated.View key={`exercise-${currentIndex}`} entering={FadeIn.duration(300)}>
+        {hasAnyVideo ? (
         <View style={styles.videoContainer}>
             {videoId ? (
                 <View style={styles.videoWrapper}>
@@ -634,34 +641,27 @@ export default function LiveWorkoutScreen() {
                         )}
                     />
                 </View>
-            ) : (
-                <ImageBackground
-                    source={{ uri: mainImage || 'https://via.placeholder.com/400x225?text=No+Image' }}
-                    style={styles.videoThumbnail}
-                    imageStyle={{ opacity: 0.8 }}
-                >
-                    <LinearGradient
-                        colors={['transparent', 'rgba(18, 20, 10, 0.8)']}
-                        style={styles.videoOverlay}
-                    />
-                    
-                    {/* Simulated controls for UI fidelity if no video */}
-                    <View style={styles.videoControls}>
-                        <View style={styles.videoTimeline}>
-                            <View style={styles.videoProgress}>
-                                <View style={styles.videoProgressFill}>
-                                    <View style={styles.videoKnob} />
-                                </View>
+            ) : isDirectVideoUrl ? (
+                <View style={styles.videoWrapper}>
+                    <WebView
+                        style={styles.webView}
+                        javaScriptEnabled={true}
+                        allowsFullscreenVideo={true}
+                        source={{ html: directVideoHTML, baseUrl: "https://myapp.local" }}
+                        mediaPlaybackRequiresUserAction={false}
+                        renderLoading={() => (
+                            <View style={styles.loadingContainer}>
+                                <ActivityIndicator size="large" color={PRIMARY} />
+                                <Text style={styles.loadingText}>
+                                    Loading video...
+                                </Text>
                             </View>
-                        </View>
-                        <View style={styles.timeLabels}>
-                            <Text style={styles.timeText}>0:00</Text>
-                            <Text style={styles.timeText}>--:--</Text>
-                        </View>
-                    </View>
-                </ImageBackground>
-            )}
+                        )}
+                    />
+                </View>
+            ) : null}
         </View>
+        ) : null}
 
         {/* Set Info Banner */}
         <View style={styles.setInfoBanner}>

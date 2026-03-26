@@ -215,7 +215,7 @@ export default function FeaturedRoutinesScreen() {
                       id: workout.id,
                       isCustom: 'false',
                       hideAddToDay: 'true',
-                      fromLibrary: 'true'
+                      fromLibrary: 'false'
                     }
                   })}
                 >
