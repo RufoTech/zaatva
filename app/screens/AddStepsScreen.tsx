@@ -7,7 +7,7 @@ import { Pedometer } from 'expo-sensors';
 import * as IntentLauncher from 'expo-intent-launcher';
 import { BatteryOptEnabled, RequestDisableOptimization } from 'react-native-battery-optimization-check';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import { getStoredSteps, saveSteps, getLast7DaysSteps, getAllHistory, getMonthSteps, formatDate, DailySteps, registerBackgroundFetchAsync, unregisterBackgroundFetchAsync } from '../utils/stepManager';
+import { getStoredSteps, saveSteps, getLast7DaysSteps, getAllHistory, getMonthSteps, formatDate, DailySteps, registerBackgroundFetchAsync, unregisterBackgroundFetchAsync } from '../_utils/stepManager';
 import { CustomAlert } from '@/utils/CustomAlert';
 
 const PRIMARY = "#ccff00";

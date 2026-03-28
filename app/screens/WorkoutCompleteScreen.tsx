@@ -27,7 +27,7 @@ import Animated, {
   useDerivedValue,
   runOnJS
 } from 'react-native-reanimated';
-import { checkMuscleMaster } from '../utils/achievementManager';
+import { checkMuscleMaster } from '../_utils/achievementManager';
 
 const AnimatedMaterialIcons = Animated.createAnimatedComponent(MaterialIcons);
 

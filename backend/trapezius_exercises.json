@@ -1,0 +1,797 @@
+[
+  {
+    "createdAt": "March 27, 2026 at 4:21:05 PM UTC+4",
+    "mainImage": "https://res.cloudinary.com/dhokfcxag/image/upload/v1774639755/fitness_exercises/001_Overhead_Shrug_unzhgv.png",
+    "muscleGroups": [
+      {
+        "imageUrl": "https://fitnessprogramer.com/wp-content/uploads/2021/05/Trapezius-muscle-worked-300x300.png",
+        "name": "Trapezius"
+      }
+    ],
+    "name": "Overhead Shrug",
+    "realizeImage": null,
+    "type": "Trapezius",
+    "updatedAt": "March 27, 2026 at 4:21:05 PM UTC+4",
+    "videoUrl": "https://www.youtube.com/watch?v=Ckg9rWgVc8U&pp=ygUgT3ZlcmhlYWQgU2hydWcgZXhlcmNpc2UgdHV0b3JpYWw%3D"
+  },
+  {
+    "createdAt": "March 27, 2026 at 4:21:05 PM UTC+4",
+    "mainImage": "https://res.cloudinary.com/dhokfcxag/image/upload/v1774639757/fitness_exercises/002_Gittleson_Shrug_g4ltdn.png",
+    "muscleGroups": [
+      {
+        "imageUrl": "https://fitnessprogramer.com/wp-content/uploads/2021/05/Trapezius-muscle-worked-300x300.png",
+        "name": "Trapezius"
+      }
+    ],
+    "name": "Gittleson Shrug",
+    "realizeImage": null,
+    "type": "Trapezius",
+    "updatedAt": "March 27, 2026 at 4:21:05 PM UTC+4",
+    "videoUrl": "https://www.youtube.com/watch?v=IHSRvEMo91M&pp=ygUhR2l0dGxlc29uIFNocnVnIGV4ZXJjaXNlIHR1dG9yaWFs"
+  },
+  {
+    "createdAt": "March 27, 2026 at 4:21:05 PM UTC+4",
+    "mainImage": "https://res.cloudinary.com/dhokfcxag/image/upload/v1774639758/fitness_exercises/003_45_Degree_Incline_Dumbbell_Row_lmqkig.png",
+    "muscleGroups": [
+      {
+        "imageUrl": "https://fitnessprogramer.com/wp-content/uploads/2021/05/Trapezius-muscle-worked-300x300.png",
+        "name": "Trapezius"
+      }
+    ],
+    "name": "45 Degree Incline Dumbbell Row",
+    "realizeImage": null,
+    "type": "Trapezius",
+    "updatedAt": "March 27, 2026 at 4:21:05 PM UTC+4",
+    "videoUrl": "https://www.youtube.com/watch?v=s5DqehlkvIs&pp=ygUwNDUgRGVncmVlIEluY2xpbmUgRHVtYmJlbGwgUm93IGV4ZXJjaXNlIHR1dG9yaWFs"
+  },
+  {
+    "createdAt": "March 27, 2026 at 4:21:05 PM UTC+4",
+    "mainImage": "https://res.cloudinary.com/dhokfcxag/image/upload/v1774639760/fitness_exercises/004_Dumbbell_Shrug_dz6rgg.png",
+    "muscleGroups": [
+      {
+        "imageUrl": "https://fitnessprogramer.com/wp-content/uploads/2021/05/Trapezius-muscle-worked-300x300.png",
+        "name": "Trapezius"
+      }
+    ],
+    "name": "Dumbbell Shrug",
+    "realizeImage": null,
+    "type": "Trapezius",
+    "updatedAt": "March 27, 2026 at 4:21:05 PM UTC+4",
+    "videoUrl": "https://www.youtube.com/watch?v=_t3lrPI6Ns4&pp=ygUgRHVtYmJlbGwgU2hydWcgZXhlcmNpc2UgdHV0b3JpYWw%3D"
+  },
+  {
+    "createdAt": "March 27, 2026 at 4:21:05 PM UTC+4",
+    "mainImage": "https://res.cloudinary.com/dhokfcxag/image/upload/v1774639761/fitness_exercises/005_Cable_Shrug_dzgnpu.png",
+    "muscleGroups": [
+      {
+        "imageUrl": "https://fitnessprogramer.com/wp-content/uploads/2021/05/Trapezius-muscle-worked-300x300.png",
+        "name": "Trapezius"
+      }
+    ],
+    "name": "Cable Shrug",
+    "realizeImage": null,
+    "type": "Trapezius",
+    "updatedAt": "March 27, 2026 at 4:21:05 PM UTC+4",
+    "videoUrl": "https://www.youtube.com/watch?v=Wab3-dsZohU&pp=ygUdQ2FibGUgU2hydWcgZXhlcmNpc2UgdHV0b3JpYWw%3D"
+  },
+  {
+    "createdAt": "March 27, 2026 at 4:21:05 PM UTC+4",
+    "mainImage": "https://res.cloudinary.com/dhokfcxag/image/upload/v1774639763/fitness_exercises/006_Barbell_Shrug_h8lxtr.png",
+    "muscleGroups": [
+      {
+        "imageUrl": "https://fitnessprogramer.com/wp-content/uploads/2021/05/Trapezius-muscle-worked-300x300.png",
+        "name": "Trapezius"
+      }
+    ],
+    "name": "Barbell Shrug",
+    "realizeImage": null,
+    "type": "Trapezius",
+    "updatedAt": "March 27, 2026 at 4:21:05 PM UTC+4",
+    "videoUrl": "https://www.youtube.com/watch?v=M_MjF5Nm_h4&pp=ygUfQmFyYmVsbCBTaHJ1ZyBleGVyY2lzZSB0dXRvcmlhbA%3D%3D"
+  },
+  {
+    "createdAt": "March 27, 2026 at 4:21:05 PM UTC+4",
+    "mainImage": "https://res.cloudinary.com/dhokfcxag/image/upload/v1774639764/fitness_exercises/007_Behind_The_Back_Barbell_Shrug_gy7lk7.png",
+    "muscleGroups": [
+      {
+        "imageUrl": "https://fitnessprogramer.com/wp-content/uploads/2021/05/Trapezius-muscle-worked-300x300.png",
+        "name": "Trapezius"
+      }
+    ],
+    "name": "Behind The Back Barbell Shrug",
+    "realizeImage": null,
+    "type": "Trapezius",
+    "updatedAt": "March 27, 2026 at 4:21:05 PM UTC+4",
+    "videoUrl": "https://www.youtube.com/watch?v=OoUQRw91D94&pp=ygUvQmVoaW5kIFRoZSBCYWNrIEJhcmJlbGwgU2hydWcgZXhlcmNpc2UgdHV0b3JpYWw%3D"
+  },
+  {
+    "createdAt": "March 27, 2026 at 4:21:05 PM UTC+4",
+    "mainImage": "https://res.cloudinary.com/dhokfcxag/image/upload/v1774639766/fitness_exercises/008_Dumbbell_Incline_Shrug_ulbvrl.png",
+    "muscleGroups": [
+      {
+        "imageUrl": "https://fitnessprogramer.com/wp-content/uploads/2021/05/Trapezius-muscle-worked-300x300.png",
+        "name": "Trapezius"
+      }
+    ],
+    "name": "Dumbbell Incline Shrug",
+    "realizeImage": null,
+    "type": "Trapezius",
+    "updatedAt": "March 27, 2026 at 4:21:05 PM UTC+4",
+    "videoUrl": "https://www.youtube.com/watch?v=35wAsOWCyVM&pp=ygUoRHVtYmJlbGwgSW5jbGluZSBTaHJ1ZyBleGVyY2lzZSB0dXRvcmlhbA%3D%3D"
+  },
+  {
+    "createdAt": "March 27, 2026 at 4:21:05 PM UTC+4",
+    "mainImage": "https://res.cloudinary.com/dhokfcxag/image/upload/v1774639767/fitness_exercises/009_Prone_Incline_Shrug_hrs12y.png",
+    "muscleGroups": [
+      {
+        "imageUrl": "https://fitnessprogramer.com/wp-content/uploads/2021/05/Trapezius-muscle-worked-300x300.png",
+        "name": "Trapezius"
+      }
+    ],
+    "name": "Prone Incline Shrug",
+    "realizeImage": null,
+    "type": "Trapezius",
+    "updatedAt": "March 27, 2026 at 4:21:05 PM UTC+4",
+    "videoUrl": "https://www.youtube.com/watch?v=U2IzzhE1dbQ&pp=ygUlUHJvbmUgSW5jbGluZSBTaHJ1ZyBleGVyY2lzZSB0dXRvcmlhbA%3D%3D"
+  },
+  {
+    "createdAt": "March 27, 2026 at 4:21:05 PM UTC+4",
+    "mainImage": "https://res.cloudinary.com/dhokfcxag/image/upload/v1774639768/fitness_exercises/010_Lever_Shrug_utmdx8.png",
+    "muscleGroups": [
+      {
+        "imageUrl": "https://fitnessprogramer.com/wp-content/uploads/2021/05/Trapezius-muscle-worked-300x300.png",
+        "name": "Trapezius"
+      }
+    ],
+    "name": "Lever Shrug",
+    "realizeImage": null,
+    "type": "Trapezius",
+    "updatedAt": "March 27, 2026 at 4:21:05 PM UTC+4",
+    "videoUrl": "https://www.youtube.com/watch?v=0-C7T82QvEw&pp=ygUdTGV2ZXIgU2hydWcgZXhlcmNpc2UgdHV0b3JpYWw%3D"
+  },
+  {
+    "createdAt": "March 27, 2026 at 4:21:05 PM UTC+4",
+    "mainImage": "https://res.cloudinary.com/dhokfcxag/image/upload/v1774639770/fitness_exercises/011_Rear_Delt_Fly_Machine_md4vbk.png",
+    "muscleGroups": [
+      {
+        "imageUrl": "https://fitnessprogramer.com/wp-content/uploads/2021/05/Trapezius-muscle-worked-300x300.png",
+        "name": "Trapezius"
+      }
+    ],
+    "name": "Rear Delt Fly Machine",
+    "realizeImage": null,
+    "type": "Trapezius",
+    "updatedAt": "March 27, 2026 at 4:21:05 PM UTC+4",
+    "videoUrl": "https://www.youtube.com/watch?v=Y59M5fXn8bs&pp=ygUnUmVhciBEZWx0IEZseSBNYWNoaW5lIGV4ZXJjaXNlIHR1dG9yaWFs"
+  },
+  {
+    "createdAt": "March 27, 2026 at 4:21:05 PM UTC+4",
+    "mainImage": "https://res.cloudinary.com/dhokfcxag/image/upload/v1774639771/fitness_exercises/012_Lever_Gripless_Shrug_ar8g6f.png",
+    "muscleGroups": [
+      {
+        "imageUrl": "https://fitnessprogramer.com/wp-content/uploads/2021/05/Trapezius-muscle-worked-300x300.png",
+        "name": "Trapezius"
+      }
+    ],
+    "name": "Lever Gripless Shrug",
+    "realizeImage": null,
+    "type": "Trapezius",
+    "updatedAt": "March 27, 2026 at 4:21:05 PM UTC+4",
+    "videoUrl": "https://www.youtube.com/watch?v=fUmJKuglXPc&pp=ygUmTGV2ZXIgR3JpcGxlc3MgU2hydWcgZXhlcmNpc2UgdHV0b3JpYWw%3D"
+  },
+  {
+    "createdAt": "March 27, 2026 at 4:21:05 PM UTC+4",
+    "mainImage": "https://res.cloudinary.com/dhokfcxag/image/upload/v1774639773/fitness_exercises/013_Cable_Rear_Delt_Fly_ulyiyp.png",
+    "muscleGroups": [
+      {
+        "imageUrl": "https://fitnessprogramer.com/wp-content/uploads/2021/05/Trapezius-muscle-worked-300x300.png",
+        "name": "Trapezius"
+      }
+    ],
+    "name": "Cable Rear Delt Fly",
+    "realizeImage": null,
+    "type": "Trapezius",
+    "updatedAt": "March 27, 2026 at 4:21:05 PM UTC+4",
+    "videoUrl": "https://www.youtube.com/watch?v=UJP3IcIbRe4&pp=ygUlQ2FibGUgUmVhciBEZWx0IEZseSBleGVyY2lzZSB0dXRvcmlhbA%3D%3D"
+  },
+  {
+    "createdAt": "March 27, 2026 at 4:21:05 PM UTC+4",
+    "mainImage": "https://res.cloudinary.com/dhokfcxag/image/upload/v1774639775/fitness_exercises/014_Bent_Over_Lateral_Raise_yracei.png",
+    "muscleGroups": [
+      {
+        "imageUrl": "https://fitnessprogramer.com/wp-content/uploads/2021/05/Trapezius-muscle-worked-300x300.png",
+        "name": "Trapezius"
+      }
+    ],
+    "name": "Bent Over Lateral Raise",
+    "realizeImage": null,
+    "type": "Trapezius",
+    "updatedAt": "March 27, 2026 at 4:21:05 PM UTC+4",
+    "videoUrl": "https://www.youtube.com/watch?v=gQBJPfWf_-s&pp=ygUpQmVudCBPdmVyIExhdGVyYWwgUmFpc2UgZXhlcmNpc2UgdHV0b3JpYWw%3D"
+  },
+  {
+    "createdAt": "March 27, 2026 at 4:21:05 PM UTC+4",
+    "mainImage": "https://res.cloudinary.com/dhokfcxag/image/upload/v1774639776/fitness_exercises/015_Cable_Upright_Row_xok0za.png",
+    "muscleGroups": [
+      {
+        "imageUrl": "https://fitnessprogramer.com/wp-content/uploads/2021/05/Trapezius-muscle-worked-300x300.png",
+        "name": "Trapezius"
+      }
+    ],
+    "name": "Cable Upright Row",
+    "realizeImage": null,
+    "type": "Trapezius",
+    "updatedAt": "March 27, 2026 at 4:21:05 PM UTC+4",
+    "videoUrl": "https://www.youtube.com/watch?v=qr3ziolhjvQ&pp=ygUjQ2FibGUgVXByaWdodCBSb3cgZXhlcmNpc2UgdHV0b3JpYWzSBwkJ2woBhyohjO8%3D"
+  },
+  {
+    "createdAt": "March 27, 2026 at 4:21:05 PM UTC+4",
+    "mainImage": "https://res.cloudinary.com/dhokfcxag/image/upload/v1774639778/fitness_exercises/016_Face_Pull_d07r9u.png",
+    "muscleGroups": [
+      {
+        "imageUrl": "https://fitnessprogramer.com/wp-content/uploads/2021/05/Trapezius-muscle-worked-300x300.png",
+        "name": "Trapezius"
+      }
+    ],
+    "name": "Face Pull",
+    "realizeImage": null,
+    "type": "Trapezius",
+    "updatedAt": "March 27, 2026 at 4:21:05 PM UTC+4",
+    "videoUrl": "https://www.youtube.com/watch?v=0Po47vvj9g4&pp=ygUbRmFjZSBQdWxsIGV4ZXJjaXNlIHR1dG9yaWFs"
+  },
+  {
+    "createdAt": "March 27, 2026 at 4:21:05 PM UTC+4",
+    "mainImage": "https://res.cloudinary.com/dhokfcxag/image/upload/v1774639779/fitness_exercises/017_Half_Kneeling_High_Cable_Row_Rope_afcv43.png",
+    "muscleGroups": [
+      {
+        "imageUrl": "https://fitnessprogramer.com/wp-content/uploads/2021/05/Trapezius-muscle-worked-300x300.png",
+        "name": "Trapezius"
+      }
+    ],
+    "name": "Half Kneeling High Cable Row Rope",
+    "realizeImage": null,
+    "type": "Trapezius",
+    "updatedAt": "March 27, 2026 at 4:21:05 PM UTC+4",
+    "videoUrl": "https://www.youtube.com/watch?v=RwRZ_c8ljuw&pp=ygUzSGFsZiBLbmVlbGluZyBIaWdoIENhYmxlIFJvdyBSb3BlIGV4ZXJjaXNlIHR1dG9yaWFs"
+  },
+  {
+    "createdAt": "March 27, 2026 at 4:21:05 PM UTC+4",
+    "mainImage": "https://res.cloudinary.com/dhokfcxag/image/upload/v1774639781/fitness_exercises/018_Dumbbell_Raise_hvhjvq.png",
+    "muscleGroups": [
+      {
+        "imageUrl": "https://fitnessprogramer.com/wp-content/uploads/2021/05/Trapezius-muscle-worked-300x300.png",
+        "name": "Trapezius"
+      }
+    ],
+    "name": "Dumbbell Raise",
+    "realizeImage": null,
+    "type": "Trapezius",
+    "updatedAt": "March 27, 2026 at 4:21:05 PM UTC+4",
+    "videoUrl": "https://www.youtube.com/watch?v=byGit7i8Dmo&pp=ygUgRHVtYmJlbGwgUmFpc2UgZXhlcmNpc2UgdHV0b3JpYWw%3D"
+  },
+  {
+    "createdAt": "March 27, 2026 at 4:21:05 PM UTC+4",
+    "mainImage": "https://res.cloudinary.com/dhokfcxag/image/upload/v1774639782/fitness_exercises/019_Dumbbell_Upright_Row_x3qayn.png",
+    "muscleGroups": [
+      {
+        "imageUrl": "https://fitnessprogramer.com/wp-content/uploads/2021/05/Trapezius-muscle-worked-300x300.png",
+        "name": "Trapezius"
+      }
+    ],
+    "name": "Dumbbell Upright Row",
+    "realizeImage": null,
+    "type": "Trapezius",
+    "updatedAt": "March 27, 2026 at 4:21:05 PM UTC+4",
+    "videoUrl": "https://www.youtube.com/watch?v=K0dYqPCaO14&pp=ygUmRHVtYmJlbGwgVXByaWdodCBSb3cgZXhlcmNpc2UgdHV0b3JpYWw%3D"
+  },
+  {
+    "createdAt": "March 27, 2026 at 4:21:05 PM UTC+4",
+    "mainImage": "https://res.cloudinary.com/dhokfcxag/image/upload/v1774639783/fitness_exercises/020_Bodyweight_Military_Press_fjcdbx.png",
+    "muscleGroups": [
+      {
+        "imageUrl": "https://fitnessprogramer.com/wp-content/uploads/2021/05/Trapezius-muscle-worked-300x300.png",
+        "name": "Trapezius"
+      }
+    ],
+    "name": "Bodyweight Military Press",
+    "realizeImage": null,
+    "type": "Trapezius",
+    "updatedAt": "March 27, 2026 at 4:21:05 PM UTC+4",
+    "videoUrl": "https://www.youtube.com/watch?v=l9JV4epNkOA&pp=ygUrQm9keXdlaWdodCBNaWxpdGFyeSBQcmVzcyBleGVyY2lzZSB0dXRvcmlhbA%3D%3D"
+  },
+  {
+    "createdAt": "March 27, 2026 at 4:21:05 PM UTC+4",
+    "mainImage": "https://res.cloudinary.com/dhokfcxag/image/upload/v1774639785/fitness_exercises/021_Kneeling_High_Pulley_Row_hrpbf4.png",
+    "muscleGroups": [
+      {
+        "imageUrl": "https://fitnessprogramer.com/wp-content/uploads/2021/05/Trapezius-muscle-worked-300x300.png",
+        "name": "Trapezius"
+      }
+    ],
+    "name": "Kneeling High Pulley Row",
+    "realizeImage": null,
+    "type": "Trapezius",
+    "updatedAt": "March 27, 2026 at 4:21:05 PM UTC+4",
+    "videoUrl": "https://www.youtube.com/watch?v=oX5NDZ5qNno&pp=ygUqS25lZWxpbmcgSGlnaCBQdWxsZXkgUm93IGV4ZXJjaXNlIHR1dG9yaWFs"
+  },
+  {
+    "createdAt": "March 27, 2026 at 4:21:05 PM UTC+4",
+    "mainImage": "https://res.cloudinary.com/dhokfcxag/image/upload/v1774639786/fitness_exercises/022_Ez_Bar_Upright_Row_ky3dvc.png",
+    "muscleGroups": [
+      {
+        "imageUrl": "https://fitnessprogramer.com/wp-content/uploads/2021/05/Trapezius-muscle-worked-300x300.png",
+        "name": "Trapezius"
+      }
+    ],
+    "name": "Ez Bar Upright Row",
+    "realizeImage": null,
+    "type": "Trapezius",
+    "updatedAt": "March 27, 2026 at 4:21:05 PM UTC+4",
+    "videoUrl": "https://www.youtube.com/watch?v=7Ya4W7pzGuY&pp=ygUkRXogQmFyIFVwcmlnaHQgUm93IGV4ZXJjaXNlIHR1dG9yaWFs"
+  },
+  {
+    "createdAt": "March 27, 2026 at 4:21:05 PM UTC+4",
+    "mainImage": "https://res.cloudinary.com/dhokfcxag/image/upload/v1774639788/fitness_exercises/023_Band_Pull_Apart_ordjge.png",
+    "muscleGroups": [
+      {
+        "imageUrl": "https://fitnessprogramer.com/wp-content/uploads/2021/05/Trapezius-muscle-worked-300x300.png",
+        "name": "Trapezius"
+      }
+    ],
+    "name": "Band Pull-Apart",
+    "realizeImage": null,
+    "type": "Trapezius",
+    "updatedAt": "March 27, 2026 at 4:21:05 PM UTC+4",
+    "videoUrl": "https://www.youtube.com/watch?v=eZwnwWMkEL4&pp=ygUhQmFuZCBQdWxsLUFwYXJ0IGV4ZXJjaXNlIHR1dG9yaWFs"
+  },
+  {
+    "createdAt": "March 27, 2026 at 4:21:05 PM UTC+4",
+    "mainImage": "https://res.cloudinary.com/dhokfcxag/image/upload/v1774639789/fitness_exercises/024_Bent_Over_Reverse_Cable_Fly_ovdnpm.png",
+    "muscleGroups": [
+      {
+        "imageUrl": "https://fitnessprogramer.com/wp-content/uploads/2021/05/Trapezius-muscle-worked-300x300.png",
+        "name": "Trapezius"
+      }
+    ],
+    "name": "Bent Over Reverse Cable Fly",
+    "realizeImage": null,
+    "type": "Trapezius",
+    "updatedAt": "March 27, 2026 at 4:21:05 PM UTC+4",
+    "videoUrl": "https://www.youtube.com/watch?v=SszEC401WQs&pp=ygUtQmVudCBPdmVyIFJldmVyc2UgQ2FibGUgRmx5IGV4ZXJjaXNlIHR1dG9yaWFs"
+  },
+  {
+    "createdAt": "March 27, 2026 at 4:21:05 PM UTC+4",
+    "mainImage": "https://res.cloudinary.com/dhokfcxag/image/upload/v1774639790/fitness_exercises/025_Bent_Over_Barbell_Reverse_Raise_r0rtg3.png",
+    "muscleGroups": [
+      {
+        "imageUrl": "https://fitnessprogramer.com/wp-content/uploads/2021/05/Trapezius-muscle-worked-300x300.png",
+        "name": "Trapezius"
+      }
+    ],
+    "name": "Bent-Over Barbell Reverse Raise",
+    "realizeImage": null,
+    "type": "Trapezius",
+    "updatedAt": "March 27, 2026 at 4:21:05 PM UTC+4",
+    "videoUrl": "https://www.youtube.com/watch?v=qXrTDQG1oUQ&pp=ygUxQmVudC1PdmVyIEJhcmJlbGwgUmV2ZXJzZSBSYWlzZSBleGVyY2lzZSB0dXRvcmlhbA%3D%3D"
+  },
+  {
+    "createdAt": "March 27, 2026 at 4:21:05 PM UTC+4",
+    "mainImage": "https://res.cloudinary.com/dhokfcxag/image/upload/v1774639792/fitness_exercises/026_Barbell_Rear_Delt_Raise_k13vea.png",
+    "muscleGroups": [
+      {
+        "imageUrl": "https://fitnessprogramer.com/wp-content/uploads/2021/05/Trapezius-muscle-worked-300x300.png",
+        "name": "Trapezius"
+      }
+    ],
+    "name": "Barbell Rear Delt Raise",
+    "realizeImage": null,
+    "type": "Trapezius",
+    "updatedAt": "March 27, 2026 at 4:21:05 PM UTC+4",
+    "videoUrl": "https://www.youtube.com/watch?v=DZnSlq-Gneg&pp=ygUpQmFyYmVsbCBSZWFyIERlbHQgUmFpc2UgZXhlcmNpc2UgdHV0b3JpYWw%3D"
+  },
+  {
+    "createdAt": "March 27, 2026 at 4:21:05 PM UTC+4",
+    "mainImage": "https://res.cloudinary.com/dhokfcxag/image/upload/v1774639793/fitness_exercises/027_Smith_Machine_Shrug_ob62o0.png",
+    "muscleGroups": [
+      {
+        "imageUrl": "https://fitnessprogramer.com/wp-content/uploads/2021/05/Trapezius-muscle-worked-300x300.png",
+        "name": "Trapezius"
+      }
+    ],
+    "name": "Smith Machine Shrug",
+    "realizeImage": null,
+    "type": "Trapezius",
+    "updatedAt": "March 27, 2026 at 4:21:05 PM UTC+4",
+    "videoUrl": "https://www.youtube.com/watch?v=g00nZdE6_Ro&pp=ygUlU21pdGggTWFjaGluZSBTaHJ1ZyBleGVyY2lzZSB0dXRvcmlhbA%3D%3D"
+  },
+  {
+    "createdAt": "March 27, 2026 at 4:21:05 PM UTC+4",
+    "mainImage": "https://res.cloudinary.com/dhokfcxag/image/upload/v1774639794/fitness_exercises/028_Incline_Dumbbell_Reverse_Fly_jxhy0d.png",
+    "muscleGroups": [
+      {
+        "imageUrl": "https://fitnessprogramer.com/wp-content/uploads/2021/05/Trapezius-muscle-worked-300x300.png",
+        "name": "Trapezius"
+      }
+    ],
+    "name": "Incline Dumbbell Reverse Fly",
+    "realizeImage": null,
+    "type": "Trapezius",
+    "updatedAt": "March 27, 2026 at 4:21:05 PM UTC+4",
+    "videoUrl": "https://www.youtube.com/watch?v=bMD474hAjDE&pp=ygUuSW5jbGluZSBEdW1iYmVsbCBSZXZlcnNlIEZseSBleGVyY2lzZSB0dXRvcmlhbA%3D%3D"
+  },
+  {
+    "createdAt": "March 27, 2026 at 4:21:05 PM UTC+4",
+    "mainImage": "https://res.cloudinary.com/dhokfcxag/image/upload/v1774639796/fitness_exercises/029_Incline_Dumbbell_Y_Raise_fhf6yi.png",
+    "muscleGroups": [
+      {
+        "imageUrl": "https://fitnessprogramer.com/wp-content/uploads/2021/05/Trapezius-muscle-worked-300x300.png",
+        "name": "Trapezius"
+      }
+    ],
+    "name": "Incline Dumbbell Y-Raise",
+    "realizeImage": null,
+    "type": "Trapezius",
+    "updatedAt": "March 27, 2026 at 4:21:05 PM UTC+4",
+    "videoUrl": "https://www.youtube.com/watch?v=KdE7jt94zWs&pp=ygUqSW5jbGluZSBEdW1iYmVsbCBZLVJhaXNlIGV4ZXJjaXNlIHR1dG9yaWFs"
+  },
+  {
+    "createdAt": "March 27, 2026 at 4:21:05 PM UTC+4",
+    "mainImage": "https://res.cloudinary.com/dhokfcxag/image/upload/v1774639797/fitness_exercises/030_Dumbbell_Incline_T_Raise_yx0o9d.png",
+    "muscleGroups": [
+      {
+        "imageUrl": "https://fitnessprogramer.com/wp-content/uploads/2021/05/Trapezius-muscle-worked-300x300.png",
+        "name": "Trapezius"
+      }
+    ],
+    "name": "Dumbbell Incline T-Raise",
+    "realizeImage": null,
+    "type": "Trapezius",
+    "updatedAt": "March 27, 2026 at 4:21:05 PM UTC+4",
+    "videoUrl": "https://www.youtube.com/watch?v=qanhbYrvX_c&pp=ygUqRHVtYmJlbGwgSW5jbGluZSBULVJhaXNlIGV4ZXJjaXNlIHR1dG9yaWFs0gcJCdsKAYcqIYzv"
+  },
+  {
+    "createdAt": "March 27, 2026 at 4:21:05 PM UTC+4",
+    "mainImage": "https://res.cloudinary.com/dhokfcxag/image/upload/v1774639799/fitness_exercises/031_Swimming_qrhlfm.png",
+    "muscleGroups": [
+      {
+        "imageUrl": "https://fitnessprogramer.com/wp-content/uploads/2021/05/Trapezius-muscle-worked-300x300.png",
+        "name": "Trapezius"
+      }
+    ],
+    "name": "Swimming",
+    "realizeImage": null,
+    "type": "Trapezius",
+    "updatedAt": "March 27, 2026 at 4:21:05 PM UTC+4",
+    "videoUrl": "https://www.youtube.com/watch?v=oM4sHl1hTEE&pp=ygUaU3dpbW1pbmcgZXhlcmNpc2UgdHV0b3JpYWw%3D"
+  },
+  {
+    "createdAt": "March 27, 2026 at 4:21:05 PM UTC+4",
+    "mainImage": "https://res.cloudinary.com/dhokfcxag/image/upload/v1774639800/fitness_exercises/032_Bent_Over_Rear_Delt_Fly_Gymstick_ixj4la.png",
+    "muscleGroups": [
+      {
+        "imageUrl": "https://fitnessprogramer.com/wp-content/uploads/2021/05/Trapezius-muscle-worked-300x300.png",
+        "name": "Trapezius"
+      }
+    ],
+    "name": "Bent Over Rear Delt Fly | Gymstick",
+    "realizeImage": null,
+    "type": "Trapezius",
+    "updatedAt": "March 27, 2026 at 4:21:05 PM UTC+4",
+    "videoUrl": "https://www.youtube.com/watch?v=3gJXpfwg_go&pp=ygU0QmVudCBPdmVyIFJlYXIgRGVsdCBGbHkgfCBHeW1zdGljayBleGVyY2lzZSB0dXRvcmlhbA%3D%3D"
+  },
+  {
+    "createdAt": "March 27, 2026 at 4:21:05 PM UTC+4",
+    "mainImage": "https://res.cloudinary.com/dhokfcxag/image/upload/v1774639802/fitness_exercises/033_Scapular_Protraction_and_Retraction_nt5g75.png",
+    "muscleGroups": [
+      {
+        "imageUrl": "https://fitnessprogramer.com/wp-content/uploads/2021/05/Trapezius-muscle-worked-300x300.png",
+        "name": "Trapezius"
+      }
+    ],
+    "name": "Scapular Protraction and Retraction",
+    "realizeImage": null,
+    "type": "Trapezius",
+    "updatedAt": "March 27, 2026 at 4:21:05 PM UTC+4",
+    "videoUrl": "https://www.youtube.com/watch?v=0mSAeOOaAuc&pp=ygU1U2NhcHVsYXIgUHJvdHJhY3Rpb24gYW5kIFJldHJhY3Rpb24gZXhlcmNpc2UgdHV0b3JpYWw%3D"
+  },
+  {
+    "createdAt": "March 27, 2026 at 4:21:05 PM UTC+4",
+    "mainImage": "https://res.cloudinary.com/dhokfcxag/image/upload/v1774639804/fitness_exercises/034_Cross_Cable_Face_Pull_k9kjwd.png",
+    "muscleGroups": [
+      {
+        "imageUrl": "https://fitnessprogramer.com/wp-content/uploads/2021/05/Trapezius-muscle-worked-300x300.png",
+        "name": "Trapezius"
+      }
+    ],
+    "name": "Cross Cable Face Pull",
+    "realizeImage": null,
+    "type": "Trapezius",
+    "updatedAt": "March 27, 2026 at 4:21:05 PM UTC+4",
+    "videoUrl": "https://www.youtube.com/watch?v=0Po47vvj9g4&pp=ygUnQ3Jvc3MgQ2FibGUgRmFjZSBQdWxsIGV4ZXJjaXNlIHR1dG9yaWFs"
+  },
+  {
+    "createdAt": "March 27, 2026 at 4:21:05 PM UTC+4",
+    "mainImage": "https://res.cloudinary.com/dhokfcxag/image/upload/v1774639805/fitness_exercises/035_Elbow_Reverse_Push_Up_efq2nj.png",
+    "muscleGroups": [
+      {
+        "imageUrl": "https://fitnessprogramer.com/wp-content/uploads/2021/05/Trapezius-muscle-worked-300x300.png",
+        "name": "Trapezius"
+      }
+    ],
+    "name": "Elbow Reverse Push-Up",
+    "realizeImage": null,
+    "type": "Trapezius",
+    "updatedAt": "March 27, 2026 at 4:21:05 PM UTC+4",
+    "videoUrl": "https://www.youtube.com/watch?v=IHL7XosVHEM&pp=ygUnRWxib3cgUmV2ZXJzZSBQdXNoLVVwIGV4ZXJjaXNlIHR1dG9yaWFs"
+  },
+  {
+    "createdAt": "March 27, 2026 at 4:21:05 PM UTC+4",
+    "mainImage": "https://res.cloudinary.com/dhokfcxag/image/upload/v1774639806/fitness_exercises/036_Scapula_Dips_dfvaxa.png",
+    "muscleGroups": [
+      {
+        "imageUrl": "https://fitnessprogramer.com/wp-content/uploads/2021/05/Trapezius-muscle-worked-300x300.png",
+        "name": "Trapezius"
+      }
+    ],
+    "name": "Scapula Dips",
+    "realizeImage": null,
+    "type": "Trapezius",
+    "updatedAt": "March 27, 2026 at 4:21:05 PM UTC+4",
+    "videoUrl": "https://www.youtube.com/watch?v=Af4x8-N1a8E&pp=ygUeU2NhcHVsYSBEaXBzIGV4ZXJjaXNlIHR1dG9yaWFs0gcJCdsKAYcqIYzv"
+  },
+  {
+    "createdAt": "March 27, 2026 at 4:21:05 PM UTC+4",
+    "mainImage": "https://res.cloudinary.com/dhokfcxag/image/upload/v1774639808/fitness_exercises/037_Push_Up_Plus_y58ate.png",
+    "muscleGroups": [
+      {
+        "imageUrl": "https://fitnessprogramer.com/wp-content/uploads/2021/05/Trapezius-muscle-worked-300x300.png",
+        "name": "Trapezius"
+      }
+    ],
+    "name": "Push-Up Plus",
+    "realizeImage": null,
+    "type": "Trapezius",
+    "updatedAt": "March 27, 2026 at 4:21:05 PM UTC+4",
+    "videoUrl": "https://www.youtube.com/watch?v=ibNtWB_Jz_E&pp=ygUeUHVzaC1VcCBQbHVzIGV4ZXJjaXNlIHR1dG9yaWFs"
+  },
+  {
+    "createdAt": "March 27, 2026 at 4:21:05 PM UTC+4",
+    "mainImage": "https://res.cloudinary.com/dhokfcxag/image/upload/v1774639809/fitness_exercises/038_Seated_Ballerina_Exercise_wih1ws.png",
+    "muscleGroups": [
+      {
+        "imageUrl": "https://fitnessprogramer.com/wp-content/uploads/2021/05/Trapezius-muscle-worked-300x300.png",
+        "name": "Trapezius"
+      }
+    ],
+    "name": "Seated Ballerina Exercise",
+    "realizeImage": null,
+    "type": "Trapezius",
+    "updatedAt": "March 27, 2026 at 4:21:05 PM UTC+4",
+    "videoUrl": "https://www.youtube.com/watch?v=rwWllKGLngY&pp=ygUrU2VhdGVkIEJhbGxlcmluYSBFeGVyY2lzZSBleGVyY2lzZSB0dXRvcmlhbA%3D%3D"
+  },
+  {
+    "createdAt": "March 27, 2026 at 4:21:05 PM UTC+4",
+    "mainImage": "https://res.cloudinary.com/dhokfcxag/image/upload/v1774639812/fitness_exercises/039_Seated_Scapular_Retraction_Exercise_rcwzd3.png",
+    "muscleGroups": [
+      {
+        "imageUrl": "https://fitnessprogramer.com/wp-content/uploads/2021/05/Trapezius-muscle-worked-300x300.png",
+        "name": "Trapezius"
+      }
+    ],
+    "name": "Seated Scapular Retraction Exercise",
+    "realizeImage": null,
+    "type": "Trapezius",
+    "updatedAt": "March 27, 2026 at 4:21:05 PM UTC+4",
+    "videoUrl": "https://www.youtube.com/watch?v=Bw88PXaGUxU&pp=ygU1U2VhdGVkIFNjYXB1bGFyIFJldHJhY3Rpb24gRXhlcmNpc2UgZXhlcmNpc2UgdHV0b3JpYWw%3D"
+  },
+  {
+    "createdAt": "March 27, 2026 at 4:21:05 PM UTC+4",
+    "mainImage": "https://res.cloudinary.com/dhokfcxag/image/upload/v1774639813/fitness_exercises/040_Foam_Roller_Rhomboids_qenoio.png",
+    "muscleGroups": [
+      {
+        "imageUrl": "https://fitnessprogramer.com/wp-content/uploads/2021/05/Trapezius-muscle-worked-300x300.png",
+        "name": "Trapezius"
+      }
+    ],
+    "name": "Foam Roller Rhomboids",
+    "realizeImage": null,
+    "type": "Trapezius",
+    "updatedAt": "March 27, 2026 at 4:21:05 PM UTC+4",
+    "videoUrl": "https://www.youtube.com/watch?v=V7i8Xk6hfdI&pp=ygUnRm9hbSBSb2xsZXIgUmhvbWJvaWRzIGV4ZXJjaXNlIHR1dG9yaWFs"
+  },
+  {
+    "createdAt": "March 27, 2026 at 4:21:05 PM UTC+4",
+    "mainImage": "https://res.cloudinary.com/dhokfcxag/image/upload/v1774639815/fitness_exercises/041_Foam_Roller_Upper_Back_rw4nza.png",
+    "muscleGroups": [
+      {
+        "imageUrl": "https://fitnessprogramer.com/wp-content/uploads/2021/05/Trapezius-muscle-worked-300x300.png",
+        "name": "Trapezius"
+      }
+    ],
+    "name": "Foam Roller Upper Back",
+    "realizeImage": null,
+    "type": "Trapezius",
+    "updatedAt": "March 27, 2026 at 4:21:05 PM UTC+4",
+    "videoUrl": "https://www.youtube.com/watch?v=vCmD7RnPYFE&pp=ygUoRm9hbSBSb2xsZXIgVXBwZXIgQmFjayBleGVyY2lzZSB0dXRvcmlhbA%3D%3D"
+  },
+  {
+    "createdAt": "March 27, 2026 at 4:21:05 PM UTC+4",
+    "mainImage": "https://res.cloudinary.com/dhokfcxag/image/upload/v1774639816/fitness_exercises/042_Scapula_Pull_up_gqthaw.png",
+    "muscleGroups": [
+      {
+        "imageUrl": "https://fitnessprogramer.com/wp-content/uploads/2021/05/Trapezius-muscle-worked-300x300.png",
+        "name": "Trapezius"
+      }
+    ],
+    "name": "Scapula Pull-up",
+    "realizeImage": null,
+    "type": "Trapezius",
+    "updatedAt": "March 27, 2026 at 4:21:05 PM UTC+4",
+    "videoUrl": "https://www.youtube.com/watch?v=-ZIpSoTRsuE&pp=ygUhU2NhcHVsYSBQdWxsLXVwIGV4ZXJjaXNlIHR1dG9yaWFs"
+  },
+  {
+    "createdAt": "March 27, 2026 at 4:21:05 PM UTC+4",
+    "mainImage": "https://res.cloudinary.com/dhokfcxag/image/upload/v1774639818/fitness_exercises/043_Serratus_Wall_Slide_With_Foam_Roller_dnboyk.png",
+    "muscleGroups": [
+      {
+        "imageUrl": "https://fitnessprogramer.com/wp-content/uploads/2021/05/Trapezius-muscle-worked-300x300.png",
+        "name": "Trapezius"
+      }
+    ],
+    "name": "Serratus Wall Slide With Foam Roller",
+    "realizeImage": null,
+    "type": "Trapezius",
+    "updatedAt": "March 27, 2026 at 4:21:05 PM UTC+4",
+    "videoUrl": "https://www.youtube.com/watch?v=z2oSlFNxUWA&pp=ygU2U2VycmF0dXMgV2FsbCBTbGlkZSBXaXRoIEZvYW0gUm9sbGVyIGV4ZXJjaXNlIHR1dG9yaWFs"
+  },
+  {
+    "createdAt": "March 27, 2026 at 4:21:05 PM UTC+4",
+    "mainImage": "https://res.cloudinary.com/dhokfcxag/image/upload/v1774639819/fitness_exercises/044_Dip_Shrugs_Serratus_Shrugs__ajejjr.png",
+    "muscleGroups": [
+      {
+        "imageUrl": "https://fitnessprogramer.com/wp-content/uploads/2021/05/Trapezius-muscle-worked-300x300.png",
+        "name": "Trapezius"
+      }
+    ],
+    "name": "Dip Shrugs (Serratus Shrugs)",
+    "realizeImage": null,
+    "type": "Trapezius",
+    "updatedAt": "March 27, 2026 at 4:21:05 PM UTC+4",
+    "videoUrl": "https://www.youtube.com/watch?v=TeFK9anZjxk&pp=ygUuRGlwIFNocnVncyAoU2VycmF0dXMgU2hydWdzKSBleGVyY2lzZSB0dXRvcmlhbA%3D%3D"
+  },
+  {
+    "createdAt": "March 27, 2026 at 4:21:05 PM UTC+4",
+    "mainImage": "https://res.cloudinary.com/dhokfcxag/image/upload/v1774639820/fitness_exercises/045_Wide_Grip_Barbell_Bent_Over_Row_Plus_sfmoks.png",
+    "muscleGroups": [
+      {
+        "imageUrl": "https://fitnessprogramer.com/wp-content/uploads/2021/05/Trapezius-muscle-worked-300x300.png",
+        "name": "Trapezius"
+      }
+    ],
+    "name": "Wide Grip Barbell Bent Over Row Plus",
+    "realizeImage": null,
+    "type": "Trapezius",
+    "updatedAt": "March 27, 2026 at 4:21:05 PM UTC+4",
+    "videoUrl": "https://www.youtube.com/watch?v=FWJR5Ve8bnQ&pp=ygU2V2lkZSBHcmlwIEJhcmJlbGwgQmVudCBPdmVyIFJvdyBQbHVzIGV4ZXJjaXNlIHR1dG9yaWFs"
+  },
+  {
+    "createdAt": "March 27, 2026 at 4:21:05 PM UTC+4",
+    "mainImage": "https://res.cloudinary.com/dhokfcxag/image/upload/v1774639822/fitness_exercises/046_Wide_Grip_Alternate_Barbell_Bent_Over_Row_Plus_snaa9u.png",
+    "muscleGroups": [
+      {
+        "imageUrl": "https://fitnessprogramer.com/wp-content/uploads/2021/05/Trapezius-muscle-worked-300x300.png",
+        "name": "Trapezius"
+      }
+    ],
+    "name": "Wide Grip Alternate Barbell Bent Over Row Plus",
+    "realizeImage": null,
+    "type": "Trapezius",
+    "updatedAt": "March 27, 2026 at 4:21:05 PM UTC+4",
+    "videoUrl": "https://www.youtube.com/watch?v=FWJR5Ve8bnQ&pp=ygVAV2lkZSBHcmlwIEFsdGVybmF0ZSBCYXJiZWxsIEJlbnQgT3ZlciBSb3cgUGx1cyBleGVyY2lzZSB0dXRvcmlhbA%3D%3D"
+  },
+  {
+    "createdAt": "March 27, 2026 at 4:21:05 PM UTC+4",
+    "mainImage": "https://res.cloudinary.com/dhokfcxag/image/upload/v1774639823/fitness_exercises/047_One_Arm_Dumbbell_Upright_Row_hc6pnu.png",
+    "muscleGroups": [
+      {
+        "imageUrl": "https://fitnessprogramer.com/wp-content/uploads/2021/05/Trapezius-muscle-worked-300x300.png",
+        "name": "Trapezius"
+      }
+    ],
+    "name": "One-Arm Dumbbell Upright Row",
+    "realizeImage": null,
+    "type": "Trapezius",
+    "updatedAt": "March 27, 2026 at 4:21:05 PM UTC+4",
+    "videoUrl": "https://www.youtube.com/watch?v=VtCGdQti7c0&pp=ygUuT25lLUFybSBEdW1iYmVsbCBVcHJpZ2h0IFJvdyBleGVyY2lzZSB0dXRvcmlhbNIHCQnbCgGHKiGM7w%3D%3D"
+  },
+  {
+    "createdAt": "March 27, 2026 at 4:21:05 PM UTC+4",
+    "mainImage": "https://res.cloudinary.com/dhokfcxag/image/upload/v1774639825/fitness_exercises/048_Cable_Y_Raise_z4kvkd.png",
+    "muscleGroups": [
+      {
+        "imageUrl": "https://fitnessprogramer.com/wp-content/uploads/2021/05/Trapezius-muscle-worked-300x300.png",
+        "name": "Trapezius"
+      }
+    ],
+    "name": "Cable Y Raise",
+    "realizeImage": null,
+    "type": "Trapezius",
+    "updatedAt": "March 27, 2026 at 4:21:05 PM UTC+4",
+    "videoUrl": "https://www.youtube.com/watch?v=oDSGrucETfw&pp=ygUfQ2FibGUgWSBSYWlzZSBleGVyY2lzZSB0dXRvcmlhbA%3D%3D"
+  },
+  {
+    "createdAt": "March 27, 2026 at 4:21:05 PM UTC+4",
+    "mainImage": "https://res.cloudinary.com/dhokfcxag/image/upload/v1774639826/fitness_exercises/049_Barbell_Upright_Row_dfqvtc.png",
+    "muscleGroups": [
+      {
+        "imageUrl": "https://fitnessprogramer.com/wp-content/uploads/2021/05/Trapezius-muscle-worked-300x300.png",
+        "name": "Trapezius"
+      }
+    ],
+    "name": "Barbell Upright Row",
+    "realizeImage": null,
+    "type": "Trapezius",
+    "updatedAt": "March 27, 2026 at 4:21:05 PM UTC+4",
+    "videoUrl": "https://www.youtube.com/watch?v=amCU-ziHITM&pp=ygUlQmFyYmVsbCBVcHJpZ2h0IFJvdyBleGVyY2lzZSB0dXRvcmlhbNIHCQnbCgGHKiGM7w%3D%3D"
+  },
+  {
+    "createdAt": "March 27, 2026 at 4:21:05 PM UTC+4",
+    "mainImage": "https://res.cloudinary.com/dhokfcxag/image/upload/v1774639827/fitness_exercises/050_Resistance_Band_Bent_Over_Rear_Delt_Fly_cawxov.png",
+    "muscleGroups": [
+      {
+        "imageUrl": "https://fitnessprogramer.com/wp-content/uploads/2021/05/Trapezius-muscle-worked-300x300.png",
+        "name": "Trapezius"
+      }
+    ],
+    "name": "Resistance Band Bent Over Rear Delt Fly",
+    "realizeImage": null,
+    "type": "Trapezius",
+    "updatedAt": "March 27, 2026 at 4:21:05 PM UTC+4",
+    "videoUrl": "https://www.youtube.com/watch?v=cdeLH0M9QCI&pp=ygU5UmVzaXN0YW5jZSBCYW5kIEJlbnQgT3ZlciBSZWFyIERlbHQgRmx5IGV4ZXJjaXNlIHR1dG9yaWFs0gcJCdsKAYcqIYzv"
+  },
+  {
+    "createdAt": "March 27, 2026 at 4:21:05 PM UTC+4",
+    "mainImage": "https://res.cloudinary.com/dhokfcxag/image/upload/v1774639829/fitness_exercises/051_Resistance_Band_Pull_Apart_bmxcie.png",
+    "muscleGroups": [
+      {
+        "imageUrl": "https://fitnessprogramer.com/wp-content/uploads/2021/05/Trapezius-muscle-worked-300x300.png",
+        "name": "Trapezius"
+      }
+    ],
+    "name": "Resistance Band Pull Apart",
+    "realizeImage": null,
+    "type": "Trapezius",
+    "updatedAt": "March 27, 2026 at 4:21:05 PM UTC+4",
+    "videoUrl": "https://www.youtube.com/watch?v=eZwnwWMkEL4&pp=ygUsUmVzaXN0YW5jZSBCYW5kIFB1bGwgQXBhcnQgZXhlcmNpc2UgdHV0b3JpYWzSBwkJ2woBhyohjO8%3D"
+  },
+  {
+    "createdAt": "March 27, 2026 at 4:21:05 PM UTC+4",
+    "mainImage": "https://res.cloudinary.com/dhokfcxag/image/upload/v1774639830/fitness_exercises/052_Single_Arm_Upright_Row_Gymstick_z2pvqc.png",
+    "muscleGroups": [
+      {
+        "imageUrl": "https://fitnessprogramer.com/wp-content/uploads/2021/05/Trapezius-muscle-worked-300x300.png",
+        "name": "Trapezius"
+      }
+    ],
+    "name": "Single Arm Upright Row | Gymstick",
+    "realizeImage": null,
+    "type": "Trapezius",
+    "updatedAt": "March 27, 2026 at 4:21:05 PM UTC+4",
+    "videoUrl": "https://www.youtube.com/watch?v=NceGq0SDt6o&pp=ygUzU2luZ2xlIEFybSBVcHJpZ2h0IFJvdyB8IEd5bXN0aWNrIGV4ZXJjaXNlIHR1dG9yaWFs"
+  },
+  {
+    "createdAt": "March 27, 2026 at 4:21:05 PM UTC+4",
+    "mainImage": "https://res.cloudinary.com/dhokfcxag/image/upload/v1774639831/fitness_exercises/053_Face_Pull_With_Resistance_Band_sa1ekc.png",
+    "muscleGroups": [
+      {
+        "imageUrl": "https://fitnessprogramer.com/wp-content/uploads/2021/05/Trapezius-muscle-worked-300x300.png",
+        "name": "Trapezius"
+      }
+    ],
+    "name": "Face Pull With Resistance Band",
+    "realizeImage": null,
+    "type": "Trapezius",
+    "updatedAt": "March 27, 2026 at 4:21:05 PM UTC+4",
+    "videoUrl": "https://www.youtube.com/watch?v=toHfpKStJ48&pp=ygUwRmFjZSBQdWxsIFdpdGggUmVzaXN0YW5jZSBCYW5kIGV4ZXJjaXNlIHR1dG9yaWFs"
+  }
+]

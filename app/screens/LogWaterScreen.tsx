@@ -3,8 +3,8 @@ import { View, Text, TouchableOpacity, StyleSheet, SafeAreaView, Platform, Statu
 import { MaterialIcons, MaterialCommunityIcons } from '@expo/vector-icons';
 import { useRouter, useFocusEffect } from 'expo-router';
 import Svg, { Circle, Defs, LinearGradient, Stop } from 'react-native-svg';
-import { getWaterLogs, createWaterLog, removeWaterLog, getDailyGoal, setDailyGoal, WaterLog, saveWaterLogs } from '../utils/waterManager';
-import { scheduleHydrationReminders } from '../utils/notificationManager';
+import { getWaterLogs, createWaterLog, removeWaterLog, getDailyGoal, setDailyGoal, WaterLog, saveWaterLogs } from '../_utils/waterManager';
+import { scheduleHydrationReminders } from '../_utils/notificationManager';
 import DateTimePicker from '@react-native-community/datetimepicker';
 import { CustomAlert } from '@/utils/CustomAlert';
 

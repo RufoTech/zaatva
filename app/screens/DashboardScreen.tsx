@@ -29,9 +29,9 @@ import Animated, {
     useAnimatedScrollHandler
 } from 'react-native-reanimated';
 import { BatteryOptEnabled, RequestDisableOptimization } from 'react-native-battery-optimization-check';
-import { getStoredSteps } from '../utils/stepManager';
-import { useAchievements } from '../utils/useAchievements';
-import { getWaterLogs } from '../utils/waterManager';
+import { getStoredSteps } from '../_utils/stepManager';
+import { useAchievements } from '../_utils/useAchievements';
+import { getWaterLogs } from '../_utils/waterManager';
 import { CustomAlert } from '@/utils/CustomAlert';
 
 const AnimatedTouchableOpacity = Animated.createAnimatedComponent(TouchableOpacity);

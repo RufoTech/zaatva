@@ -2,8 +2,8 @@ import { MaterialIcons } from '@expo/vector-icons';
 import { useRouter } from 'expo-router';
 import React, { useEffect, useState } from 'react';
 import { Dimensions, SafeAreaView, ScrollView, StatusBar, StyleSheet, Text, TouchableOpacity, View, ActivityIndicator } from 'react-native';
-import { ACHIEVEMENTS, getUnlockedAchievements, getUserXp } from '../utils/achievementManager';
-import { AppEvents } from '../utils/eventEmitter';
+import { ACHIEVEMENTS, getUnlockedAchievements, getUserXp } from '../_utils/achievementManager';
+import { AppEvents } from '../_utils/eventEmitter';
 
 const { width } = Dimensions.get('window');
 

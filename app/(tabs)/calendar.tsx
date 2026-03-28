@@ -6,8 +6,8 @@ import { useFocusEffect, useRouter } from 'expo-router';
 import React, { useCallback, useState } from 'react';
 import { ActivityIndicator, Platform, SafeAreaView, ScrollView, StatusBar, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import Animated, { FadeIn, FadeInDown, FadeInUp, Layout } from 'react-native-reanimated';
-import { getStoredSteps } from '../utils/stepManager';
-import { DailyWater, getWaterLogs } from '../utils/waterManager';
+import { getStoredSteps } from '../_utils/stepManager';
+import { DailyWater, getWaterLogs } from '../_utils/waterManager';
 
 const PRIMARY = "#ccff00";
 const BG_DARK = "#1f230f";

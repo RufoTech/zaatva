@@ -19,7 +19,7 @@ import {
 } from 'react-native';
 import Animated, { FadeInUp, Layout } from 'react-native-reanimated';
 import { AddWorkoutListSkeleton } from '@/components/SkeletonLoader';
-import { SelectionStore } from '../utils/SelectionStore';
+import { SelectionStore } from '../_utils/SelectionStore';
 import { CustomAlert } from '@/utils/CustomAlert';
 
 // Define Workout interface

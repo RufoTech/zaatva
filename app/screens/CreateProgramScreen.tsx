@@ -17,7 +17,7 @@ import {
   TouchableOpacity,
   View
 } from 'react-native';
-import { SelectionStore } from '../utils/SelectionStore';
+import { SelectionStore } from '../_utils/SelectionStore';
 
 import auth from '@react-native-firebase/auth';
 import { CustomAlert } from '@/utils/CustomAlert';

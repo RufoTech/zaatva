@@ -1,8 +1,8 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { Animated, StyleSheet, Text, View, Dimensions, TouchableOpacity, Platform } from 'react-native';
 import { MaterialIcons } from '@expo/vector-icons';
-import { AppEvents } from '../utils/eventEmitter';
-import { Achievement } from '../utils/achievementManager';
+import { AppEvents } from '../_utils/eventEmitter';
+import { Achievement } from '../_utils/achievementManager';
 
 const { width } = Dimensions.get('window');
 

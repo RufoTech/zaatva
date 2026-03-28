@@ -1,0 +1,2318 @@
+[
+  {
+    "name": "Seated Barbell Shoulder Press",
+    "mainImage": "https://res.cloudinary.com/dhokfcxag/image/upload/v1774633327/fitness_exercises/001_Seated_Barbell_Shoulder_Press_t2hj8q.png",
+    "videoUrl": "https://www.youtube.com/watch?v=YNK3eQVevIs",
+    "type": "Shoulders",
+    "muscleGroups": [
+      {
+        "name": "Shoulders",
+        "imageUrl": "https://res.cloudinary.com/dplgyvrof/image/upload/v1774613350/Bench-Press-Muscle-work-300x300_mey4w1.webp"
+      }
+    ]
+  },
+  {
+    "name": "Dumbbell Push Press",
+    "mainImage": "https://res.cloudinary.com/dhokfcxag/image/upload/v1774633328/fitness_exercises/002_Dumbbell_Push_Press_ku3jyq.png",
+    "videoUrl": "https://www.youtube.com/watch?v=sElIkjcfyNY",
+    "type": "Shoulders",
+    "muscleGroups": [
+      {
+        "name": "Shoulders",
+        "imageUrl": "https://res.cloudinary.com/dplgyvrof/image/upload/v1774613350/Bench-Press-Muscle-work-300x300_mey4w1.webp"
+      }
+    ]
+  },
+  {
+    "name": "Standing Dumbbell Shoulder Press",
+    "mainImage": "https://res.cloudinary.com/dhokfcxag/image/upload/v1774633330/fitness_exercises/003_Standing_Dumbbell_Shoulder_Press_qsd7js.png",
+    "videoUrl": "https://www.youtube.com/watch?v=OOe_HrNnQWw",
+    "type": "Shoulders",
+    "muscleGroups": [
+      {
+        "name": "Shoulders",
+        "imageUrl": "https://res.cloudinary.com/dplgyvrof/image/upload/v1774613350/Bench-Press-Muscle-work-300x300_mey4w1.webp"
+      }
+    ]
+  },
+  {
+    "name": "Arm Scissors",
+    "mainImage": "https://res.cloudinary.com/dhokfcxag/image/upload/v1774633331/fitness_exercises/004_Arm_Scissors_t32xun.png",
+    "videoUrl": "https://www.youtube.com/watch?v=dPDsW7xvuVY",
+    "type": "Shoulders",
+    "muscleGroups": [
+      {
+        "name": "Shoulders",
+        "imageUrl": "https://res.cloudinary.com/dplgyvrof/image/upload/v1774613350/Bench-Press-Muscle-work-300x300_mey4w1.webp"
+      }
+    ]
+  },
+  {
+    "name": "Side Arm Raises",
+    "mainImage": "https://res.cloudinary.com/dhokfcxag/image/upload/v1774633333/fitness_exercises/005_Side_Arm_Raises_gyl9we.png",
+    "videoUrl": "https://www.youtube.com/watch?v=YslHgg2E-Ro",
+    "type": "Shoulders",
+    "muscleGroups": [
+      {
+        "name": "Shoulders",
+        "imageUrl": "https://res.cloudinary.com/dplgyvrof/image/upload/v1774613350/Bench-Press-Muscle-work-300x300_mey4w1.webp"
+      }
+    ]
+  },
+  {
+    "name": "Arm Circles",
+    "mainImage": "https://res.cloudinary.com/dhokfcxag/image/upload/v1774633334/fitness_exercises/006_Arm_Circles_k7l7jk.png",
+    "videoUrl": "https://www.youtube.com/watch?v=UVMEnIaY8aU",
+    "type": "Shoulders",
+    "muscleGroups": [
+      {
+        "name": "Shoulders",
+        "imageUrl": "https://res.cloudinary.com/dplgyvrof/image/upload/v1774613350/Bench-Press-Muscle-work-300x300_mey4w1.webp"
+      }
+    ]
+  },
+  {
+    "name": "Dumbbell Lateral Raise",
+    "mainImage": "https://res.cloudinary.com/dhokfcxag/image/upload/v1774633336/fitness_exercises/007_Dumbbell_Lateral_Raise_m1h6nu.png",
+    "videoUrl": "https://www.youtube.com/watch?v=PzsMitRdI_8",
+    "type": "Shoulders",
+    "muscleGroups": [
+      {
+        "name": "Shoulders",
+        "imageUrl": "https://res.cloudinary.com/dplgyvrof/image/upload/v1774613350/Bench-Press-Muscle-work-300x300_mey4w1.webp"
+      }
+    ]
+  },
+  {
+    "name": "Dumbbell Shoulder Press",
+    "mainImage": "https://res.cloudinary.com/dhokfcxag/image/upload/v1774633338/fitness_exercises/008_Dumbbell_Shoulder_Press_yppxi3.png",
+    "videoUrl": "https://www.youtube.com/watch?v=poD_-zaG9hk",
+    "type": "Shoulders",
+    "muscleGroups": [
+      {
+        "name": "Shoulders",
+        "imageUrl": "https://res.cloudinary.com/dplgyvrof/image/upload/v1774613350/Bench-Press-Muscle-work-300x300_mey4w1.webp"
+      }
+    ]
+  },
+  {
+    "name": "Smith Machine Behind The Neck Press",
+    "mainImage": "https://res.cloudinary.com/dhokfcxag/image/upload/v1774633339/fitness_exercises/009_Smith_Machine_Behind_The_Neck_Press_idbg90.png",
+    "videoUrl": "https://www.youtube.com/watch?v=SpeLAcG-yyE",
+    "type": "Shoulders",
+    "muscleGroups": [
+      {
+        "name": "Shoulders",
+        "imageUrl": "https://res.cloudinary.com/dplgyvrof/image/upload/v1774613350/Bench-Press-Muscle-work-300x300_mey4w1.webp"
+      }
+    ]
+  },
+  {
+    "name": "Smith Machine Shoulder Press",
+    "mainImage": "https://res.cloudinary.com/dhokfcxag/image/upload/v1774633340/fitness_exercises/010_Smith_Machine_Shoulder_Press_dhmvg9.png",
+    "videoUrl": "https://www.youtube.com/watch?v=W96mQiZv9q0",
+    "type": "Shoulders",
+    "muscleGroups": [
+      {
+        "name": "Shoulders",
+        "imageUrl": "https://res.cloudinary.com/dplgyvrof/image/upload/v1774613350/Bench-Press-Muscle-work-300x300_mey4w1.webp"
+      }
+    ]
+  },
+  {
+    "name": "Cable Lateral Raise",
+    "mainImage": "https://res.cloudinary.com/dhokfcxag/image/upload/v1774633342/fitness_exercises/011_Cable_Lateral_Raise_ykd4gy.png",
+    "videoUrl": "https://www.youtube.com/watch?v=Z5FA9aq3L6A",
+    "type": "Shoulders",
+    "muscleGroups": [
+      {
+        "name": "Shoulders",
+        "imageUrl": "https://res.cloudinary.com/dplgyvrof/image/upload/v1774613350/Bench-Press-Muscle-work-300x300_mey4w1.webp"
+      }
+    ]
+  },
+  {
+    "name": "45 Degree Incline Dumbbell Row",
+    "mainImage": "https://res.cloudinary.com/dhokfcxag/image/upload/v1774633343/fitness_exercises/012_45_Degree_Incline_Dumbbell_Row_olasxr.png",
+    "videoUrl": "https://www.youtube.com/watch?v=s5DqehlkvIs",
+    "type": "Shoulders",
+    "muscleGroups": [
+      {
+        "name": "Shoulders",
+        "imageUrl": "https://res.cloudinary.com/dplgyvrof/image/upload/v1774613350/Bench-Press-Muscle-work-300x300_mey4w1.webp"
+      }
+    ]
+  },
+  {
+    "name": "Lever Shoulder Press",
+    "mainImage": "https://res.cloudinary.com/dhokfcxag/image/upload/v1774633345/fitness_exercises/013_Lever_Shoulder_Press_o9qjhl.png",
+    "videoUrl": "https://www.youtube.com/watch?v=3R14MnZbcpw",
+    "type": "Shoulders",
+    "muscleGroups": [
+      {
+        "name": "Shoulders",
+        "imageUrl": "https://res.cloudinary.com/dplgyvrof/image/upload/v1774613350/Bench-Press-Muscle-work-300x300_mey4w1.webp"
+      }
+    ]
+  },
+  {
+    "name": "Standing Close Grip Military Press",
+    "mainImage": "https://res.cloudinary.com/dhokfcxag/image/upload/v1774633346/fitness_exercises/014_Standing_Close_Grip_Military_Press_wqj4ts.png",
+    "videoUrl": "https://www.youtube.com/watch?v=coNb7Kqlhes",
+    "type": "Shoulders",
+    "muscleGroups": [
+      {
+        "name": "Shoulders",
+        "imageUrl": "https://res.cloudinary.com/dplgyvrof/image/upload/v1774613350/Bench-Press-Muscle-work-300x300_mey4w1.webp"
+      }
+    ]
+  },
+  {
+    "name": "Barbell Military Press (Overhead press)",
+    "mainImage": "https://res.cloudinary.com/dhokfcxag/image/upload/v1774633347/fitness_exercises/015_Barbell_Military_Press_Overhead_press__d2qspc.png",
+    "videoUrl": "https://www.youtube.com/watch?v=KP1sYz2VICk",
+    "type": "Shoulders",
+    "muscleGroups": [
+      {
+        "name": "Shoulders",
+        "imageUrl": "https://res.cloudinary.com/dplgyvrof/image/upload/v1774613350/Bench-Press-Muscle-work-300x300_mey4w1.webp"
+      }
+    ]
+  },
+  {
+    "name": "Dumbbell Chest Supported Lateral Raises",
+    "mainImage": "https://res.cloudinary.com/dhokfcxag/image/upload/v1774633349/fitness_exercises/016_Dumbbell_Chest_Supported_Lateral_Raises_jkgyxm.png",
+    "videoUrl": "https://www.youtube.com/watch?v=5w2z2EXszWA",
+    "type": "Shoulders",
+    "muscleGroups": [
+      {
+        "name": "Shoulders",
+        "imageUrl": "https://res.cloudinary.com/dplgyvrof/image/upload/v1774613350/Bench-Press-Muscle-work-300x300_mey4w1.webp"
+      }
+    ]
+  },
+  {
+    "name": "Dumbbell 6 Way Raise",
+    "mainImage": "https://res.cloudinary.com/dhokfcxag/image/upload/v1774633350/fitness_exercises/017_Dumbbell_6_Way_Raise_nghgp4.png",
+    "videoUrl": "https://www.youtube.com/watch?v=pZyc0kVIjOw",
+    "type": "Shoulders",
+    "muscleGroups": [
+      {
+        "name": "Shoulders",
+        "imageUrl": "https://res.cloudinary.com/dplgyvrof/image/upload/v1774613350/Bench-Press-Muscle-work-300x300_mey4w1.webp"
+      }
+    ]
+  },
+  {
+    "name": "Dumbbell 4 Way Lateral Raise",
+    "mainImage": "https://res.cloudinary.com/dhokfcxag/image/upload/v1774633352/fitness_exercises/018_Dumbbell_4_Way_Lateral_Raise_q6yt0f.png",
+    "videoUrl": "https://www.youtube.com/watch?v=XPPfnSEATJA",
+    "type": "Shoulders",
+    "muscleGroups": [
+      {
+        "name": "Shoulders",
+        "imageUrl": "https://res.cloudinary.com/dplgyvrof/image/upload/v1774613350/Bench-Press-Muscle-work-300x300_mey4w1.webp"
+      }
+    ]
+  },
+  {
+    "name": "Alternating Dumbbell Front Raise",
+    "mainImage": "https://res.cloudinary.com/dhokfcxag/image/upload/v1774633353/fitness_exercises/019_Alternating_Dumbbell_Front_Raise_f5lvzp.png",
+    "videoUrl": "https://www.youtube.com/watch?v=fKMIHZD9S98",
+    "type": "Shoulders",
+    "muscleGroups": [
+      {
+        "name": "Shoulders",
+        "imageUrl": "https://res.cloudinary.com/dplgyvrof/image/upload/v1774613350/Bench-Press-Muscle-work-300x300_mey4w1.webp"
+      }
+    ]
+  },
+  {
+    "name": "Two Arm Cable Front Raise",
+    "mainImage": "https://res.cloudinary.com/dhokfcxag/image/upload/v1774633354/fitness_exercises/020_Two_Arm_Cable_Front_Raise_erj8aw.png",
+    "videoUrl": "https://www.youtube.com/watch?v=c9nZjoaqseM",
+    "type": "Shoulders",
+    "muscleGroups": [
+      {
+        "name": "Shoulders",
+        "imageUrl": "https://res.cloudinary.com/dplgyvrof/image/upload/v1774613350/Bench-Press-Muscle-work-300x300_mey4w1.webp"
+      }
+    ]
+  },
+  {
+    "name": "Two Arm Dumbbell Front Raise",
+    "mainImage": "https://res.cloudinary.com/dhokfcxag/image/upload/v1774633356/fitness_exercises/021_Two_Arm_Dumbbell_Front_Raise_n1o9aa.png",
+    "videoUrl": "https://www.youtube.com/watch?v=CoCWdX95hnI",
+    "type": "Shoulders",
+    "muscleGroups": [
+      {
+        "name": "Shoulders",
+        "imageUrl": "https://res.cloudinary.com/dplgyvrof/image/upload/v1774613350/Bench-Press-Muscle-work-300x300_mey4w1.webp"
+      }
+    ]
+  },
+  {
+    "name": "Dumbbell Front Raise",
+    "mainImage": "https://res.cloudinary.com/dhokfcxag/image/upload/v1774633358/fitness_exercises/022_Dumbbell_Front_Raise_b88mll.png",
+    "videoUrl": "https://www.youtube.com/watch?v=sOcYlBI85hc",
+    "type": "Shoulders",
+    "muscleGroups": [
+      {
+        "name": "Shoulders",
+        "imageUrl": "https://res.cloudinary.com/dplgyvrof/image/upload/v1774613350/Bench-Press-Muscle-work-300x300_mey4w1.webp"
+      }
+    ]
+  },
+  {
+    "name": "Cable Front Raise",
+    "mainImage": "https://res.cloudinary.com/dhokfcxag/image/upload/v1774633360/fitness_exercises/023_Cable_Front_Raise_lndqj1.png",
+    "videoUrl": "https://www.youtube.com/watch?v=iCgSt7RqoOo",
+    "type": "Shoulders",
+    "muscleGroups": [
+      {
+        "name": "Shoulders",
+        "imageUrl": "https://res.cloudinary.com/dplgyvrof/image/upload/v1774613350/Bench-Press-Muscle-work-300x300_mey4w1.webp"
+      }
+    ]
+  },
+  {
+    "name": "Leaning Single Arm Dumbbell Lateral Raise",
+    "mainImage": "https://res.cloudinary.com/dhokfcxag/image/upload/v1774633361/fitness_exercises/024_Leaning_Single_Arm_Dumbbell_Lateral_Raise_rbkcbo.png",
+    "videoUrl": "https://www.youtube.com/watch?v=qWif_7SOYpQ",
+    "type": "Shoulders",
+    "muscleGroups": [
+      {
+        "name": "Shoulders",
+        "imageUrl": "https://res.cloudinary.com/dplgyvrof/image/upload/v1774613350/Bench-Press-Muscle-work-300x300_mey4w1.webp"
+      }
+    ]
+  },
+  {
+    "name": "Seated Behind Neck Press",
+    "mainImage": "https://res.cloudinary.com/dhokfcxag/image/upload/v1774633364/fitness_exercises/025_Seated_Behind_Neck_Press_h7kakh.png",
+    "videoUrl": "https://www.youtube.com/watch?v=iFoJWnIuBcY",
+    "type": "Shoulders",
+    "muscleGroups": [
+      {
+        "name": "Shoulders",
+        "imageUrl": "https://res.cloudinary.com/dplgyvrof/image/upload/v1774613350/Bench-Press-Muscle-work-300x300_mey4w1.webp"
+      }
+    ]
+  },
+  {
+    "name": "Rear Delt Fly Machine",
+    "mainImage": "https://res.cloudinary.com/dhokfcxag/image/upload/v1774633366/fitness_exercises/026_Rear_Delt_Fly_Machine_skpc3r.png",
+    "videoUrl": "https://www.youtube.com/watch?v=Uz81XugWbG0",
+    "type": "Shoulders",
+    "muscleGroups": [
+      {
+        "name": "Shoulders",
+        "imageUrl": "https://res.cloudinary.com/dplgyvrof/image/upload/v1774613350/Bench-Press-Muscle-work-300x300_mey4w1.webp"
+      }
+    ]
+  },
+  {
+    "name": "Seated Rear Lateral Dumbbell Raise",
+    "mainImage": "https://res.cloudinary.com/dhokfcxag/image/upload/v1774633368/fitness_exercises/027_Seated_Rear_Lateral_Dumbbell_Raise_vbzxzv.png",
+    "videoUrl": "https://www.youtube.com/watch?v=Z0HTsZEMedA",
+    "type": "Shoulders",
+    "muscleGroups": [
+      {
+        "name": "Shoulders",
+        "imageUrl": "https://res.cloudinary.com/dplgyvrof/image/upload/v1774613350/Bench-Press-Muscle-work-300x300_mey4w1.webp"
+      }
+    ]
+  },
+  {
+    "name": "Half Arnold Press",
+    "mainImage": "https://res.cloudinary.com/dhokfcxag/image/upload/v1774633370/fitness_exercises/028_Half_Arnold_Press_flxko0.png",
+    "videoUrl": "https://www.youtube.com/watch?v=ris9tKqMwgU",
+    "type": "Shoulders",
+    "muscleGroups": [
+      {
+        "name": "Shoulders",
+        "imageUrl": "https://res.cloudinary.com/dplgyvrof/image/upload/v1774613350/Bench-Press-Muscle-work-300x300_mey4w1.webp"
+      }
+    ]
+  },
+  {
+    "name": "Arnold Press",
+    "mainImage": "https://res.cloudinary.com/dhokfcxag/image/upload/v1774633372/fitness_exercises/029_Arnold_Press_fiffe8.png",
+    "videoUrl": "https://www.youtube.com/watch?v=6Z15_WdXmVw",
+    "type": "Shoulders",
+    "muscleGroups": [
+      {
+        "name": "Shoulders",
+        "imageUrl": "https://res.cloudinary.com/dplgyvrof/image/upload/v1774613350/Bench-Press-Muscle-work-300x300_mey4w1.webp"
+      }
+    ]
+  },
+  {
+    "name": "Seated Dumbbell Lateral Raise",
+    "mainImage": "https://res.cloudinary.com/dhokfcxag/image/upload/v1774633373/fitness_exercises/030_Seated_Dumbbell_Lateral_Raise_hjw9dv.png",
+    "videoUrl": "https://www.youtube.com/watch?v=XdEP433thg8",
+    "type": "Shoulders",
+    "muscleGroups": [
+      {
+        "name": "Shoulders",
+        "imageUrl": "https://res.cloudinary.com/dplgyvrof/image/upload/v1774613350/Bench-Press-Muscle-work-300x300_mey4w1.webp"
+      }
+    ]
+  },
+  {
+    "name": "Cable Rear Delt Fly",
+    "mainImage": "https://res.cloudinary.com/dhokfcxag/image/upload/v1774633375/fitness_exercises/031_Cable_Rear_Delt_Fly_lb7eee.png",
+    "videoUrl": "https://www.youtube.com/watch?v=dKluhLck1Zs",
+    "type": "Shoulders",
+    "muscleGroups": [
+      {
+        "name": "Shoulders",
+        "imageUrl": "https://res.cloudinary.com/dplgyvrof/image/upload/v1774613350/Bench-Press-Muscle-work-300x300_mey4w1.webp"
+      }
+    ]
+  },
+  {
+    "name": "Bent Over Lateral Raise",
+    "mainImage": "https://res.cloudinary.com/dhokfcxag/image/upload/v1774633376/fitness_exercises/032_Bent_Over_Lateral_Raise_psdfpy.png",
+    "videoUrl": "https://www.youtube.com/watch?v=gQBJPfWf_-s",
+    "type": "Shoulders",
+    "muscleGroups": [
+      {
+        "name": "Shoulders",
+        "imageUrl": "https://res.cloudinary.com/dplgyvrof/image/upload/v1774613350/Bench-Press-Muscle-work-300x300_mey4w1.webp"
+      }
+    ]
+  },
+  {
+    "name": "Bent Arm Lateral Raise",
+    "mainImage": "https://res.cloudinary.com/dhokfcxag/image/upload/v1774633377/fitness_exercises/033_Bent_Arm_Lateral_Raise_jcv5te.png",
+    "videoUrl": "https://www.youtube.com/watch?v=s-lQtYXsSYg",
+    "type": "Shoulders",
+    "muscleGroups": [
+      {
+        "name": "Shoulders",
+        "imageUrl": "https://res.cloudinary.com/dplgyvrof/image/upload/v1774613350/Bench-Press-Muscle-work-300x300_mey4w1.webp"
+      }
+    ]
+  },
+  {
+    "name": "Cable Upright Row",
+    "mainImage": "https://res.cloudinary.com/dhokfcxag/image/upload/v1774633378/fitness_exercises/034_Cable_Upright_Row_qfsr1u.png",
+    "videoUrl": "https://www.youtube.com/watch?v=qr3ziolhjvQ",
+    "type": "Shoulders",
+    "muscleGroups": [
+      {
+        "name": "Shoulders",
+        "imageUrl": "https://res.cloudinary.com/dplgyvrof/image/upload/v1774613350/Bench-Press-Muscle-work-300x300_mey4w1.webp"
+      }
+    ]
+  },
+  {
+    "name": "Face Pull",
+    "mainImage": "https://res.cloudinary.com/dhokfcxag/image/upload/v1774633380/fitness_exercises/035_Face_Pull_ym8usk.png",
+    "videoUrl": "https://www.youtube.com/watch?v=0Po47vvj9g4",
+    "type": "Shoulders",
+    "muscleGroups": [
+      {
+        "name": "Shoulders",
+        "imageUrl": "https://res.cloudinary.com/dplgyvrof/image/upload/v1774613350/Bench-Press-Muscle-work-300x300_mey4w1.webp"
+      }
+    ]
+  },
+  {
+    "name": "Half Kneeling High Cable Row Rope",
+    "mainImage": "https://res.cloudinary.com/dhokfcxag/image/upload/v1774633381/fitness_exercises/036_Half_Kneeling_High_Cable_Row_Rope_se8jxp.png",
+    "videoUrl": "https://www.youtube.com/watch?v=RwRZ_c8ljuw",
+    "type": "Shoulders",
+    "muscleGroups": [
+      {
+        "name": "Shoulders",
+        "imageUrl": "https://res.cloudinary.com/dplgyvrof/image/upload/v1774613350/Bench-Press-Muscle-work-300x300_mey4w1.webp"
+      }
+    ]
+  },
+  {
+    "name": "Leaning Cable Lateral Raise",
+    "mainImage": "https://res.cloudinary.com/dhokfcxag/image/upload/v1774633383/fitness_exercises/037_Leaning_Cable_Lateral_Raise_wvp5rm.png",
+    "videoUrl": "https://www.youtube.com/watch?v=lq7eLC30b9w",
+    "type": "Shoulders",
+    "muscleGroups": [
+      {
+        "name": "Shoulders",
+        "imageUrl": "https://res.cloudinary.com/dplgyvrof/image/upload/v1774613350/Bench-Press-Muscle-work-300x300_mey4w1.webp"
+      }
+    ]
+  },
+  {
+    "name": "Dumbbell Raise",
+    "mainImage": "https://res.cloudinary.com/dhokfcxag/image/upload/v1774633384/fitness_exercises/038_Dumbbell_Raise_pobvrj.png",
+    "videoUrl": "https://www.youtube.com/watch?v=byGit7i8Dmo",
+    "type": "Shoulders",
+    "muscleGroups": [
+      {
+        "name": "Shoulders",
+        "imageUrl": "https://res.cloudinary.com/dplgyvrof/image/upload/v1774613350/Bench-Press-Muscle-work-300x300_mey4w1.webp"
+      }
+    ]
+  },
+  {
+    "name": "Dumbbell Upright Row",
+    "mainImage": "https://res.cloudinary.com/dhokfcxag/image/upload/v1774633386/fitness_exercises/039_Dumbbell_Upright_Row_ltt44i.png",
+    "videoUrl": "https://www.youtube.com/watch?v=K0dYqPCaO14",
+    "type": "Shoulders",
+    "muscleGroups": [
+      {
+        "name": "Shoulders",
+        "imageUrl": "https://res.cloudinary.com/dplgyvrof/image/upload/v1774613350/Bench-Press-Muscle-work-300x300_mey4w1.webp"
+      }
+    ]
+  },
+  {
+    "name": "Bodyweight Military Press",
+    "mainImage": "https://res.cloudinary.com/dhokfcxag/image/upload/v1774633387/fitness_exercises/040_Bodyweight_Military_Press_l7qife.png",
+    "videoUrl": "https://www.youtube.com/watch?v=l9JV4epNkOA",
+    "type": "Shoulders",
+    "muscleGroups": [
+      {
+        "name": "Shoulders",
+        "imageUrl": "https://res.cloudinary.com/dplgyvrof/image/upload/v1774613350/Bench-Press-Muscle-work-300x300_mey4w1.webp"
+      }
+    ]
+  },
+  {
+    "name": "Push Press",
+    "mainImage": "https://res.cloudinary.com/dhokfcxag/image/upload/v1774633388/fitness_exercises/041_Push_Press_dg2oxx.png",
+    "videoUrl": "https://www.youtube.com/watch?v=iaBVSJm78ko",
+    "type": "Shoulders",
+    "muscleGroups": [
+      {
+        "name": "Shoulders",
+        "imageUrl": "https://res.cloudinary.com/dplgyvrof/image/upload/v1774613350/Bench-Press-Muscle-work-300x300_mey4w1.webp"
+      }
+    ]
+  },
+  {
+    "name": "Ez Bar Upright Row",
+    "mainImage": "https://res.cloudinary.com/dhokfcxag/image/upload/v1774633389/fitness_exercises/042_Ez_Bar_Upright_Row_wdvwnv.png",
+    "videoUrl": "https://www.youtube.com/watch?v=ndkkJ0L-YNo",
+    "type": "Shoulders",
+    "muscleGroups": [
+      {
+        "name": "Shoulders",
+        "imageUrl": "https://res.cloudinary.com/dplgyvrof/image/upload/v1774613350/Bench-Press-Muscle-work-300x300_mey4w1.webp"
+      }
+    ]
+  },
+  {
+    "name": "Dumbbell Lying One-Arm Rear Lateral Raise",
+    "mainImage": "https://res.cloudinary.com/dhokfcxag/image/upload/v1774633391/fitness_exercises/043_Dumbbell_Lying_One_Arm_Rear_Lateral_Raise_novdzk.png",
+    "videoUrl": "https://www.youtube.com/watch?v=caFTWcg7sx0",
+    "type": "Shoulders",
+    "muscleGroups": [
+      {
+        "name": "Shoulders",
+        "imageUrl": "https://res.cloudinary.com/dplgyvrof/image/upload/v1774613350/Bench-Press-Muscle-work-300x300_mey4w1.webp"
+      }
+    ]
+  },
+  {
+    "name": "Lateral Raise Machine",
+    "mainImage": "https://res.cloudinary.com/dhokfcxag/image/upload/v1774633393/fitness_exercises/044_Lateral_Raise_Machine_f1k3cv.png",
+    "videoUrl": "https://www.youtube.com/watch?v=xMEs3zEzS8s",
+    "type": "Shoulders",
+    "muscleGroups": [
+      {
+        "name": "Shoulders",
+        "imageUrl": "https://res.cloudinary.com/dplgyvrof/image/upload/v1774613350/Bench-Press-Muscle-work-300x300_mey4w1.webp"
+      }
+    ]
+  },
+  {
+    "name": "Scott Press",
+    "mainImage": "https://res.cloudinary.com/dhokfcxag/image/upload/v1774633394/fitness_exercises/045_Scott_Press_qtr8ph.png",
+    "videoUrl": "https://www.youtube.com/watch?v=0KjlTz6MbKQ",
+    "type": "Shoulders",
+    "muscleGroups": [
+      {
+        "name": "Shoulders",
+        "imageUrl": "https://res.cloudinary.com/dplgyvrof/image/upload/v1774613350/Bench-Press-Muscle-work-300x300_mey4w1.webp"
+      }
+    ]
+  },
+  {
+    "name": "Band Pull-Apart",
+    "mainImage": "https://res.cloudinary.com/dhokfcxag/image/upload/v1774633395/fitness_exercises/046_Band_Pull_Apart_ft8axw.png",
+    "videoUrl": "https://www.youtube.com/watch?v=eZwnwWMkEL4",
+    "type": "Shoulders",
+    "muscleGroups": [
+      {
+        "name": "Shoulders",
+        "imageUrl": "https://res.cloudinary.com/dplgyvrof/image/upload/v1774613350/Bench-Press-Muscle-work-300x300_mey4w1.webp"
+      }
+    ]
+  },
+  {
+    "name": "Bent Over Reverse Cable Fly",
+    "mainImage": "https://res.cloudinary.com/dhokfcxag/image/upload/v1774633397/fitness_exercises/047_Bent_Over_Reverse_Cable_Fly_g36jup.png",
+    "videoUrl": "https://www.youtube.com/watch?v=zYG0r0g4quY",
+    "type": "Shoulders",
+    "muscleGroups": [
+      {
+        "name": "Shoulders",
+        "imageUrl": "https://res.cloudinary.com/dplgyvrof/image/upload/v1774613350/Bench-Press-Muscle-work-300x300_mey4w1.webp"
+      }
+    ]
+  },
+  {
+    "name": "Bent-Over Barbell Reverse Raise",
+    "mainImage": "https://res.cloudinary.com/dhokfcxag/image/upload/v1774633399/fitness_exercises/048_Bent_Over_Barbell_Reverse_Raise_gznrke.png",
+    "videoUrl": "https://www.youtube.com/watch?v=qXrTDQG1oUQ",
+    "type": "Shoulders",
+    "muscleGroups": [
+      {
+        "name": "Shoulders",
+        "imageUrl": "https://res.cloudinary.com/dplgyvrof/image/upload/v1774613350/Bench-Press-Muscle-work-300x300_mey4w1.webp"
+      }
+    ]
+  },
+  {
+    "name": "Weighted Round Arm",
+    "mainImage": "https://res.cloudinary.com/dhokfcxag/image/upload/v1774633400/fitness_exercises/049_Weighted_Round_Arm_bfh6eb.png",
+    "videoUrl": "https://www.youtube.com/watch?v=vFXwQSuY_gw",
+    "type": "Shoulders",
+    "muscleGroups": [
+      {
+        "name": "Shoulders",
+        "imageUrl": "https://res.cloudinary.com/dplgyvrof/image/upload/v1774613350/Bench-Press-Muscle-work-300x300_mey4w1.webp"
+      }
+    ]
+  },
+  {
+    "name": "Weight Plate Front Raise",
+    "mainImage": "https://res.cloudinary.com/dhokfcxag/image/upload/v1774633401/fitness_exercises/050_Weight_Plate_Front_Raise_k5sivm.png",
+    "videoUrl": "https://www.youtube.com/watch?v=ZMkPZc1mLUo",
+    "type": "Shoulders",
+    "muscleGroups": [
+      {
+        "name": "Shoulders",
+        "imageUrl": "https://res.cloudinary.com/dplgyvrof/image/upload/v1774613350/Bench-Press-Muscle-work-300x300_mey4w1.webp"
+      }
+    ]
+  },
+  {
+    "name": "Two Arm Cable Lateral Raise",
+    "mainImage": "https://res.cloudinary.com/dhokfcxag/image/upload/v1774633403/fitness_exercises/051_Two_Arm_Cable_Lateral_Raise_fcdjk8.png",
+    "videoUrl": "https://www.youtube.com/watch?v=j49XHBfLjhE",
+    "type": "Shoulders",
+    "muscleGroups": [
+      {
+        "name": "Shoulders",
+        "imageUrl": "https://res.cloudinary.com/dplgyvrof/image/upload/v1774613350/Bench-Press-Muscle-work-300x300_mey4w1.webp"
+      }
+    ]
+  },
+  {
+    "name": "Landmine Squat to Press",
+    "mainImage": "https://res.cloudinary.com/dhokfcxag/image/upload/v1774633404/fitness_exercises/052_Landmine_Squat_to_Press_rrtru7.png",
+    "videoUrl": "https://www.youtube.com/watch?v=0oJsNm_MreY",
+    "type": "Shoulders",
+    "muscleGroups": [
+      {
+        "name": "Shoulders",
+        "imageUrl": "https://res.cloudinary.com/dplgyvrof/image/upload/v1774613350/Bench-Press-Muscle-work-300x300_mey4w1.webp"
+      }
+    ]
+  },
+  {
+    "name": "Cable Shoulder Press",
+    "mainImage": "https://res.cloudinary.com/dhokfcxag/image/upload/v1774633406/fitness_exercises/053_Cable_Shoulder_Press_gxgioy.png",
+    "videoUrl": "https://www.youtube.com/watch?v=G1qWo8YjDPE",
+    "type": "Shoulders",
+    "muscleGroups": [
+      {
+        "name": "Shoulders",
+        "imageUrl": "https://res.cloudinary.com/dplgyvrof/image/upload/v1774613350/Bench-Press-Muscle-work-300x300_mey4w1.webp"
+      }
+    ]
+  },
+  {
+    "name": "Barbell Rear Delt Raise",
+    "mainImage": "https://res.cloudinary.com/dhokfcxag/image/upload/v1774633408/fitness_exercises/054_Barbell_Rear_Delt_Raise_bs2za6.png",
+    "videoUrl": "https://www.youtube.com/watch?v=DZnSlq-Gneg",
+    "type": "Shoulders",
+    "muscleGroups": [
+      {
+        "name": "Shoulders",
+        "imageUrl": "https://res.cloudinary.com/dplgyvrof/image/upload/v1774613350/Bench-Press-Muscle-work-300x300_mey4w1.webp"
+      }
+    ]
+  },
+  {
+    "name": "Double Cable Front Raise",
+    "mainImage": "https://res.cloudinary.com/dhokfcxag/image/upload/v1774633411/fitness_exercises/055_Double_Cable_Front_Raise_vdsrmn.png",
+    "videoUrl": "https://www.youtube.com/watch?v=j49XHBfLjhE",
+    "type": "Shoulders",
+    "muscleGroups": [
+      {
+        "name": "Shoulders",
+        "imageUrl": "https://res.cloudinary.com/dplgyvrof/image/upload/v1774613350/Bench-Press-Muscle-work-300x300_mey4w1.webp"
+      }
+    ]
+  },
+  {
+    "name": "Standing Smith Machine Shoulder Press",
+    "mainImage": "https://res.cloudinary.com/dhokfcxag/image/upload/v1774633413/fitness_exercises/056_Standing_Smith_Machine_Shoulder_Press_kpnix7.png",
+    "videoUrl": "https://www.youtube.com/watch?v=Wvb-lmNcS44",
+    "type": "Shoulders",
+    "muscleGroups": [
+      {
+        "name": "Shoulders",
+        "imageUrl": "https://res.cloudinary.com/dplgyvrof/image/upload/v1774613350/Bench-Press-Muscle-work-300x300_mey4w1.webp"
+      }
+    ]
+  },
+  {
+    "name": "Dumbbell W Press",
+    "mainImage": "https://res.cloudinary.com/dhokfcxag/image/upload/v1774633414/fitness_exercises/057_Dumbbell_W_Press_gyhg85.png",
+    "videoUrl": "https://www.youtube.com/watch?v=Did01dFR3Lk",
+    "type": "Shoulders",
+    "muscleGroups": [
+      {
+        "name": "Shoulders",
+        "imageUrl": "https://res.cloudinary.com/dplgyvrof/image/upload/v1774613350/Bench-Press-Muscle-work-300x300_mey4w1.webp"
+      }
+    ]
+  },
+  {
+    "name": "Dumbbell One Arm Shoulder Press",
+    "mainImage": "https://res.cloudinary.com/dhokfcxag/image/upload/v1774633415/fitness_exercises/058_Dumbbell_One_Arm_Shoulder_Press_i4uysm.png",
+    "videoUrl": "https://www.youtube.com/watch?v=4INnuqPeyIQ",
+    "type": "Shoulders",
+    "muscleGroups": [
+      {
+        "name": "Shoulders",
+        "imageUrl": "https://res.cloudinary.com/dplgyvrof/image/upload/v1774613350/Bench-Press-Muscle-work-300x300_mey4w1.webp"
+      }
+    ]
+  },
+  {
+    "name": "Dumbbell Scaption",
+    "mainImage": "https://res.cloudinary.com/dhokfcxag/image/upload/v1774633417/fitness_exercises/059_Dumbbell_Scaption_j4rsp8.png",
+    "videoUrl": "https://www.youtube.com/watch?v=pDtt6b9NUSU",
+    "type": "Shoulders",
+    "muscleGroups": [
+      {
+        "name": "Shoulders",
+        "imageUrl": "https://res.cloudinary.com/dplgyvrof/image/upload/v1774613350/Bench-Press-Muscle-work-300x300_mey4w1.webp"
+      }
+    ]
+  },
+  {
+    "name": "Barbell Clean and Press",
+    "mainImage": "https://res.cloudinary.com/dhokfcxag/image/upload/v1774633418/fitness_exercises/060_Barbell_Clean_and_Press_dou6f9.png",
+    "videoUrl": "https://www.youtube.com/watch?v=K1QPQBVbTKM",
+    "type": "Shoulders",
+    "muscleGroups": [
+      {
+        "name": "Shoulders",
+        "imageUrl": "https://res.cloudinary.com/dplgyvrof/image/upload/v1774613350/Bench-Press-Muscle-work-300x300_mey4w1.webp"
+      }
+    ]
+  },
+  {
+    "name": "Dumbbell Cuban Press",
+    "mainImage": "https://res.cloudinary.com/dhokfcxag/image/upload/v1774633420/fitness_exercises/061_Dumbbell_Cuban_Press_f8li5h.png",
+    "videoUrl": "https://www.youtube.com/watch?v=2VqucGWyXkw",
+    "type": "Shoulders",
+    "muscleGroups": [
+      {
+        "name": "Shoulders",
+        "imageUrl": "https://res.cloudinary.com/dplgyvrof/image/upload/v1774613350/Bench-Press-Muscle-work-300x300_mey4w1.webp"
+      }
+    ]
+  },
+  {
+    "name": "Dumbbell Cuban External Rotation",
+    "mainImage": "https://res.cloudinary.com/dhokfcxag/image/upload/v1774633422/fitness_exercises/062_Dumbbell_Cuban_External_Rotation_ti3nng.png",
+    "videoUrl": "https://www.youtube.com/watch?v=TwF-75hvDgk",
+    "type": "Shoulders",
+    "muscleGroups": [
+      {
+        "name": "Shoulders",
+        "imageUrl": "https://res.cloudinary.com/dplgyvrof/image/upload/v1774613350/Bench-Press-Muscle-work-300x300_mey4w1.webp"
+      }
+    ]
+  },
+  {
+    "name": "Standing Alternating Dumbbell Shoulder Press",
+    "mainImage": "https://res.cloudinary.com/dhokfcxag/image/upload/v1774633423/fitness_exercises/063_Standing_Alternating_Dumbbell_Shoulder_Press_rmxxdv.png",
+    "videoUrl": "https://www.youtube.com/watch?v=kiCAW0XhTC4",
+    "type": "Shoulders",
+    "muscleGroups": [
+      {
+        "name": "Shoulders",
+        "imageUrl": "https://res.cloudinary.com/dplgyvrof/image/upload/v1774613350/Bench-Press-Muscle-work-300x300_mey4w1.webp"
+      }
+    ]
+  },
+  {
+    "name": "Cable External Shoulder Rotation",
+    "mainImage": "https://res.cloudinary.com/dhokfcxag/image/upload/v1774633424/fitness_exercises/064_Cable_External_Shoulder_Rotation_xuklih.png",
+    "videoUrl": "https://www.youtube.com/watch?v=PVdgjHqAes8",
+    "type": "Shoulders",
+    "muscleGroups": [
+      {
+        "name": "Shoulders",
+        "imageUrl": "https://res.cloudinary.com/dplgyvrof/image/upload/v1774613350/Bench-Press-Muscle-work-300x300_mey4w1.webp"
+      }
+    ]
+  },
+  {
+    "name": "Cable Internal Shoulder Rotation",
+    "mainImage": "https://res.cloudinary.com/dhokfcxag/image/upload/v1774633426/fitness_exercises/065_Cable_Internal_Shoulder_Rotation_iqmtyj.png",
+    "videoUrl": "https://www.youtube.com/watch?v=UlWgtUcEhFk",
+    "type": "Shoulders",
+    "muscleGroups": [
+      {
+        "name": "Shoulders",
+        "imageUrl": "https://res.cloudinary.com/dplgyvrof/image/upload/v1774613350/Bench-Press-Muscle-work-300x300_mey4w1.webp"
+      }
+    ]
+  },
+  {
+    "name": "Across Chest Shoulder Stretch",
+    "mainImage": "https://res.cloudinary.com/dhokfcxag/image/upload/v1774633427/fitness_exercises/066_Across_Chest_Shoulder_Stretch_eijnvv.png",
+    "videoUrl": "https://www.youtube.com/watch?v=-1K0m5ywRcY",
+    "type": "Shoulders",
+    "muscleGroups": [
+      {
+        "name": "Shoulders",
+        "imageUrl": "https://res.cloudinary.com/dplgyvrof/image/upload/v1774613350/Bench-Press-Muscle-work-300x300_mey4w1.webp"
+      }
+    ]
+  },
+  {
+    "name": "Standing Reach Up Back rotation Stretch",
+    "mainImage": "https://res.cloudinary.com/dhokfcxag/image/upload/v1774633428/fitness_exercises/067_Standing_Reach_Up_Back_rotation_Stretch_wfgv4c.png",
+    "videoUrl": "https://www.youtube.com/watch?v=LS4-CU0r8Kw",
+    "type": "Shoulders",
+    "muscleGroups": [
+      {
+        "name": "Shoulders",
+        "imageUrl": "https://res.cloudinary.com/dplgyvrof/image/upload/v1774613350/Bench-Press-Muscle-work-300x300_mey4w1.webp"
+      }
+    ]
+  },
+  {
+    "name": "Shoulder Stretch Behind The Back",
+    "mainImage": "https://res.cloudinary.com/dhokfcxag/image/upload/v1774633430/fitness_exercises/068_Shoulder_Stretch_Behind_The_Back_rgbaor.png",
+    "videoUrl": "https://www.youtube.com/watch?v=UXorkTzXClY",
+    "type": "Shoulders",
+    "muscleGroups": [
+      {
+        "name": "Shoulders",
+        "imageUrl": "https://res.cloudinary.com/dplgyvrof/image/upload/v1774613350/Bench-Press-Muscle-work-300x300_mey4w1.webp"
+      }
+    ]
+  },
+  {
+    "name": "Incline Dumbbell Side Lateral Raise",
+    "mainImage": "https://res.cloudinary.com/dhokfcxag/image/upload/v1774633431/fitness_exercises/069_Incline_Dumbbell_Side_Lateral_Raise_wgonj9.png",
+    "videoUrl": "https://www.youtube.com/watch?v=z3PRz2aVA10",
+    "type": "Shoulders",
+    "muscleGroups": [
+      {
+        "name": "Shoulders",
+        "imageUrl": "https://res.cloudinary.com/dplgyvrof/image/upload/v1774613350/Bench-Press-Muscle-work-300x300_mey4w1.webp"
+      }
+    ]
+  },
+  {
+    "name": "Dumbbell Side Lying Rear Delt Raise",
+    "mainImage": "https://res.cloudinary.com/dhokfcxag/image/upload/v1774633433/fitness_exercises/070_Dumbbell_Side_Lying_Rear_Delt_Raise_cz8ygz.png",
+    "videoUrl": "https://www.youtube.com/watch?v=Ed4TXV54neI",
+    "type": "Shoulders",
+    "muscleGroups": [
+      {
+        "name": "Shoulders",
+        "imageUrl": "https://res.cloudinary.com/dplgyvrof/image/upload/v1774613350/Bench-Press-Muscle-work-300x300_mey4w1.webp"
+      }
+    ]
+  },
+  {
+    "name": "Lying Cable Reverse Fly",
+    "mainImage": "https://res.cloudinary.com/dhokfcxag/image/upload/v1774633434/fitness_exercises/071_Lying_Cable_Reverse_Fly_rveipz.png",
+    "videoUrl": "https://www.youtube.com/watch?v=IloCYmYWayM",
+    "type": "Shoulders",
+    "muscleGroups": [
+      {
+        "name": "Shoulders",
+        "imageUrl": "https://res.cloudinary.com/dplgyvrof/image/upload/v1774613350/Bench-Press-Muscle-work-300x300_mey4w1.webp"
+      }
+    ]
+  },
+  {
+    "name": "Single Arm Circles",
+    "mainImage": "https://res.cloudinary.com/dhokfcxag/image/upload/v1774633435/fitness_exercises/072_Single_Arm_Circles_pbki2d.png",
+    "videoUrl": "https://www.youtube.com/watch?v=_3g-LcRVJLA",
+    "type": "Shoulders",
+    "muscleGroups": [
+      {
+        "name": "Shoulders",
+        "imageUrl": "https://res.cloudinary.com/dplgyvrof/image/upload/v1774613350/Bench-Press-Muscle-work-300x300_mey4w1.webp"
+      }
+    ]
+  },
+  {
+    "name": "Dumbbell Lateral to Front Raise",
+    "mainImage": "https://res.cloudinary.com/dhokfcxag/image/upload/v1774633437/fitness_exercises/073_Dumbbell_Lateral_to_Front_Raise_jz4bey.png",
+    "videoUrl": "https://www.youtube.com/watch?v=SqTLytmDy_8",
+    "type": "Shoulders",
+    "muscleGroups": [
+      {
+        "name": "Shoulders",
+        "imageUrl": "https://res.cloudinary.com/dplgyvrof/image/upload/v1774613350/Bench-Press-Muscle-work-300x300_mey4w1.webp"
+      }
+    ]
+  },
+  {
+    "name": "One-Arm Bent Over Cable Lateral Raise",
+    "mainImage": "https://res.cloudinary.com/dhokfcxag/image/upload/v1774633438/fitness_exercises/074_One_Arm_Bent_Over_Cable_Lateral_Raise_aqantj.png",
+    "videoUrl": "https://www.youtube.com/watch?v=KenChC0j_fw",
+    "type": "Shoulders",
+    "muscleGroups": [
+      {
+        "name": "Shoulders",
+        "imageUrl": "https://res.cloudinary.com/dplgyvrof/image/upload/v1774613350/Bench-Press-Muscle-work-300x300_mey4w1.webp"
+      }
+    ]
+  },
+  {
+    "name": "Handstand Push-Up",
+    "mainImage": "https://res.cloudinary.com/dhokfcxag/image/upload/v1774633440/fitness_exercises/075_Handstand_Push_Up_zdiytn.png",
+    "videoUrl": "https://www.youtube.com/watch?v=BeGUXwZmATQ",
+    "type": "Shoulders",
+    "muscleGroups": [
+      {
+        "name": "Shoulders",
+        "imageUrl": "https://res.cloudinary.com/dplgyvrof/image/upload/v1774613350/Bench-Press-Muscle-work-300x300_mey4w1.webp"
+      }
+    ]
+  },
+  {
+    "name": "EZ Bar Underhand Press",
+    "mainImage": "https://res.cloudinary.com/dhokfcxag/image/upload/v1774633442/fitness_exercises/076_EZ_Bar_Underhand_Press_sdcigh.png",
+    "videoUrl": "https://www.youtube.com/watch?v=GdYAvmF8C3Y",
+    "type": "Shoulders",
+    "muscleGroups": [
+      {
+        "name": "Shoulders",
+        "imageUrl": "https://res.cloudinary.com/dplgyvrof/image/upload/v1774613350/Bench-Press-Muscle-work-300x300_mey4w1.webp"
+      }
+    ]
+  },
+  {
+    "name": "Dumbbell Lying External Shoulder Rotation",
+    "mainImage": "https://res.cloudinary.com/dhokfcxag/image/upload/v1774633443/fitness_exercises/077_Dumbbell_Lying_External_Shoulder_Rotation_dgp6vp.png",
+    "videoUrl": "https://www.youtube.com/watch?v=20v3G-odF5c",
+    "type": "Shoulders",
+    "muscleGroups": [
+      {
+        "name": "Shoulders",
+        "imageUrl": "https://res.cloudinary.com/dplgyvrof/image/upload/v1774613350/Bench-Press-Muscle-work-300x300_mey4w1.webp"
+      }
+    ]
+  },
+  {
+    "name": "Incline Dumbbell Reverse Fly",
+    "mainImage": "https://res.cloudinary.com/dhokfcxag/image/upload/v1774633445/fitness_exercises/078_Incline_Dumbbell_Reverse_Fly_as4eex.png",
+    "videoUrl": "https://www.youtube.com/watch?v=bMD474hAjDE",
+    "type": "Shoulders",
+    "muscleGroups": [
+      {
+        "name": "Shoulders",
+        "imageUrl": "https://res.cloudinary.com/dplgyvrof/image/upload/v1774613350/Bench-Press-Muscle-work-300x300_mey4w1.webp"
+      }
+    ]
+  },
+  {
+    "name": "Incline Dumbbell Y-Raise",
+    "mainImage": "https://res.cloudinary.com/dhokfcxag/image/upload/v1774633446/fitness_exercises/079_Incline_Dumbbell_Y_Raise_djc97s.png",
+    "videoUrl": "https://www.youtube.com/watch?v=KdE7jt94zWs",
+    "type": "Shoulders",
+    "muscleGroups": [
+      {
+        "name": "Shoulders",
+        "imageUrl": "https://res.cloudinary.com/dplgyvrof/image/upload/v1774613350/Bench-Press-Muscle-work-300x300_mey4w1.webp"
+      }
+    ]
+  },
+  {
+    "name": "Dumbbell Incline T-Raise",
+    "mainImage": "https://res.cloudinary.com/dhokfcxag/image/upload/v1774633449/fitness_exercises/080_Dumbbell_Incline_T_Raise_evjs82.png",
+    "videoUrl": "https://www.youtube.com/watch?v=qanhbYrvX_c",
+    "type": "Shoulders",
+    "muscleGroups": [
+      {
+        "name": "Shoulders",
+        "imageUrl": "https://res.cloudinary.com/dplgyvrof/image/upload/v1774613350/Bench-Press-Muscle-work-300x300_mey4w1.webp"
+      }
+    ]
+  },
+  {
+    "name": "Bench Supported Dumbbell External Rotation",
+    "mainImage": "https://res.cloudinary.com/dhokfcxag/image/upload/v1774633451/fitness_exercises/081_Bench_Supported_Dumbbell_External_Rotation_mpqa9f.png",
+    "videoUrl": "https://www.youtube.com/watch?v=5ey0IeXdZS4",
+    "type": "Shoulders",
+    "muscleGroups": [
+      {
+        "name": "Shoulders",
+        "imageUrl": "https://res.cloudinary.com/dplgyvrof/image/upload/v1774613350/Bench-Press-Muscle-work-300x300_mey4w1.webp"
+      }
+    ]
+  },
+  {
+    "name": "Dumbbell Seated Bent Over Rear Delt Row",
+    "mainImage": "https://res.cloudinary.com/dhokfcxag/image/upload/v1774633453/fitness_exercises/082_Dumbbell_Seated_Bent_Over_Rear_Delt_Row_u0cmtg.png",
+    "videoUrl": "https://www.youtube.com/watch?v=p1yQnTNE808",
+    "type": "Shoulders",
+    "muscleGroups": [
+      {
+        "name": "Shoulders",
+        "imageUrl": "https://res.cloudinary.com/dplgyvrof/image/upload/v1774613350/Bench-Press-Muscle-work-300x300_mey4w1.webp"
+      }
+    ]
+  },
+  {
+    "name": "Dumbbell Standing Palms In Press",
+    "mainImage": "https://res.cloudinary.com/dhokfcxag/image/upload/v1774633455/fitness_exercises/083_Dumbbell_Standing_Palms_In_Press_fh5vx5.png",
+    "videoUrl": "https://www.youtube.com/watch?v=PJAjYua1pGo",
+    "type": "Shoulders",
+    "muscleGroups": [
+      {
+        "name": "Shoulders",
+        "imageUrl": "https://res.cloudinary.com/dplgyvrof/image/upload/v1774613350/Bench-Press-Muscle-work-300x300_mey4w1.webp"
+      }
+    ]
+  },
+  {
+    "name": "Lying Shoulder Press",
+    "mainImage": "https://res.cloudinary.com/dhokfcxag/image/upload/v1774633457/fitness_exercises/084_Lying_Shoulder_Press_zqwvgz.png",
+    "videoUrl": "https://www.youtube.com/watch?v=d639tQ26_q8",
+    "type": "Shoulders",
+    "muscleGroups": [
+      {
+        "name": "Shoulders",
+        "imageUrl": "https://res.cloudinary.com/dplgyvrof/image/upload/v1774613350/Bench-Press-Muscle-work-300x300_mey4w1.webp"
+      }
+    ]
+  },
+  {
+    "name": "Dumbbell Rear Delt Row",
+    "mainImage": "https://res.cloudinary.com/dhokfcxag/image/upload/v1774633458/fitness_exercises/085_Dumbbell_Rear_Delt_Row_ifuoib.png",
+    "videoUrl": "https://www.youtube.com/watch?v=65gMtswVB1c",
+    "type": "Shoulders",
+    "muscleGroups": [
+      {
+        "name": "Shoulders",
+        "imageUrl": "https://res.cloudinary.com/dplgyvrof/image/upload/v1774613350/Bench-Press-Muscle-work-300x300_mey4w1.webp"
+      }
+    ]
+  },
+  {
+    "name": "Lever Lateral Raise",
+    "mainImage": "https://res.cloudinary.com/dhokfcxag/image/upload/v1774633459/fitness_exercises/086_Lever_Lateral_Raise_oxaeie.png",
+    "videoUrl": "https://www.youtube.com/watch?v=NNAs8jx_zJI",
+    "type": "Shoulders",
+    "muscleGroups": [
+      {
+        "name": "Shoulders",
+        "imageUrl": "https://res.cloudinary.com/dplgyvrof/image/upload/v1774613350/Bench-Press-Muscle-work-300x300_mey4w1.webp"
+      }
+    ]
+  },
+  {
+    "name": "Kettlebell One-Arm Military Press",
+    "mainImage": "https://res.cloudinary.com/dhokfcxag/image/upload/v1774633461/fitness_exercises/087_Kettlebell_One_Arm_Military_Press_jxprqx.png",
+    "videoUrl": "https://www.youtube.com/watch?v=7erxS5cebhU",
+    "type": "Shoulders",
+    "muscleGroups": [
+      {
+        "name": "Shoulders",
+        "imageUrl": "https://res.cloudinary.com/dplgyvrof/image/upload/v1774613350/Bench-Press-Muscle-work-300x300_mey4w1.webp"
+      }
+    ]
+  },
+  {
+    "name": "Kettlebell Split Snatch",
+    "mainImage": "https://res.cloudinary.com/dhokfcxag/image/upload/v1774633462/fitness_exercises/088_Kettlebell_Split_Snatch_yrordf.png",
+    "videoUrl": "https://www.youtube.com/watch?v=AMu5WiklIgA",
+    "type": "Shoulders",
+    "muscleGroups": [
+      {
+        "name": "Shoulders",
+        "imageUrl": "https://res.cloudinary.com/dplgyvrof/image/upload/v1774613350/Bench-Press-Muscle-work-300x300_mey4w1.webp"
+      }
+    ]
+  },
+  {
+    "name": "Kettlebell Windmill",
+    "mainImage": "https://res.cloudinary.com/dhokfcxag/image/upload/v1774633464/fitness_exercises/089_Kettlebell_Windmill_r4on7n.png",
+    "videoUrl": "https://www.youtube.com/watch?v=q8K_Wg8OuV4",
+    "type": "Shoulders",
+    "muscleGroups": [
+      {
+        "name": "Shoulders",
+        "imageUrl": "https://res.cloudinary.com/dplgyvrof/image/upload/v1774613350/Bench-Press-Muscle-work-300x300_mey4w1.webp"
+      }
+    ]
+  },
+  {
+    "name": "Kettlebell Swings",
+    "mainImage": "https://res.cloudinary.com/dhokfcxag/image/upload/v1774633466/fitness_exercises/090_Kettlebell_Swings_nvhnei.png",
+    "videoUrl": "https://www.youtube.com/watch?v=DqkYuWR4zRI",
+    "type": "Shoulders",
+    "muscleGroups": [
+      {
+        "name": "Shoulders",
+        "imageUrl": "https://res.cloudinary.com/dplgyvrof/image/upload/v1774613350/Bench-Press-Muscle-work-300x300_mey4w1.webp"
+      }
+    ]
+  },
+  {
+    "name": "Kettlebell Arnold Press",
+    "mainImage": "https://res.cloudinary.com/dhokfcxag/image/upload/v1774633467/fitness_exercises/091_Kettlebell_Arnold_Press_dabja9.png",
+    "videoUrl": "https://www.youtube.com/watch?v=wlNQI2PvppA",
+    "type": "Shoulders",
+    "muscleGroups": [
+      {
+        "name": "Shoulders",
+        "imageUrl": "https://res.cloudinary.com/dplgyvrof/image/upload/v1774613350/Bench-Press-Muscle-work-300x300_mey4w1.webp"
+      }
+    ]
+  },
+  {
+    "name": "Bent Over Rear Delt Fly | Gymstick",
+    "mainImage": "https://res.cloudinary.com/dhokfcxag/image/upload/v1774633468/fitness_exercises/092_Bent_Over_Rear_Delt_Fly_Gymstick_j9f8er.png",
+    "videoUrl": "https://www.youtube.com/watch?v=3gJXpfwg_go",
+    "type": "Shoulders",
+    "muscleGroups": [
+      {
+        "name": "Shoulders",
+        "imageUrl": "https://res.cloudinary.com/dplgyvrof/image/upload/v1774613350/Bench-Press-Muscle-work-300x300_mey4w1.webp"
+      }
+    ]
+  },
+  {
+    "name": "Cable Seated Shoulder Internal Rotation",
+    "mainImage": "https://res.cloudinary.com/dhokfcxag/image/upload/v1774633470/fitness_exercises/093_Cable_Seated_Shoulder_Internal_Rotation_hd17if.png",
+    "videoUrl": "https://www.youtube.com/watch?v=MoN4CA17t6g",
+    "type": "Shoulders",
+    "muscleGroups": [
+      {
+        "name": "Shoulders",
+        "imageUrl": "https://res.cloudinary.com/dplgyvrof/image/upload/v1774613350/Bench-Press-Muscle-work-300x300_mey4w1.webp"
+      }
+    ]
+  },
+  {
+    "name": "Half Kneeling Cable External Rotation",
+    "mainImage": "https://res.cloudinary.com/dhokfcxag/image/upload/v1774633471/fitness_exercises/094_Half_Kneeling_Cable_External_Rotation_oekwi6.png",
+    "videoUrl": "https://www.youtube.com/watch?v=hVssGGPPAo4",
+    "type": "Shoulders",
+    "muscleGroups": [
+      {
+        "name": "Shoulders",
+        "imageUrl": "https://res.cloudinary.com/dplgyvrof/image/upload/v1774613350/Bench-Press-Muscle-work-300x300_mey4w1.webp"
+      }
+    ]
+  },
+  {
+    "name": "Landmine Lateral Raise",
+    "mainImage": "https://res.cloudinary.com/dhokfcxag/image/upload/v1774633472/fitness_exercises/095_Landmine_Lateral_Raise_vfdkfa.png",
+    "videoUrl": "https://www.youtube.com/watch?v=vY6qbDL_Crk",
+    "type": "Shoulders",
+    "muscleGroups": [
+      {
+        "name": "Shoulders",
+        "imageUrl": "https://res.cloudinary.com/dplgyvrof/image/upload/v1774613350/Bench-Press-Muscle-work-300x300_mey4w1.webp"
+      }
+    ]
+  },
+  {
+    "name": "Seated Dumbbell Front Raise",
+    "mainImage": "https://res.cloudinary.com/dhokfcxag/image/upload/v1774633474/fitness_exercises/096_Seated_Dumbbell_Front_Raise_jbevgb.png",
+    "videoUrl": "https://www.youtube.com/watch?v=544cc62VKGE",
+    "type": "Shoulders",
+    "muscleGroups": [
+      {
+        "name": "Shoulders",
+        "imageUrl": "https://res.cloudinary.com/dplgyvrof/image/upload/v1774613350/Bench-Press-Muscle-work-300x300_mey4w1.webp"
+      }
+    ]
+  },
+  {
+    "name": "Scapular Protraction and Retraction",
+    "mainImage": "https://res.cloudinary.com/dhokfcxag/image/upload/v1774633475/fitness_exercises/097_Scapular_Protraction_and_Retraction_qbz2ut.png",
+    "videoUrl": "https://www.youtube.com/watch?v=0mSAeOOaAuc",
+    "type": "Shoulders",
+    "muscleGroups": [
+      {
+        "name": "Shoulders",
+        "imageUrl": "https://res.cloudinary.com/dplgyvrof/image/upload/v1774613350/Bench-Press-Muscle-work-300x300_mey4w1.webp"
+      }
+    ]
+  },
+  {
+    "name": "One Arm Kettlebell Snatch",
+    "mainImage": "https://res.cloudinary.com/dhokfcxag/image/upload/v1774633477/fitness_exercises/098_One_Arm_Kettlebell_Snatch_whsevv.png",
+    "videoUrl": "https://www.youtube.com/watch?v=elzIpYSLVnA",
+    "type": "Shoulders",
+    "muscleGroups": [
+      {
+        "name": "Shoulders",
+        "imageUrl": "https://res.cloudinary.com/dplgyvrof/image/upload/v1774613350/Bench-Press-Muscle-work-300x300_mey4w1.webp"
+      }
+    ]
+  },
+  {
+    "name": "Cross Cable Face Pull",
+    "mainImage": "https://res.cloudinary.com/dhokfcxag/image/upload/v1774633479/fitness_exercises/099_Cross_Cable_Face_Pull_dms8wa.png",
+    "videoUrl": "https://www.youtube.com/watch?v=0Po47vvj9g4",
+    "type": "Shoulders",
+    "muscleGroups": [
+      {
+        "name": "Shoulders",
+        "imageUrl": "https://res.cloudinary.com/dplgyvrof/image/upload/v1774613350/Bench-Press-Muscle-work-300x300_mey4w1.webp"
+      }
+    ]
+  },
+  {
+    "name": "One Arm Landmine Row",
+    "mainImage": "https://res.cloudinary.com/dhokfcxag/image/upload/v1774633480/fitness_exercises/100_One_Arm_Landmine_Row_lss8xr.png",
+    "videoUrl": "https://www.youtube.com/watch?v=eEA6JNbT5FY",
+    "type": "Shoulders",
+    "muscleGroups": [
+      {
+        "name": "Shoulders",
+        "imageUrl": "https://res.cloudinary.com/dplgyvrof/image/upload/v1774613350/Bench-Press-Muscle-work-300x300_mey4w1.webp"
+      }
+    ]
+  },
+  {
+    "name": "Resistance Band Seated Shoulder Press",
+    "mainImage": "https://res.cloudinary.com/dhokfcxag/image/upload/v1774633482/fitness_exercises/101_Resistance_Band_Seated_Shoulder_Press_q6h2pe.png",
+    "videoUrl": "https://www.youtube.com/watch?v=ERezv55RUPg",
+    "type": "Shoulders",
+    "muscleGroups": [
+      {
+        "name": "Shoulders",
+        "imageUrl": "https://res.cloudinary.com/dplgyvrof/image/upload/v1774613350/Bench-Press-Muscle-work-300x300_mey4w1.webp"
+      }
+    ]
+  },
+  {
+    "name": "Bench Pike Push-up",
+    "mainImage": "https://res.cloudinary.com/dhokfcxag/image/upload/v1774633483/fitness_exercises/102_Bench_Pike_Push_up_j0zeca.png",
+    "videoUrl": "https://www.youtube.com/watch?v=TkgozuSg9VQ",
+    "type": "Shoulders",
+    "muscleGroups": [
+      {
+        "name": "Shoulders",
+        "imageUrl": "https://res.cloudinary.com/dplgyvrof/image/upload/v1774613350/Bench-Press-Muscle-work-300x300_mey4w1.webp"
+      }
+    ]
+  },
+  {
+    "name": "Pike Push-up",
+    "mainImage": "https://res.cloudinary.com/dhokfcxag/image/upload/v1774633485/fitness_exercises/103_Pike_Push_up_iiy3lz.png",
+    "videoUrl": "https://www.youtube.com/watch?v=VnQU_lLBFW0",
+    "type": "Shoulders",
+    "muscleGroups": [
+      {
+        "name": "Shoulders",
+        "imageUrl": "https://res.cloudinary.com/dplgyvrof/image/upload/v1774613350/Bench-Press-Muscle-work-300x300_mey4w1.webp"
+      }
+    ]
+  },
+  {
+    "name": "Tall Kneeling One Arm Kettlebell Press",
+    "mainImage": "https://res.cloudinary.com/dhokfcxag/image/upload/v1774633486/fitness_exercises/104_Tall_Kneeling_One_Arm_Kettlebell_Press_bihxbt.png",
+    "videoUrl": "https://www.youtube.com/watch?v=1KTVxJcUB3k",
+    "type": "Shoulders",
+    "muscleGroups": [
+      {
+        "name": "Shoulders",
+        "imageUrl": "https://res.cloudinary.com/dplgyvrof/image/upload/v1774613350/Bench-Press-Muscle-work-300x300_mey4w1.webp"
+      }
+    ]
+  },
+  {
+    "name": "Kettlebell Clean and Jerk",
+    "mainImage": "https://res.cloudinary.com/dhokfcxag/image/upload/v1774633488/fitness_exercises/105_Kettlebell_Clean_and_Jerk_wo7gvi.png",
+    "videoUrl": "https://www.youtube.com/watch?v=CF967_SBPSM",
+    "type": "Shoulders",
+    "muscleGroups": [
+      {
+        "name": "Shoulders",
+        "imageUrl": "https://res.cloudinary.com/dplgyvrof/image/upload/v1774613350/Bench-Press-Muscle-work-300x300_mey4w1.webp"
+      }
+    ]
+  },
+  {
+    "name": "Full Range Of Motion Lat Pulldown",
+    "mainImage": "https://res.cloudinary.com/dhokfcxag/image/upload/v1774633489/fitness_exercises/106_Full_Range_Of_Motion_Lat_Pulldown_cbmcga.png",
+    "videoUrl": "https://www.youtube.com/watch?v=8Wv1l90lNIE",
+    "type": "Shoulders",
+    "muscleGroups": [
+      {
+        "name": "Shoulders",
+        "imageUrl": "https://res.cloudinary.com/dplgyvrof/image/upload/v1774613350/Bench-Press-Muscle-work-300x300_mey4w1.webp"
+      }
+    ]
+  },
+  {
+    "name": "Lever Shoulder Press (Hammer Grip)",
+    "mainImage": "https://res.cloudinary.com/dhokfcxag/image/upload/v1774633490/fitness_exercises/107_Lever_Shoulder_Press_Hammer_Grip__mbgpif.png",
+    "videoUrl": "https://www.youtube.com/watch?v=_DRQ2ZRtC3I",
+    "type": "Shoulders",
+    "muscleGroups": [
+      {
+        "name": "Shoulders",
+        "imageUrl": "https://res.cloudinary.com/dplgyvrof/image/upload/v1774613350/Bench-Press-Muscle-work-300x300_mey4w1.webp"
+      }
+    ]
+  },
+  {
+    "name": "Dumbbell Lying Rear Lateral Raise",
+    "mainImage": "https://res.cloudinary.com/dhokfcxag/image/upload/v1774633492/fitness_exercises/108_Dumbbell_Lying_Rear_Lateral_Raise_ycyakg.png",
+    "videoUrl": "https://www.youtube.com/watch?v=iaG4yUMlDVg",
+    "type": "Shoulders",
+    "muscleGroups": [
+      {
+        "name": "Shoulders",
+        "imageUrl": "https://res.cloudinary.com/dplgyvrof/image/upload/v1774613350/Bench-Press-Muscle-work-300x300_mey4w1.webp"
+      }
+    ]
+  },
+  {
+    "name": "Lever Reverse Shoulder Press",
+    "mainImage": "https://res.cloudinary.com/dhokfcxag/image/upload/v1774633493/fitness_exercises/109_Lever_Reverse_Shoulder_Press_mwzvor.png",
+    "videoUrl": "https://www.youtube.com/watch?v=XwhVcReEDsM",
+    "type": "Shoulders",
+    "muscleGroups": [
+      {
+        "name": "Shoulders",
+        "imageUrl": "https://res.cloudinary.com/dplgyvrof/image/upload/v1774613350/Bench-Press-Muscle-work-300x300_mey4w1.webp"
+      }
+    ]
+  },
+  {
+    "name": "Side Lying Rear Delt Dumbbell Raise",
+    "mainImage": "https://res.cloudinary.com/dhokfcxag/image/upload/v1774633494/fitness_exercises/110_Side_Lying_Rear_Delt_Dumbbell_Raise_mkmkzi.png",
+    "videoUrl": "https://www.youtube.com/watch?v=XyPvULdVYzM",
+    "type": "Shoulders",
+    "muscleGroups": [
+      {
+        "name": "Shoulders",
+        "imageUrl": "https://res.cloudinary.com/dplgyvrof/image/upload/v1774613350/Bench-Press-Muscle-work-300x300_mey4w1.webp"
+      }
+    ]
+  },
+  {
+    "name": "Scapula Dips",
+    "mainImage": "https://res.cloudinary.com/dhokfcxag/image/upload/v1774633496/fitness_exercises/111_Scapula_Dips_lprixa.png",
+    "videoUrl": "https://www.youtube.com/watch?v=Af4x8-N1a8E",
+    "type": "Shoulders",
+    "muscleGroups": [
+      {
+        "name": "Shoulders",
+        "imageUrl": "https://res.cloudinary.com/dplgyvrof/image/upload/v1774613350/Bench-Press-Muscle-work-300x300_mey4w1.webp"
+      }
+    ]
+  },
+  {
+    "name": "Ez-Bar Incline Front Raise",
+    "mainImage": "https://res.cloudinary.com/dhokfcxag/image/upload/v1774633497/fitness_exercises/112_Ez_Bar_Incline_Front_Raise_taavvi.png",
+    "videoUrl": "https://www.youtube.com/watch?v=OGtgwydRSxs",
+    "type": "Shoulders",
+    "muscleGroups": [
+      {
+        "name": "Shoulders",
+        "imageUrl": "https://res.cloudinary.com/dplgyvrof/image/upload/v1774613350/Bench-Press-Muscle-work-300x300_mey4w1.webp"
+      }
+    ]
+  },
+  {
+    "name": "Back Lever",
+    "mainImage": "https://res.cloudinary.com/dhokfcxag/image/upload/v1774633499/fitness_exercises/113_Back_Lever_nweter.png",
+    "videoUrl": "https://www.youtube.com/watch?v=HXaG8mJmSnU",
+    "type": "Shoulders",
+    "muscleGroups": [
+      {
+        "name": "Shoulders",
+        "imageUrl": "https://res.cloudinary.com/dplgyvrof/image/upload/v1774613350/Bench-Press-Muscle-work-300x300_mey4w1.webp"
+      }
+    ]
+  },
+  {
+    "name": "Barbell Front Raise Twist",
+    "mainImage": "https://res.cloudinary.com/dhokfcxag/image/upload/v1774633501/fitness_exercises/114_Barbell_Front_Raise_Twist_gkd8ul.png",
+    "videoUrl": "https://www.youtube.com/watch?v=Jy9roYLSK7w",
+    "type": "Shoulders",
+    "muscleGroups": [
+      {
+        "name": "Shoulders",
+        "imageUrl": "https://res.cloudinary.com/dplgyvrof/image/upload/v1774613350/Bench-Press-Muscle-work-300x300_mey4w1.webp"
+      }
+    ]
+  },
+  {
+    "name": "Kettlebell Shoulder Press",
+    "mainImage": "https://res.cloudinary.com/dhokfcxag/image/upload/v1774633502/fitness_exercises/115_Kettlebell_Shoulder_Press_ckaaze.png",
+    "videoUrl": "https://www.youtube.com/watch?v=ykyeHMRKQPU",
+    "type": "Shoulders",
+    "muscleGroups": [
+      {
+        "name": "Shoulders",
+        "imageUrl": "https://res.cloudinary.com/dplgyvrof/image/upload/v1774613350/Bench-Press-Muscle-work-300x300_mey4w1.webp"
+      }
+    ]
+  },
+  {
+    "name": "Wall-Supported Handstand Push-Ups",
+    "mainImage": "https://res.cloudinary.com/dhokfcxag/image/upload/v1774633503/fitness_exercises/116_Wall_Supported_Handstand_Push_Ups_rm4fup.png",
+    "videoUrl": "https://www.youtube.com/watch?v=CusS-MZGQOk",
+    "type": "Shoulders",
+    "muscleGroups": [
+      {
+        "name": "Shoulders",
+        "imageUrl": "https://res.cloudinary.com/dplgyvrof/image/upload/v1774613350/Bench-Press-Muscle-work-300x300_mey4w1.webp"
+      }
+    ]
+  },
+  {
+    "name": "Towel Shoulder Stretch",
+    "mainImage": "https://res.cloudinary.com/dhokfcxag/image/upload/v1774633506/fitness_exercises/117_Towel_Shoulder_Stretch_bx8ru3.png",
+    "videoUrl": "https://www.youtube.com/watch?v=omeww85Mhkw",
+    "type": "Shoulders",
+    "muscleGroups": [
+      {
+        "name": "Shoulders",
+        "imageUrl": "https://res.cloudinary.com/dplgyvrof/image/upload/v1774613350/Bench-Press-Muscle-work-300x300_mey4w1.webp"
+      }
+    ]
+  },
+  {
+    "name": "Kettlebell Thruster",
+    "mainImage": "https://res.cloudinary.com/dhokfcxag/image/upload/v1774633507/fitness_exercises/118_Kettlebell_Thruster_jwzvls.png",
+    "videoUrl": "https://www.youtube.com/watch?v=is3SP_5TW8Q",
+    "type": "Shoulders",
+    "muscleGroups": [
+      {
+        "name": "Shoulders",
+        "imageUrl": "https://res.cloudinary.com/dplgyvrof/image/upload/v1774613350/Bench-Press-Muscle-work-300x300_mey4w1.webp"
+      }
+    ]
+  },
+  {
+    "name": "One Arm Dumbbell Snatch",
+    "mainImage": "https://res.cloudinary.com/dhokfcxag/image/upload/v1774633509/fitness_exercises/119_One_Arm_Dumbbell_Snatch_mradg3.png",
+    "videoUrl": "https://www.youtube.com/watch?v=xA_DpewzL7c",
+    "type": "Shoulders",
+    "muscleGroups": [
+      {
+        "name": "Shoulders",
+        "imageUrl": "https://res.cloudinary.com/dplgyvrof/image/upload/v1774613350/Bench-Press-Muscle-work-300x300_mey4w1.webp"
+      }
+    ]
+  },
+  {
+    "name": "Band Front Lateral Raise",
+    "mainImage": "https://res.cloudinary.com/dhokfcxag/image/upload/v1774633510/fitness_exercises/120_Band_Front_Lateral_Raise_j9berh.png",
+    "videoUrl": "https://www.youtube.com/watch?v=yfNg5sFndbw",
+    "type": "Shoulders",
+    "muscleGroups": [
+      {
+        "name": "Shoulders",
+        "imageUrl": "https://res.cloudinary.com/dplgyvrof/image/upload/v1774613350/Bench-Press-Muscle-work-300x300_mey4w1.webp"
+      }
+    ]
+  },
+  {
+    "name": "Shoulder Pendulum",
+    "mainImage": "https://res.cloudinary.com/dhokfcxag/image/upload/v1774633512/fitness_exercises/121_Shoulder_Pendulum_pahkpn.png",
+    "videoUrl": "https://www.youtube.com/watch?v=zY5nq68IxwA",
+    "type": "Shoulders",
+    "muscleGroups": [
+      {
+        "name": "Shoulders",
+        "imageUrl": "https://res.cloudinary.com/dplgyvrof/image/upload/v1774613350/Bench-Press-Muscle-work-300x300_mey4w1.webp"
+      }
+    ]
+  },
+  {
+    "name": "90-Degree Cable External Rotation",
+    "mainImage": "https://res.cloudinary.com/dhokfcxag/image/upload/v1774633513/fitness_exercises/122_90_Degree_Cable_External_Rotation_lk7voi.png",
+    "videoUrl": "https://www.youtube.com/watch?v=2Zy07ygEAko",
+    "type": "Shoulders",
+    "muscleGroups": [
+      {
+        "name": "Shoulders",
+        "imageUrl": "https://res.cloudinary.com/dplgyvrof/image/upload/v1774613350/Bench-Press-Muscle-work-300x300_mey4w1.webp"
+      }
+    ]
+  },
+  {
+    "name": "90-degree Cable Internal Rotation",
+    "mainImage": "https://res.cloudinary.com/dhokfcxag/image/upload/v1774633515/fitness_exercises/123_90_degree_Cable_Internal_Rotation_fge6wh.png",
+    "videoUrl": "https://www.youtube.com/watch?v=FGtFChtUcVY",
+    "type": "Shoulders",
+    "muscleGroups": [
+      {
+        "name": "Shoulders",
+        "imageUrl": "https://res.cloudinary.com/dplgyvrof/image/upload/v1774613350/Bench-Press-Muscle-work-300x300_mey4w1.webp"
+      }
+    ]
+  },
+  {
+    "name": "Seated Ballerina Exercise",
+    "mainImage": "https://res.cloudinary.com/dhokfcxag/image/upload/v1774633516/fitness_exercises/124_Seated_Ballerina_Exercise_vvbu5x.png",
+    "videoUrl": "https://www.youtube.com/watch?v=rwWllKGLngY",
+    "type": "Shoulders",
+    "muscleGroups": [
+      {
+        "name": "Shoulders",
+        "imageUrl": "https://res.cloudinary.com/dplgyvrof/image/upload/v1774613350/Bench-Press-Muscle-work-300x300_mey4w1.webp"
+      }
+    ]
+  },
+  {
+    "name": "Seated Scapular Retraction Exercise",
+    "mainImage": "https://res.cloudinary.com/dhokfcxag/image/upload/v1774633518/fitness_exercises/125_Seated_Scapular_Retraction_Exercise_matofh.png",
+    "videoUrl": "https://www.youtube.com/watch?v=Bw88PXaGUxU",
+    "type": "Shoulders",
+    "muscleGroups": [
+      {
+        "name": "Shoulders",
+        "imageUrl": "https://res.cloudinary.com/dplgyvrof/image/upload/v1774613350/Bench-Press-Muscle-work-300x300_mey4w1.webp"
+      }
+    ]
+  },
+  {
+    "name": "Foam Roller Posterior Shoulder",
+    "mainImage": "https://res.cloudinary.com/dhokfcxag/image/upload/v1774633519/fitness_exercises/126_Foam_Roller_Posterior_Shoulder_oxraso.png",
+    "videoUrl": "https://www.youtube.com/watch?v=NCYB_9HjiBU",
+    "type": "Shoulders",
+    "muscleGroups": [
+      {
+        "name": "Shoulders",
+        "imageUrl": "https://res.cloudinary.com/dplgyvrof/image/upload/v1774613350/Bench-Press-Muscle-work-300x300_mey4w1.webp"
+      }
+    ]
+  },
+  {
+    "name": "Foam Roller Front Shoulder and Chest",
+    "mainImage": "https://res.cloudinary.com/dhokfcxag/image/upload/v1774633520/fitness_exercises/127_Foam_Roller_Front_Shoulder_and_Chest_rx92yc.png",
+    "videoUrl": "https://www.youtube.com/watch?v=qC4FFlUgh4Y",
+    "type": "Shoulders",
+    "muscleGroups": [
+      {
+        "name": "Shoulders",
+        "imageUrl": "https://res.cloudinary.com/dplgyvrof/image/upload/v1774613350/Bench-Press-Muscle-work-300x300_mey4w1.webp"
+      }
+    ]
+  },
+  {
+    "name": "Rotator Cuff Stretch",
+    "mainImage": "https://res.cloudinary.com/dhokfcxag/image/upload/v1774633522/fitness_exercises/128_Rotator_Cuff_Stretch_kmh77d.png",
+    "videoUrl": "https://www.youtube.com/watch?v=luoiGpT4PJ8",
+    "type": "Shoulders",
+    "muscleGroups": [
+      {
+        "name": "Shoulders",
+        "imageUrl": "https://res.cloudinary.com/dplgyvrof/image/upload/v1774613350/Bench-Press-Muscle-work-300x300_mey4w1.webp"
+      }
+    ]
+  },
+  {
+    "name": "Assisted Reverse Stretch (Chest And Shoulder)",
+    "mainImage": "https://res.cloudinary.com/dhokfcxag/image/upload/v1774633524/fitness_exercises/129_Assisted_Reverse_Stretch_Chest_And_Shoulder__enu8sx.png",
+    "videoUrl": "https://www.youtube.com/watch?v=EzLy6rsB7Bo",
+    "type": "Shoulders",
+    "muscleGroups": [
+      {
+        "name": "Shoulders",
+        "imageUrl": "https://res.cloudinary.com/dplgyvrof/image/upload/v1774613350/Bench-Press-Muscle-work-300x300_mey4w1.webp"
+      }
+    ]
+  },
+  {
+    "name": "Lying Upper Body Rotation",
+    "mainImage": "https://res.cloudinary.com/dhokfcxag/image/upload/v1774633525/fitness_exercises/130_Lying_Upper_Body_Rotation_eqg1ze.png",
+    "videoUrl": "https://www.youtube.com/watch?v=EHZJns1bXPM",
+    "type": "Shoulders",
+    "muscleGroups": [
+      {
+        "name": "Shoulders",
+        "imageUrl": "https://res.cloudinary.com/dplgyvrof/image/upload/v1774613350/Bench-Press-Muscle-work-300x300_mey4w1.webp"
+      }
+    ]
+  },
+  {
+    "name": "Dumbbell One Arm Reverse Fly",
+    "mainImage": "https://res.cloudinary.com/dhokfcxag/image/upload/v1774633527/fitness_exercises/131_Dumbbell_One_Arm_Reverse_Fly_pksmgu.png",
+    "videoUrl": "https://www.youtube.com/watch?v=H79I92P8-iY",
+    "type": "Shoulders",
+    "muscleGroups": [
+      {
+        "name": "Shoulders",
+        "imageUrl": "https://res.cloudinary.com/dplgyvrof/image/upload/v1774613350/Bench-Press-Muscle-work-300x300_mey4w1.webp"
+      }
+    ]
+  },
+  {
+    "name": "One Arm Cable Rear Delt Fly",
+    "mainImage": "https://res.cloudinary.com/dhokfcxag/image/upload/v1774633528/fitness_exercises/132_One_Arm_Cable_Rear_Delt_Fly_knyiv1.png",
+    "videoUrl": "https://www.youtube.com/watch?v=1u4jY3v1Ams",
+    "type": "Shoulders",
+    "muscleGroups": [
+      {
+        "name": "Shoulders",
+        "imageUrl": "https://res.cloudinary.com/dplgyvrof/image/upload/v1774613350/Bench-Press-Muscle-work-300x300_mey4w1.webp"
+      }
+    ]
+  },
+  {
+    "name": "Incline Dumbbell Front Raise",
+    "mainImage": "https://res.cloudinary.com/dhokfcxag/image/upload/v1774633530/fitness_exercises/133_Incline_Dumbbell_Front_Raise_tkyofl.png",
+    "videoUrl": "https://www.youtube.com/watch?v=Xh0mGInW_No",
+    "type": "Shoulders",
+    "muscleGroups": [
+      {
+        "name": "Shoulders",
+        "imageUrl": "https://res.cloudinary.com/dplgyvrof/image/upload/v1774613350/Bench-Press-Muscle-work-300x300_mey4w1.webp"
+      }
+    ]
+  },
+  {
+    "name": "Resistance Band Lateral Raise",
+    "mainImage": "https://res.cloudinary.com/dhokfcxag/image/upload/v1774633531/fitness_exercises/134_Resistance_Band_Lateral_Raise_v5osn3.png",
+    "videoUrl": "https://www.youtube.com/watch?v=C7G-uGshV_0",
+    "type": "Shoulders",
+    "muscleGroups": [
+      {
+        "name": "Shoulders",
+        "imageUrl": "https://res.cloudinary.com/dplgyvrof/image/upload/v1774613350/Bench-Press-Muscle-work-300x300_mey4w1.webp"
+      }
+    ]
+  },
+  {
+    "name": "Resistance Band Front Raise",
+    "mainImage": "https://res.cloudinary.com/dhokfcxag/image/upload/v1774633533/fitness_exercises/135_Resistance_Band_Front_Raise_tij82l.png",
+    "videoUrl": "https://www.youtube.com/watch?v=7uunR26H1Uo",
+    "type": "Shoulders",
+    "muscleGroups": [
+      {
+        "name": "Shoulders",
+        "imageUrl": "https://res.cloudinary.com/dplgyvrof/image/upload/v1774613350/Bench-Press-Muscle-work-300x300_mey4w1.webp"
+      }
+    ]
+  },
+  {
+    "name": "Resistance Band Rear Delt Fly",
+    "mainImage": "https://res.cloudinary.com/dhokfcxag/image/upload/v1774633534/fitness_exercises/136_Resistance_Band_Rear_Delt_Fly_vaxz0y.png",
+    "videoUrl": "https://www.youtube.com/watch?v=AIsL7P19R3A",
+    "type": "Shoulders",
+    "muscleGroups": [
+      {
+        "name": "Shoulders",
+        "imageUrl": "https://res.cloudinary.com/dplgyvrof/image/upload/v1774613350/Bench-Press-Muscle-work-300x300_mey4w1.webp"
+      }
+    ]
+  },
+  {
+    "name": "Bench Press - Close Grip",
+    "mainImage": "https://res.cloudinary.com/dhokfcxag/image/upload/v1774633536/fitness_exercises/137_Bench_Press_Close_Grip_o6e4re.png",
+    "videoUrl": "https://www.youtube.com/watch?v=nEF0bv2FW94",
+    "type": "Shoulders",
+    "muscleGroups": [
+      {
+        "name": "Shoulders",
+        "imageUrl": "https://res.cloudinary.com/dplgyvrof/image/upload/v1774613350/Bench-Press-Muscle-work-300x300_mey4w1.webp"
+      }
+    ]
+  },
+  {
+    "name": "Shoulder Shrug",
+    "mainImage": "https://res.cloudinary.com/dhokfcxag/image/upload/v1774633537/fitness_exercises/138_Shoulder_Shrug_nt5vun.png",
+    "videoUrl": "https://www.youtube.com/watch?v=cJRVVxmytaM",
+    "type": "Shoulders",
+    "muscleGroups": [
+      {
+        "name": "Shoulders",
+        "imageUrl": "https://res.cloudinary.com/dplgyvrof/image/upload/v1774613350/Bench-Press-Muscle-work-300x300_mey4w1.webp"
+      }
+    ]
+  },
+  {
+    "name": "Dumbbell Shrug",
+    "mainImage": "https://res.cloudinary.com/dhokfcxag/image/upload/v1774633539/fitness_exercises/139_Dumbbell_Shrug_eebvpx.png",
+    "videoUrl": "https://www.youtube.com/watch?v=_t3lrPI6Of4",
+    "type": "Shoulders",
+    "muscleGroups": [
+      {
+        "name": "Shoulders",
+        "imageUrl": "https://res.cloudinary.com/dplgyvrof/image/upload/v1774613350/Bench-Press-Muscle-work-300x300_mey4w1.webp"
+      }
+    ]
+  },
+  {
+    "name": "Standing Barbell Shrug",
+    "mainImage": "https://res.cloudinary.com/dhokfcxag/image/upload/v1774633541/fitness_exercises/140_Standing_Barbell_Shrug_t8o29g.png",
+    "videoUrl": "https://www.youtube.com/watch?v=68E68L_T8p0",
+    "type": "Shoulders",
+    "muscleGroups": [
+      {
+        "name": "Shoulders",
+        "imageUrl": "https://res.cloudinary.com/dplgyvrof/image/upload/v1774613350/Bench-Press-Muscle-work-300x300_mey4w1.webp"
+      }
+    ]
+  },
+  {
+    "name": "Smith Machine Shrug",
+    "mainImage": "https://res.cloudinary.com/dhokfcxag/image/upload/v1774633544/fitness_exercises/141_Smith_Machine_Shrug_sk2eon.png",
+    "videoUrl": "https://www.youtube.com/watch?v=7uV_G0cT7Lw",
+    "type": "Shoulders",
+    "muscleGroups": [
+      {
+        "name": "Shoulders",
+        "imageUrl": "https://res.cloudinary.com/dplgyvrof/image/upload/v1774613350/Bench-Press-Muscle-work-300x300_mey4w1.webp"
+      }
+    ]
+  },
+  {
+    "name": "Cable Shrug",
+    "mainImage": "https://res.cloudinary.com/dhokfcxag/image/upload/v1774633545/fitness_exercises/142_Cable_Shrug_u6tue7.png",
+    "videoUrl": "https://www.youtube.com/watch?v=8V7ZkKlvMIs",
+    "type": "Shoulders",
+    "muscleGroups": [
+      {
+        "name": "Shoulders",
+        "imageUrl": "https://res.cloudinary.com/dplgyvrof/image/upload/v1774613350/Bench-Press-Muscle-work-300x300_mey4w1.webp"
+      }
+    ]
+  },
+  {
+    "name": "Behind The Back Barbell Shrug",
+    "mainImage": "https://res.cloudinary.com/dhokfcxag/image/upload/v1774633547/fitness_exercises/143_Behind_The_Back_Barbell_Shrug_e2x7b5.png",
+    "videoUrl": "https://www.youtube.com/watch?v=G6R4I2eA26A",
+    "type": "Shoulders",
+    "muscleGroups": [
+      {
+        "name": "Shoulders",
+        "imageUrl": "https://res.cloudinary.com/dplgyvrof/image/upload/v1774613350/Bench-Press-Muscle-work-300x300_mey4w1.webp"
+      }
+    ]
+  },
+  {
+    "name": "Lever Shrug",
+    "mainImage": "https://res.cloudinary.com/dhokfcxag/image/upload/v1774633548/fitness_exercises/144_Lever_Shrug_uocnly.png",
+    "videoUrl": "https://www.youtube.com/watch?v=W0-d4Ois_tM",
+    "type": "Shoulders",
+    "muscleGroups": [
+      {
+        "name": "Shoulders",
+        "imageUrl": "https://res.cloudinary.com/dplgyvrof/image/upload/v1774613350/Bench-Press-Muscle-work-300x300_mey4w1.webp"
+      }
+    ]
+  },
+  {
+    "name": "Barbell Upright Row",
+    "mainImage": "https://res.cloudinary.com/dhokfcxag/image/upload/v1774633549/fitness_exercises/145_Barbell_Upright_Row_idmxue.png",
+    "videoUrl": "https://www.youtube.com/watch?v=amCU-ziHITM",
+    "type": "Shoulders",
+    "muscleGroups": [
+      {
+        "name": "Shoulders",
+        "imageUrl": "https://res.cloudinary.com/dplgyvrof/image/upload/v1774613350/Bench-Press-Muscle-work-300x300_mey4w1.webp"
+      }
+    ]
+  },
+  {
+    "name": "Lever Upright Row",
+    "mainImage": "https://res.cloudinary.com/dhokfcxag/image/upload/v1774633551/fitness_exercises/146_Lever_Upright_Row_ayz0un.png",
+    "videoUrl": "https://www.youtube.com/watch?v=7zVpZc_S52U",
+    "type": "Shoulders",
+    "muscleGroups": [
+      {
+        "name": "Shoulders",
+        "imageUrl": "https://res.cloudinary.com/dplgyvrof/image/upload/v1774613350/Bench-Press-Muscle-work-300x300_mey4w1.webp"
+      }
+    ]
+  },
+  {
+    "name": "Smith Machine Upright Row",
+    "mainImage": "https://res.cloudinary.com/dhokfcxag/image/upload/v1774633553/fitness_exercises/147_Smith_Machine_Upright_Row_it3p9n.png",
+    "videoUrl": "https://www.youtube.com/watch?v=vVjHeR4y9lM",
+    "type": "Shoulders",
+    "muscleGroups": [
+      {
+        "name": "Shoulders",
+        "imageUrl": "https://res.cloudinary.com/dplgyvrof/image/upload/v1774613350/Bench-Press-Muscle-work-300x300_mey4w1.webp"
+      }
+    ]
+  },
+  {
+    "name": "Seated Rear Lateral Raise",
+    "mainImage": "https://res.cloudinary.com/dhokfcxag/image/upload/v1774633554/fitness_exercises/148_Seated_Rear_Lateral_Raise_uim2ia.png",
+    "videoUrl": "https://www.youtube.com/watch?v=p1yQnTNE808",
+    "type": "Shoulders",
+    "muscleGroups": [
+      {
+        "name": "Shoulders",
+        "imageUrl": "https://res.cloudinary.com/dplgyvrof/image/upload/v1774613350/Bench-Press-Muscle-work-300x300_mey4w1.webp"
+      }
+    ]
+  },
+  {
+    "name": "Kettlebell Upright Row",
+    "mainImage": "https://res.cloudinary.com/dhokfcxag/image/upload/v1774633556/fitness_exercises/149_Kettlebell_Upright_Row_v4i3te.png",
+    "videoUrl": "https://www.youtube.com/watch?v=M9Uv-X_M3I4",
+    "type": "Shoulders",
+    "muscleGroups": [
+      {
+        "name": "Shoulders",
+        "imageUrl": "https://res.cloudinary.com/dplgyvrof/image/upload/v1774613350/Bench-Press-Muscle-work-300x300_mey4w1.webp"
+      }
+    ]
+  },
+  {
+    "name": "Resistance Band Upright Row",
+    "mainImage": "https://res.cloudinary.com/dhokfcxag/image/upload/v1774633558/fitness_exercises/150_Resistance_Band_Upright_Row_tt98i1.png",
+    "videoUrl": "https://www.youtube.com/watch?v=F3xZ0R0Uu7M",
+    "type": "Shoulders",
+    "muscleGroups": [
+      {
+        "name": "Shoulders",
+        "imageUrl": "https://res.cloudinary.com/dplgyvrof/image/upload/v1774613350/Bench-Press-Muscle-work-300x300_mey4w1.webp"
+      }
+    ]
+  },
+  {
+    "name": "Y-Raise",
+    "mainImage": "https://res.cloudinary.com/dhokfcxag/image/upload/v1774633559/fitness_exercises/151_Y_Raise_idpxg1.png",
+    "videoUrl": "https://www.youtube.com/watch?v=wX-f2WNoBic",
+    "type": "Shoulders",
+    "muscleGroups": [
+      {
+        "name": "Shoulders",
+        "imageUrl": "https://res.cloudinary.com/dplgyvrof/image/upload/v1774613350/Bench-Press-Muscle-work-300x300_mey4w1.webp"
+      }
+    ]
+  },
+  {
+    "name": "Resistance Band Y-Raise",
+    "mainImage": "https://res.cloudinary.com/dhokfcxag/image/upload/v1774633560/fitness_exercises/152_Resistance_Band_Y_Raise_hshgpk.png",
+    "videoUrl": "https://www.youtube.com/watch?v=h1_n8jYIs3w",
+    "type": "Shoulders",
+    "muscleGroups": [
+      {
+        "name": "Shoulders",
+        "imageUrl": "https://res.cloudinary.com/dplgyvrof/image/upload/v1774613350/Bench-Press-Muscle-work-300x300_mey4w1.webp"
+      }
+    ]
+  },
+  {
+    "name": "T-Raise",
+    "mainImage": "https://res.cloudinary.com/dhokfcxag/image/upload/v1774633562/fitness_exercises/153_T_Raise_u6onid.png",
+    "videoUrl": "https://www.youtube.com/watch?v=YfDqCqIdB58",
+    "type": "Shoulders",
+    "muscleGroups": [
+      {
+        "name": "Shoulders",
+        "imageUrl": "https://res.cloudinary.com/dplgyvrof/image/upload/v1774613350/Bench-Press-Muscle-work-300x300_mey4w1.webp"
+      }
+    ]
+  },
+  {
+    "name": "Resistance Band T-Raise",
+    "mainImage": "https://res.cloudinary.com/dhokfcxag/image/upload/v1774633563/fitness_exercises/154_Resistance_Band_T_Raise_m1g7un.png",
+    "videoUrl": "https://www.youtube.com/watch?v=vVjHeR4y9lM",
+    "type": "Shoulders",
+    "muscleGroups": [
+      {
+        "name": "Shoulders",
+        "imageUrl": "https://res.cloudinary.com/dplgyvrof/image/upload/v1774613350/Bench-Press-Muscle-work-300x300_mey4w1.webp"
+      }
+    ]
+  },
+  {
+    "name": "Plate Front Raise",
+    "mainImage": "https://res.cloudinary.com/dhokfcxag/image/upload/v1774633565/fitness_exercises/155_Plate_Front_Raise_tcy3is.png",
+    "videoUrl": "https://www.youtube.com/watch?v=ZMkPZc1mLUo",
+    "type": "Shoulders",
+    "muscleGroups": [
+      {
+        "name": "Shoulders",
+        "imageUrl": "https://res.cloudinary.com/dplgyvrof/image/upload/v1774613350/Bench-Press-Muscle-work-300x300_mey4w1.webp"
+      }
+    ]
+  },
+  {
+    "name": "Front Raise",
+    "mainImage": "https://res.cloudinary.com/dhokfcxag/image/upload/v1774633567/fitness_exercises/156_Front_Raise_on7q0p.png",
+    "videoUrl": "https://www.youtube.com/watch?v=sOcYlBI85hc",
+    "type": "Shoulders",
+    "muscleGroups": [
+      {
+        "name": "Shoulders",
+        "imageUrl": "https://res.cloudinary.com/dplgyvrof/image/upload/v1774613350/Bench-Press-Muscle-work-300x300_mey4w1.webp"
+      }
+    ]
+  },
+  {
+    "name": "Dumbbell Incline Lateral Raise",
+    "mainImage": "https://res.cloudinary.com/dhokfcxag/image/upload/v1774633569/fitness_exercises/157_Dumbbell_Incline_Lateral_Raise_nd0eyj.png",
+    "videoUrl": "https://www.youtube.com/watch?v=z3PRz2aVA10",
+    "type": "Shoulders",
+    "muscleGroups": [
+      {
+        "name": "Shoulders",
+        "imageUrl": "https://res.cloudinary.com/dplgyvrof/image/upload/v1774613350/Bench-Press-Muscle-work-300x300_mey4w1.webp"
+      }
+    ]
+  },
+  {
+    "name": "Incline Dumbbell Lateral Raise",
+    "mainImage": "https://res.cloudinary.com/dhokfcxag/image/upload/v1774633571/fitness_exercises/158_Incline_Dumbbell_Lateral_Raise_f5lvnp.png",
+    "videoUrl": "https://www.youtube.com/watch?v=z3PRz2aVA10",
+    "type": "Shoulders",
+    "muscleGroups": [
+      {
+        "name": "Shoulders",
+        "imageUrl": "https://res.cloudinary.com/dplgyvrof/image/upload/v1774613350/Bench-Press-Muscle-work-300x300_mey4w1.webp"
+      }
+    ]
+  },
+  {
+    "name": "Standing Dumbbell Side Lat Raise",
+    "mainImage": "https://res.cloudinary.com/dhokfcxag/image/upload/v1774633572/fitness_exercises/159_Standing_Dumbbell_Side_Lat_Raise_g7mvve.png",
+    "videoUrl": "https://www.youtube.com/watch?v=PzsMitRdI_8",
+    "type": "Shoulders",
+    "muscleGroups": [
+      {
+        "name": "Shoulders",
+        "imageUrl": "https://res.cloudinary.com/dplgyvrof/image/upload/v1774613350/Bench-Press-Muscle-work-300x300_mey4w1.webp"
+      }
+    ]
+  },
+  {
+    "name": "Dumbbell One Arm Lateral Raise",
+    "mainImage": "https://res.cloudinary.com/dhokfcxag/image/upload/v1774633574/fitness_exercises/160_Dumbbell_One_Arm_Lateral_Raise_at0qof.png",
+    "videoUrl": "https://www.youtube.com/watch?v=hC2Y79t3gT0",
+    "type": "Shoulders",
+    "muscleGroups": [
+      {
+        "name": "Shoulders",
+        "imageUrl": "https://res.cloudinary.com/dplgyvrof/image/upload/v1774613350/Bench-Press-Muscle-work-300x300_mey4w1.webp"
+      }
+    ]
+  },
+  {
+    "name": "Cable One Arm Side Lateral Raise",
+    "mainImage": "https://res.cloudinary.com/dhokfcxag/image/upload/v1774633575/fitness_exercises/161_Cable_One_Arm_Side_Lateral_Raise_uaw2v9.png",
+    "videoUrl": "https://www.youtube.com/watch?v=Z5FA9aq3L6A",
+    "type": "Shoulders",
+    "muscleGroups": [
+      {
+        "name": "Shoulders",
+        "imageUrl": "https://res.cloudinary.com/dplgyvrof/image/upload/v1774613350/Bench-Press-Muscle-work-300x300_mey4w1.webp"
+      }
+    ]
+  },
+  {
+    "name": "Lever Seated Lateral Raise",
+    "mainImage": "https://res.cloudinary.com/dhokfcxag/image/upload/v1774633577/fitness_exercises/162_Lever_Seated_Lateral_Raise_mvp4pe.png",
+    "videoUrl": "https://www.youtube.com/watch?v=NNAs8jx_zJI",
+    "type": "Shoulders",
+    "muscleGroups": [
+      {
+        "name": "Shoulders",
+        "imageUrl": "https://res.cloudinary.com/dplgyvrof/image/upload/v1774613350/Bench-Press-Muscle-work-300x300_mey4w1.webp"
+      }
+    ]
+  },
+  {
+    "name": "Side Lateral Raise",
+    "mainImage": "https://res.cloudinary.com/dhokfcxag/image/upload/v1774633578/fitness_exercises/163_Side_Lateral_Raise_ofq1tp.png",
+    "videoUrl": "https://www.youtube.com/watch?v=PzsMitRdI_8",
+    "type": "Shoulders",
+    "muscleGroups": [
+      {
+        "name": "Shoulders",
+        "imageUrl": "https://res.cloudinary.com/dplgyvrof/image/upload/v1774613350/Bench-Press-Muscle-work-300x300_mey4w1.webp"
+      }
+    ]
+  },
+  {
+    "name": "Standing Barbell Shoulder Press",
+    "mainImage": "https://res.cloudinary.com/dhokfcxag/image/upload/v1774633580/fitness_exercises/164_Standing_Barbell_Shoulder_Press_p82fsq.png",
+    "videoUrl": "https://www.youtube.com/watch?v=KP1sYz2VICk",
+    "type": "Shoulders",
+    "muscleGroups": [
+      {
+        "name": "Shoulders",
+        "imageUrl": "https://res.cloudinary.com/dplgyvrof/image/upload/v1774613350/Bench-Press-Muscle-work-300x300_mey4w1.webp"
+      }
+    ]
+  },
+  {
+    "name": "Barbell Seated Wide-grip Shoulder Press",
+    "mainImage": "https://res.cloudinary.com/dhokfcxag/image/upload/v1774633581/fitness_exercises/165_Barbell_Seated_Wide_grip_Shoulder_Press_on13vp.png",
+    "videoUrl": "https://www.youtube.com/watch?v=YNK3eQVevIs",
+    "type": "Shoulders",
+    "muscleGroups": [
+      {
+        "name": "Shoulders",
+        "imageUrl": "https://res.cloudinary.com/dplgyvrof/image/upload/v1774613350/Bench-Press-Muscle-work-300x300_mey4w1.webp"
+      }
+    ]
+  },
+  {
+    "name": "Dumbbell Seated Shoulder Press",
+    "mainImage": "https://res.cloudinary.com/dhokfcxag/image/upload/v1774633583/fitness_exercises/166_Dumbbell_Seated_Shoulder_Press_on13vp.png",
+    "videoUrl": "https://www.youtube.com/watch?v=poD_-zaG9hk",
+    "type": "Shoulders",
+    "muscleGroups": [
+      {
+        "name": "Shoulders",
+        "imageUrl": "https://res.cloudinary.com/dplgyvrof/image/upload/v1774613350/Bench-Press-Muscle-work-300x300_mey4w1.webp"
+      }
+    ]
+  },
+  {
+    "name": "Dumbbell Alternating Seated Shoulder Press",
+    "mainImage": "https://res.cloudinary.com/dhokfcxag/image/upload/v1774633585/fitness_exercises/167_Dumbbell_Alternating_Seated_Shoulder_Press_on13vp.png",
+    "videoUrl": "https://www.youtube.com/watch?v=kiCAW0XhTC4",
+    "type": "Shoulders",
+    "muscleGroups": [
+      {
+        "name": "Shoulders",
+        "imageUrl": "https://res.cloudinary.com/dplgyvrof/image/upload/v1774613350/Bench-Press-Muscle-work-300x300_mey4w1.webp"
+      }
+    ]
+  },
+  {
+    "name": "Dumbbell One Arm Seated Shoulder Press",
+    "mainImage": "https://res.cloudinary.com/dhokfcxag/image/upload/v1774633586/fitness_exercises/168_Dumbbell_One_Arm_Seated_Shoulder_Press_on13vp.png",
+    "videoUrl": "https://www.youtube.com/watch?v=4INnuqPeyIQ",
+    "type": "Shoulders",
+    "muscleGroups": [
+      {
+        "name": "Shoulders",
+        "imageUrl": "https://res.cloudinary.com/dplgyvrof/image/upload/v1774613350/Bench-Press-Muscle-work-300x300_mey4w1.webp"
+      }
+    ]
+  },
+  {
+    "name": "Standing Dumbbell One Arm Shoulder Press",
+    "mainImage": "https://res.cloudinary.com/dhokfcxag/image/upload/v1774633588/fitness_exercises/169_Standing_Dumbbell_One_Arm_Shoulder_Press_on13vp.png",
+    "videoUrl": "https://www.youtube.com/watch?v=4INnuqPeyIQ",
+    "type": "Shoulders",
+    "muscleGroups": [
+      {
+        "name": "Shoulders",
+        "imageUrl": "https://res.cloudinary.com/dplgyvrof/image/upload/v1774613350/Bench-Press-Muscle-work-300x300_mey4w1.webp"
+      }
+    ]
+  },
+  {
+    "name": "Seated Hammer Grip Shoulder Press",
+    "mainImage": "https://res.cloudinary.com/dhokfcxag/image/upload/v1774633590/fitness_exercises/170_Seated_Hammer_Grip_Shoulder_Press_on13vp.png",
+    "videoUrl": "https://www.youtube.com/watch?v=Kz698A_iEIk",
+    "type": "Shoulders",
+    "muscleGroups": [
+      {
+        "name": "Shoulders",
+        "imageUrl": "https://res.cloudinary.com/dplgyvrof/image/upload/v1774613350/Bench-Press-Muscle-work-300x300_mey4w1.webp"
+      }
+    ]
+  },
+  {
+    "name": "Lever Seated Shoulder Press",
+    "mainImage": "https://res.cloudinary.com/dhokfcxag/image/upload/v1774633591/fitness_exercises/171_Lever_Seated_Shoulder_Press_on13vp.png",
+    "videoUrl": "https://www.youtube.com/watch?v=3R14MnZbcpw",
+    "type": "Shoulders",
+    "muscleGroups": [
+      {
+        "name": "Shoulders",
+        "imageUrl": "https://res.cloudinary.com/dplgyvrof/image/upload/v1774613350/Bench-Press-Muscle-work-300x300_mey4w1.webp"
+      }
+    ]
+  },
+  {
+    "name": "Shoulder Press",
+    "mainImage": "https://res.cloudinary.com/dhokfcxag/image/upload/v1774633593/fitness_exercises/172_Shoulder_Press_on13vp.png",
+    "videoUrl": "https://www.youtube.com/watch?v=poD_-zaG9hk",
+    "type": "Shoulders",
+    "muscleGroups": [
+      {
+        "name": "Shoulders",
+        "imageUrl": "https://res.cloudinary.com/dplgyvrof/image/upload/v1774613350/Bench-Press-Muscle-work-300x300_mey4w1.webp"
+      }
+    ]
+  },
+  {
+    "name": "Bent-over Barbell Lateral Raise",
+    "mainImage": "https://res.cloudinary.com/dhokfcxag/image/upload/v1774633595/fitness_exercises/173_Bent_over_Barbell_Lateral_Raise_on13vp.png",
+    "videoUrl": "https://www.youtube.com/watch?v=qXrTDQG1oUQ",
+    "type": "Shoulders",
+    "muscleGroups": [
+      {
+        "name": "Shoulders",
+        "imageUrl": "https://res.cloudinary.com/dplgyvrof/image/upload/v1774613350/Bench-Press-Muscle-work-300x300_mey4w1.webp"
+      }
+    ]
+  },
+  {
+    "name": "Bent-over Dumbbell Rear Delt Raise",
+    "mainImage": "https://res.cloudinary.com/dhokfcxag/image/upload/v1774633597/fitness_exercises/174_Bent_over_Dumbbell_Rear_Delt_Raise_on13vp.png",
+    "videoUrl": "https://www.youtube.com/watch?v=gQBJPfWf_-s",
+    "type": "Shoulders",
+    "muscleGroups": [
+      {
+        "name": "Shoulders",
+        "imageUrl": "https://res.cloudinary.com/dplgyvrof/image/upload/v1774613350/Bench-Press-Muscle-work-300x300_mey4w1.webp"
+      }
+    ]
+  },
+  {
+    "name": "Dumbbell One Arm Rear Delt Raise",
+    "mainImage": "https://res.cloudinary.com/dhokfcxag/image/upload/v1774633598/fitness_exercises/175_Dumbbell_One_Arm_Rear_Delt_Raise_on13vp.png",
+    "videoUrl": "https://www.youtube.com/watch?v=Z0HTsZEMedA",
+    "type": "Shoulders",
+    "muscleGroups": [
+      {
+        "name": "Shoulders",
+        "imageUrl": "https://res.cloudinary.com/dplgyvrof/image/upload/v1774613350/Bench-Press-Muscle-work-300x300_mey4w1.webp"
+      }
+    ]
+  },
+  {
+    "name": "Rear Delt Fly",
+    "mainImage": "https://res.cloudinary.com/dhokfcxag/image/upload/v1774633600/fitness_exercises/176_Rear_Delt_Fly_on13vp.png",
+    "videoUrl": "https://www.youtube.com/watch?v=Uz81XugWbG0",
+    "type": "Shoulders",
+    "muscleGroups": [
+      {
+        "name": "Shoulders",
+        "imageUrl": "https://res.cloudinary.com/dplgyvrof/image/upload/v1774613350/Bench-Press-Muscle-work-300x300_mey4w1.webp"
+      }
+    ]
+  },
+  {
+    "name": "Dumbbell One-arm Neutral Grip Shoulder Press",
+    "mainImage": "https://res.cloudinary.com/dhokfcxag/image/upload/v1774633602/fitness_exercises/177_Dumbbell_One_arm_Neutral_Grip_Shoulder_Press_on13vp.png",
+    "videoUrl": "https://www.youtube.com/watch?v=Kz698A_iEIk",
+    "type": "Shoulders",
+    "muscleGroups": [
+      {
+        "name": "Shoulders",
+        "imageUrl": "https://res.cloudinary.com/dplgyvrof/image/upload/v1774613350/Bench-Press-Muscle-work-300x300_mey4w1.webp"
+      }
+    ]
+  },
+  {
+    "name": "One Arm Neutral Grip Shoulder Press",
+    "mainImage": "https://res.cloudinary.com/dhokfcxag/image/upload/v1774633604/fitness_exercises/178_One_Arm_Neutral_Grip_Shoulder_Press_on13vp.png",
+    "videoUrl": "https://www.youtube.com/watch?v=Kz698A_iEIk",
+    "type": "Shoulders",
+    "muscleGroups": [
+      {
+        "name": "Shoulders",
+        "imageUrl": "https://res.cloudinary.com/dplgyvrof/image/upload/v1774613350/Bench-Press-Muscle-work-300x300_mey4w1.webp"
+      }
+    ]
+  },
+  {
+    "name": "Lever Shoulder Press (Hammer grip)",
+    "mainImage": "https://res.cloudinary.com/dhokfcxag/image/upload/v1774633605/fitness_exercises/179_Lever_Shoulder_Press_Hammer_grip__on13vp.png",
+    "videoUrl": "https://www.youtube.com/watch?v=_DRQ2ZRtC3I",
+    "type": "Shoulders",
+    "muscleGroups": [
+      {
+        "name": "Shoulders",
+        "imageUrl": "https://res.cloudinary.com/dplgyvrof/image/upload/v1774613350/Bench-Press-Muscle-work-300x300_mey4w1.webp"
+      }
+    ]
+  },
+  {
+    "name": "Standing Barbell Front Raise",
+    "mainImage": "https://res.cloudinary.com/dhokfcxag/image/upload/v1774633607/fitness_exercises/180_Standing_Barbell_Front_Raise_on13vp.png",
+    "videoUrl": "https://www.youtube.com/watch?v=Xh0mGInW_No",
+    "type": "Shoulders",
+    "muscleGroups": [
+      {
+        "name": "Shoulders",
+        "imageUrl": "https://res.cloudinary.com/dplgyvrof/image/upload/v1774613350/Bench-Press-Muscle-work-300x300_mey4w1.webp"
+      }
+    ]
+  },
+  {
+    "name": "Reverse Fly",
+    "mainImage": "https://res.cloudinary.com/dhokfcxag/image/upload/v1774633609/fitness_exercises/181_Reverse_Fly_on13vp.png",
+    "videoUrl": "https://www.youtube.com/watch?v=Uz81XugWbG0",
+    "type": "Shoulders",
+    "muscleGroups": [
+      {
+        "name": "Shoulders",
+        "imageUrl": "https://res.cloudinary.com/dplgyvrof/image/upload/v1774613350/Bench-Press-Muscle-work-300x300_mey4w1.webp"
+      }
+    ]
+  },
+  {
+    "name": "Dumbbell Rear Lateral Raise",
+    "mainImage": "https://res.cloudinary.com/dhokfcxag/image/upload/v1774633611/fitness_exercises/182_Dumbbell_Rear_Lateral_Raise_on13vp.png",
+    "videoUrl": "https://www.youtube.com/watch?v=gQBJPfWf_-s",
+    "type": "Shoulders",
+    "muscleGroups": [
+      {
+        "name": "Shoulders",
+        "imageUrl": "https://res.cloudinary.com/dplgyvrof/image/upload/v1774613350/Bench-Press-Muscle-work-300x300_mey4w1.webp"
+      }
+    ]
+  },
+  {
+    "name": "Face Pull (rope)",
+    "mainImage": "https://res.cloudinary.com/dhokfcxag/image/upload/v1774633612/fitness_exercises/183_Face_Pull_rope__on13vp.png",
+    "videoUrl": "https://www.youtube.com/watch?v=0Po47vvj9g4",
+    "type": "Shoulders",
+    "muscleGroups": [
+      {
+        "name": "Shoulders",
+        "imageUrl": "https://res.cloudinary.com/dplgyvrof/image/upload/v1774613350/Bench-Press-Muscle-work-300x300_mey4w1.webp"
+      }
+    ]
+  },
+  {
+    "name": "Barbell Upright Row (Shrug)",
+    "mainImage": "https://res.cloudinary.com/dhokfcxag/image/upload/v1774633614/fitness_exercises/184_Barbell_Upright_Row_Shrug__on13vp.png",
+    "videoUrl": "https://www.youtube.com/watch?v=amCU-ziHITM",
+    "type": "Shoulders",
+    "muscleGroups": [
+      {
+        "name": "Shoulders",
+        "imageUrl": "https://res.cloudinary.com/dplgyvrof/image/upload/v1774613350/Bench-Press-Muscle-work-300x300_mey4w1.webp"
+      }
+    ]
+  },
+  {
+    "name": "Dumbbell Upright Row (Shrug)",
+    "mainImage": "https://res.cloudinary.com/dhokfcxag/image/upload/v1774633616/fitness_exercises/185_Dumbbell_Upright_Row_Shrug__on13vp.png",
+    "videoUrl": "https://www.youtube.com/watch?v=K0dYqPCaO14",
+    "type": "Shoulders",
+    "muscleGroups": [
+      {
+        "name": "Shoulders",
+        "imageUrl": "https://res.cloudinary.com/dplgyvrof/image/upload/v1774613350/Bench-Press-Muscle-work-300x300_mey4w1.webp"
+      }
+    ]
+  },
+  {
+    "name": "Cable Standing Shoulder Press",
+    "mainImage": "https://res.cloudinary.com/dhokfcxag/image/upload/v1774633618/fitness_exercises/186_Cable_Standing_Shoulder_Press_on13vp.png",
+    "videoUrl": "https://www.youtube.com/watch?v=G1qWo8YjDPE",
+    "type": "Shoulders",
+    "muscleGroups": [
+      {
+        "name": "Shoulders",
+        "imageUrl": "https://res.cloudinary.com/dplgyvrof/image/upload/v1774613350/Bench-Press-Muscle-work-300x300_mey4w1.webp"
+      }
+    ]
+  },
+  {
+    "name": "Dumbbell One Arm Front Raise",
+    "mainImage": "https://res.cloudinary.com/dhokfcxag/image/upload/v1774633620/fitness_exercises/187_Dumbbell_One_Arm_Front_Raise_on13vp.png",
+    "videoUrl": "https://www.youtube.com/watch?v=iaG4yUMlDVg",
+    "type": "Shoulders",
+    "muscleGroups": [
+      {
+        "name": "Shoulders",
+        "imageUrl": "https://res.cloudinary.com/dplgyvrof/image/upload/v1774613350/Bench-Press-Muscle-work-300x300_mey4w1.webp"
+      }
+    ]
+  },
+  {
+    "name": "Cable Pull-over",
+    "mainImage": "https://res.cloudinary.com/dhokfcxag/image/upload/v1774633621/fitness_exercises/188_Cable_Pull_over_on13vp.png",
+    "videoUrl": "https://www.youtube.com/watch?v=P_3G0Yp8M0c",
+    "type": "Shoulders",
+    "muscleGroups": [
+      {
+        "name": "Shoulders",
+        "imageUrl": "https://res.cloudinary.com/dplgyvrof/image/upload/v1774613350/Bench-Press-Muscle-work-300x300_mey4w1.webp"
+      }
+    ]
+  },
+  {
+    "name": "One Arm Low Cable Raise",
+    "mainImage": "https://res.cloudinary.com/dhokfcxag/image/upload/v1774633623/fitness_exercises/189_One_Arm_Low_Cable_Raise_on13vp.png",
+    "videoUrl": "https://www.youtube.com/watch?v=iCgSt7RqoOo",
+    "type": "Shoulders",
+    "muscleGroups": [
+      {
+        "name": "Shoulders",
+        "imageUrl": "https://res.cloudinary.com/dplgyvrof/image/upload/v1774613350/Bench-Press-Muscle-work-300x300_mey4w1.webp"
+      }
+    ]
+  },
+  {
+    "name": "Barbell Shrug (Shoulders)",
+    "mainImage": "https://res.cloudinary.com/dhokfcxag/image/upload/v1774633625/fitness_exercises/190_Barbell_Shrug_Shoulders__on13vp.png",
+    "videoUrl": "https://www.youtube.com/watch?v=cJRVVxmytaM",
+    "type": "Shoulders",
+    "muscleGroups": [
+      {
+        "name": "Shoulders",
+        "imageUrl": "https://res.cloudinary.com/dplgyvrof/image/upload/v1774613350/Bench-Press-Muscle-work-300x300_mey4w1.webp"
+      }
+    ]
+  },
+  {
+    "name": "Dumbbell Shrug (Shoulders)",
+    "mainImage": "https://res.cloudinary.com/dhokfcxag/image/upload/v1774633627/fitness_exercises/191_Dumbbell_Shrug_Shoulders__on13vp.png",
+    "videoUrl": "https://www.youtube.com/watch?v=_t3lrPI6Of4",
+    "type": "Shoulders",
+    "muscleGroups": [
+      {
+        "name": "Shoulders",
+        "imageUrl": "https://res.cloudinary.com/dplgyvrof/image/upload/v1774613350/Bench-Press-Muscle-work-300x300_mey4w1.webp"
+      }
+    ]
+  },
+  {
+    "name": "Lever Shoulder Press (Hammer grip)",
+    "mainImage": "https://res.cloudinary.com/dhokfcxag/image/upload/v1774633628/fitness_exercises/192_Lever_Shoulder_Press_Hammer_grip__on13vp.png",
+    "videoUrl": "https://www.youtube.com/watch?v=_DRQ2ZRtC3I",
+    "type": "Shoulders",
+    "muscleGroups": [
+      {
+        "name": "Shoulders",
+        "imageUrl": "https://res.cloudinary.com/dplgyvrof/image/upload/v1774613350/Bench-Press-Muscle-work-300x300_mey4w1.webp"
+      }
+    ]
+  },
+  {
+    "name": "Shoulder Pull-over (Bent arm)",
+    "mainImage": "https://res.cloudinary.com/dhokfcxag/image/upload/v1774633630/fitness_exercises/193_Shoulder_Pull_over_Bent_arm__on13vp.png",
+    "videoUrl": "https://www.youtube.com/watch?v=S30QG9wA1iI",
+    "type": "Shoulders",
+    "muscleGroups": [
+      {
+        "name": "Shoulders",
+        "imageUrl": "https://res.cloudinary.com/dplgyvrof/image/upload/v1774613350/Bench-Press-Muscle-work-300x300_mey4w1.webp"
+      }
+    ]
+  }
+]

@@ -59,7 +59,7 @@ interface Workout {
   isUserCustom?: boolean; // True if created by current user
 }
 
-import { SelectionStore } from '../utils/SelectionStore';
+import { SelectionStore } from '../_utils/SelectionStore';
 
 export default function WorkoutLibraryScreen() {
   const router = useRouter();

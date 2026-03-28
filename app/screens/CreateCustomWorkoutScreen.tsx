@@ -21,7 +21,7 @@ import {
     View,
     ActivityIndicator
 } from 'react-native';
-import { SelectionStore } from '../utils/SelectionStore';
+import { SelectionStore } from '../_utils/SelectionStore';
 import { CustomAlert } from '@/utils/CustomAlert';
 
 const { width } = Dimensions.get('window');

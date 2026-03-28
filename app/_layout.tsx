@@ -7,7 +7,7 @@ import crashlytics from '@react-native-firebase/crashlytics';
 import { DarkTheme, DefaultTheme, ThemeProvider } from '@react-navigation/native';
 import * as NavigationBar from 'expo-navigation-bar';
 import * as Notifications from 'expo-notifications';
-import { Stack, useRouter, usePathname, useSegments } from 'expo-router';
+import { Stack, useRouter, usePathname } from 'expo-router';
 import * as SplashScreen from 'expo-splash-screen';
 import { StatusBar } from 'expo-status-bar';
 import { useEffect, useRef, useState } from 'react';
@@ -49,7 +49,6 @@ export default function RootLayout() {
   const [user, setUser] = useState<FirebaseAuthTypes.User | null>(null);
   const router = useRouter();
   const pathname = usePathname();
-  const segments = useSegments();
   
   // Fontları yükle
   const [loaded, error] = useFonts({
@@ -161,13 +160,13 @@ export default function RootLayout() {
   // Track screen views
   useEffect(() => {
     if (pathname && !initializing) {
-      const screenName = segments.join('/') || 'home';
+      const screenName = pathname.replace(/^\//, '') || 'home';
       analytics().logScreenView({
         screen_name: screenName,
         screen_class: screenName,
       }).catch(err => console.error('Analytics logScreenView error:', err));
     }
-  }, [pathname, segments, initializing]);
+  }, [pathname, initializing]);
 
   if (!loaded || initializing) {
     return null;
